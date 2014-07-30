@@ -218,19 +218,19 @@ $(document).ready(function(){
 					}
 					$("#tarjetas").append('<div class="tarjeta'+medio+'" data-id="'+exito.tarjetas[a].id+'">'+tag+'</div>')
 				}
-				alert("Tarjetas OK");
+				//alert("Tarjetas OK");
 				var totbanc=exito.bancos.length
-				alert("Total Bancos"+totbanc);
+				//alert("Total Bancos"+totbanc);
 				alert("BANCOS="+JSON.stringify(exito.bancos));
 				var tag2="";
 				var medio2 = "";
 				var counter2 = 0;
 				for(var b=0;b<totbanc;b++){
-					alert("FOR Bancos1"+b);
+					//alert("FOR Bancos1"+b);
 					//alert(exito.tarjetas[a].id);
 					if(counter2==1){
 						medio2 = " medio";
-						counter2++
+						counter2++;
 					}else{
 						medio2 = "";
 						counter2++;
@@ -238,19 +238,19 @@ $(document).ready(function(){
 					if(counter2==3){
 						counter2 = 0;
 					}
-					if(exito.bancos[a].icono != ""){
-						alert("FOR Bancos2"+b);
+					if(exito.bancos[b].icono != ""){
+						//alert("FOR Bancos2"+b);
 						tag2 = '<img src="'+RUTA+'public/assets/tarjetas/'+foldernum+'/'+exito.bancos[b].icono+'" width="80" height="80" />';
 					}else{
 						alert("FOR Bancos3"+b);
 						tag2 = exito.bancos[b].tag;
 					}
 					$("#bancos").append('<div class="tarjeta'+medio2+'" data-id="'+exito.bancos[b].id+'">'+tag2+'</div>')
-					alert("FOR Bancos4"+b);
+					//alert("FOR Bancos4"+b);
 				}
 				alert("Bancos OK");
 				$.mobile.loading( 'hide');
-				alert("Se escondió");
+				//alert("Se escondió");
 				var consulta = $.post(RUTA+"tarjetas/vinculadas",{userid:userID},function(dato){
 					if(dato){
 						var dt = dato.length;
