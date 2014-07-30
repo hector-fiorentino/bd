@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" />
+  <link rel="stylesheet" type="text/css" href="css/estilos.css" />
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.mobile-1.4.0-rc.1.js"></script>
+  </head>
+  <body>
+    <div data-role="page" style="min-height:480px;" dsid="Home" id="Home" class="type-interior"
+        data-theme="b">
+            <!-- mobileheader -->
+            <div data-role="header" data-position="fixed" data-add-back-btn="false" data-back-btn-text="Back"
+            data-theme="a" name="mobileheader" id="Home_mobileheader" class="Home_mobileheader">
+                <h1 dsid="mobileheader">
+                    BigDescuento
+                </h1>
+                <!-- menubtn -->
+                <a data-role="button" name="menubtn" dsid="menubtn" class="Home_menubtn ui-btn-left"
+                style='min-height:20px; ' id="Home_menubtn" data-corners="true" data-icon="bars"
+                data-iconpos="notext" data-inline='true' data-mini='true' data-theme="a" tabindex="3">
+                &nbsp;
+                </a>
+                <!-- catesbtn -->
+                <a data-role="button" name="catesbtn" dsid="catesbtn" class="Home_catesbtn ui-btn-right"
+                style='min-height:20px; ' id="Home_catesbtn" data-corners="true" data-icon="grid"
+                data-iconpos="notext" data-inline='true' data-mini='true' data-theme="a" tabindex="6">
+                &nbsp;
+                </a>
+            </div>
+            <!-- mobilecontainer -->
+            <div data-role="content" id="Home_mobilecontainer" name="mobilecontainer" class="Home_mobilecontainer ui-content"
+            dsid="mobilecontainer" data-theme="b">
+                <!-- mobilesearchbar_3 -->
+                <div data-role="fieldcontain" class="Home_mobilesearchbar_3 ">
+                    <div id="Home_mobilesearchbar_3-cover-div">
+                        <img id="Home_mobilesearchbar_3-cover-img" src="files/resources/image/icon-search-cover.png"
+                        />
+                    </div>
+                    <input type="search" name="mobilesearchbar_3" id="Home_mobilesearchbar_3" dsid="mobilesearchbar_3"
+                    value="Search" placeholder="" data-theme="b" tabindex="1" class="Home_mobilesearchbar_3"
+                    />
+                </div>
+                <!-- mobilelist_4 -->
+                <ul data-role="listview" id="Home_mobilelist_4" class="Home_mobilelist_4" name="mobilelist_4"
+                dsid="mobilelist_4" data-inset="true" data-theme="b" data-divider-theme="b" data-count-theme="b"
+                style="">
+                    <!-- mobilelistitem_5 -->
+                    <li class="Home_mobilelistitem_5 ui-li-has-thumb" data-icon="none">
+                        <a id="Home_mobilelistitem_5" name="mobilelistitem_5" dsid="mobilelistitem_5" tabindex="2"
+                        class="Home_mobilelistitem_5">
+                        <img src="files/views/assets/image/Entity000697.jpg" />
+                        <h3>Sushi Night</h3>
+                        </a>
+                    </li>
+                    <!-- mobilelistitem_7 -->
+                    <li class="Home_mobilelistitem_7 ui-li-has-thumb" data-icon="none">
+                        <a id="Home_mobilelistitem_7" name="mobilelistitem_7" dsid="mobilelistitem_7" tabindex="2"
+                        class="Home_mobilelistitem_7">
+                        <img src="files/views/assets/image/a_3983480807269_0_680x276.JPG" />
+                        <h3>Item 2</h3>
+                        </a>
+                    </li>
+                    <!-- mobilelistitem_9 -->
+                    <li class="Home_mobilelistitem_9 ui-li-has-thumb" data-icon="none">
+                        <a id="Home_mobilelistitem_9" name="mobilelistitem_9" dsid="mobilelistitem_9" tabindex="2"
+                        class="Home_mobilelistitem_9">
+                        <img src="files/views/assets/image/carrito.jpg" />
+                        <h3>Item 3</h3>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="footer" data-position="fixed" class="Home_mobilefooter" name="mobilefooter"
+            dsid="mobilefooter" id="Home_mobilefooter" data-theme="b">
+            </div>
+            <!-- menu -->
+            <div data-role="panel" tabindex="-1" data-position="left" data-display="push" id="Home_menu"
+            class="panelmenu  Home_menu" name="menu" dsid="menu" data-theme="a">
+                <!-- html_31 -->
+                <div data-role="appery_html" name="html_31" dsid="html_31" id="Home_html_31" class="Home_html_31">
+                    USUARIO
+                </div>
+                <!-- mobilelist_24 -->
+                <ul data-role="listview" id="Home_mobilelist_24" class="Home_mobilelist_24" name="mobilelist_24"
+                dsid="mobilelist_24" data-inset="true" data-theme="c" data-divider-theme="b" data-count-theme="b"
+                style="">
+                    <!-- mobilelistitem_25 -->
+                    <li class="Home_mobilelistitem_25" data-icon="carat-r">
+                        <a id="Home_mobilelistitem_25" name="mobilelistitem_25" dsid="mobilelistitem_25"
+                        tabindex="5" class="Home_mobilelistitem_25">
+                        <h3>Item 1</h3>
+                        </a>
+                    </li>
+                    <!-- mobilelistitem_27 -->
+                    <li class="Home_mobilelistitem_27" data-icon="carat-r">
+                        <a id="Home_mobilelistitem_27" name="mobilelistitem_27" dsid="mobilelistitem_27"
+                        tabindex="5" class="Home_mobilelistitem_27">
+                        <h3>Item 2</h3>
+                        </a>
+                    </li>
+                    <!-- mobilelistitem_29 -->
+                    <li class="Home_mobilelistitem_29" data-icon="carat-r">
+                        <a id="Home_mobilelistitem_29" name="mobilelistitem_29" dsid="mobilelistitem_29"
+                        tabindex="5" class="Home_mobilelistitem_29">
+                        <h3>Item 3</h3>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- categorias -->
+            <div data-role="panel" tabindex="-1" data-position="right" data-display="push" id="Home_categorias"
+            class="panelcategorias  Home_categorias" name="categorias" dsid="categorias" data-theme="b">
+                <!-- mobilelabel_22 -->
+                <div name="mobilelabel_22" id="Home_mobilelabel_22" dsid="mobilelabel_22" data-role="appery_label"
+                class="Home_mobilelabel_22">
+                    Categorías
+                </div>
+                <!-- mobilelist_15 -->
+                <ul data-role="listview" id="Home_mobilelist_15" class="Home_mobilelist_15" name="mobilelist_15"
+                dsid="mobilelist_15" data-inset="true" data-theme="b" data-divider-theme="b" data-count-theme="b"
+                style="">
+                    <!-- mobilelistitem_16 -->
+                    <li class="Home_mobilelistitem_16 ui-li-has-icon" data-icon="none">
+                        <a id="Home_mobilelistitem_16" name="mobilelistitem_16" dsid="mobilelistitem_16"
+                        tabindex="4" class="Home_mobilelistitem_16">
+                        <img src="files/resources/image/no-image.jpg" />
+                        <h3>Gastronomía</h3>
+                        </a>
+                    </li>
+                    <!-- mobilelistitem_18 -->
+                    <li class="Home_mobilelistitem_18 ui-li-has-icon" data-icon="none">
+                        <a id="Home_mobilelistitem_18" name="mobilelistitem_18" dsid="mobilelistitem_18"
+                        tabindex="4" class="Home_mobilelistitem_18">
+                        <img src="files/resources/image/no-image.jpg" />
+                        <h3>Indumentaria</h3>
+                        </a>
+                    </li>
+                    <!-- mobilelistitem_20 -->
+                    <li class="Home_mobilelistitem_20 ui-li-has-icon" data-icon="none">
+                        <a id="Home_mobilelistitem_20" name="mobilelistitem_20" dsid="mobilelistitem_20"
+                        tabindex="4" class="Home_mobilelistitem_20">
+                        <img src="files/resources/image/no-image.jpg" />
+                        <h3>Tecnologia</h3>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+  </body>
+  </html>

@@ -1,0 +1,537 @@
+@charset "utf-8";
+/* CSS Document */
+
+#page1 div #texto-switch div #toggleswitch3 {
+	float: left;
+}
+#page1 div #texto-switch p {
+	float: left;
+}
+#page1 div #texto-switch {
+	width: 550px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#page1 div #texto-medidores {
+	text-align: center;
+}
+#page2 div #tarjetas .tarjeta {
+	margin: 10px;
+	height: 80px;
+	width: 80px;
+	display: inline-block;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+}
+
+#page2 div #tarjetas {
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+}
+#page2 div #tarjetas .tarjeta.activo {
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #0F0;
+	border-right-color: #0F0;
+	border-bottom-color: #0F0;
+	border-left-color: #0F0;
+}
+#page3 div #favoritos {
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+}
+#page3 div #favoritos .favorito {
+	height: 160px;
+	width: 360px;
+	display: inline-block;
+	margin: 5px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	background: #FFF
+}
+#page3 div #favoritos .favorito .imgfavorito {
+	height: 150px;
+	width: 150px;
+	float: left;
+	margin:5px;
+}
+#page3 div #favoritos .favorito .datos-favorito {
+	height: 150px;
+	width: 200px;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+}
+#page3 div #favoritos .favorito .datos-favorito p {
+	font-size: 10px;
+	line-height: 10px;
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 2px;
+	margin-left: 2px;
+	color: #666;
+}
+#page3 div #favoritos .favorito .datos-favorito .tiempo {
+	color: #C06;
+}
+#page3 div #favoritos .favorito .datos-favorito h4 {
+	padding: 0px;
+	margin-top: 5px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	color: #666;
+}
+#page3 div #favoritos .favorito .datos-favorito .tags .tag {
+	background-color: #93b4a7;
+	padding: 2px;
+	float: left;
+	text-align: center;
+	color: #FFF;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+
+}
+#page3 div #favoritos .favorito.gastronomia {
+	border-bottom-style: solid;
+	border-bottom-color: #09F;
+}
+#page3 div #favoritos .favorito .beneficio {
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	margin-left:-10px;
+	margin-top:-10px
+}
+#page3 div #favoritos .favorito .beneficio.descuento {
+	background-color: #46b979;
+}
+#page3 div #favoritos .favorito .beneficio h3 {
+	padding: 0px;
+	color: #FFF;
+	text-align: center;
+	margin-top: 12px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+#page3 div #favoritos .favorito .borrar {
+	background-color: #666;
+	height: 20px;
+	width: 20px;
+	position: absolute;
+	margin-left: 350px;
+	margin-top: 150px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+}
+#page3 div #favoritos .favorito .borrar p {
+	padding: 0px;
+	color: #FFF;
+	text-align: center;
+	font-size: 10px;
+	margin-top: 3px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+#page3 div #favoritos .favorito.gastronomia .beneficio.dosporuno {
+	background-color: #93C;
+}
+
+
+
+#page4 div #favoritos {
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+}
+#page4 div #favoritos .favorito {
+	height: 160px;
+	width: 360px;
+	display: inline-block;
+	margin: 5px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	background: #FFF
+}
+#page4 div #favoritos .favorito .imgfavorito {
+	height: 150px;
+	width: 150px;
+	float: left;
+	margin:5px;
+}
+#page4 div #favoritos .favorito .datos-favorito {
+	height: 150px;
+	width: 200px;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+}
+#page4 div #favoritos .favorito .datos-favorito p {
+	font-size: 10px;
+	line-height: 10px;
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 2px;
+	margin-left: 2px;
+	color: #666;
+}
+#page4 div #favoritos .favorito .datos-favorito .tiempo {
+	color: #C06;
+}
+#page4 div #favoritos .favorito .datos-favorito h4 {
+	padding: 0px;
+	margin-top: 5px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	color: #666;
+}
+#page4 div #favoritos .favorito .datos-favorito .tags .tag {
+	background-color: #93b4a7;
+	padding: 2px;
+	float: left;
+	text-align: center;
+	color: #FFF;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+
+}
+#page4 div #favoritos .favorito.gastronomia {
+	border-bottom-style: solid;
+	border-bottom-color: #09F;
+}
+#page4 div #favoritos .favorito .beneficio {
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	margin-left:-10px;
+	margin-top:-10px
+}
+#page4 div #favoritos .favorito .beneficio.descuento {
+	background-color: #46b979;
+}
+#page4 div #favoritos .favorito .beneficio h3 {
+	padding: 0px;
+	color: #FFF;
+	text-align: center;
+	margin-top: 12px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+#page4 div #favoritos .favorito .borrar {
+	background-color: #666;
+	height: 20px;
+	width: 20px;
+	position: absolute;
+	margin-left: 350px;
+	margin-top: 150px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+}
+#page4 div #favoritos .favorito .borrar p {
+	padding: 0px;
+	color: #FFF;
+	text-align: center;
+	font-size: 10px;
+	margin-top: 3px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+#page4 div #favoritos .favorito.gastronomia .beneficio.dosporuno {
+	background-color: #93C;
+}
+
+
+#page5 div #contenido {
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+}
+#page5 div #contenido .favorito {
+	height: 160px;
+	width: 100%;
+	display: inline-block;
+	margin: 5px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	background: #FFF
+}
+#page5 div #contenido .favorito .imgfavorito {
+	height: 150px;
+	width: 150px;
+	float: left;
+	margin:5px;
+}
+#page5 div #contenido .favorito .datos-favorito {
+	width: auto;
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 5px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+#page5 div #contenido .favorito .datos-favorito p {
+	font-size: 12px;
+	line-height: 12px;
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 2px;
+	margin-left: 2px;
+	color: #666;
+}
+#page5 div #coontenido .favorito .datos-favorito .tiempo {
+	color: #C06;
+}
+#page5 div #contenido .favorito .datos-favorito h4 {
+	padding: 0px;
+	margin-top: 2px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	color: #666;
+}
+#page5 div #contenido .favorito .datos-favorito .tags .tag {
+	background-color: #93b4a7;
+	padding: 2px;
+	float: left;
+	text-align: center;
+	color: #FFF;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+
+}
+#page5 div #contenido .favorito.gastronomia {
+	border-bottom-style: solid;
+	border-bottom-color: #09F;
+}
+#page5 div #contenido .favorito .beneficio {
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	margin-left:-10px;
+	margin-top:-10px
+}
+#page5 div #contenido .favorito .beneficio.descuento {
+	background-color: #46b979;
+}
+#page5 div #contenido .favorito .beneficio h3 {
+	padding: 0px;
+	color: #FFF;
+	text-align: center;
+	margin-top: 12px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+
+#page5 div #contenido .favorito.gastronomia .beneficio.dosporuno {
+	background-color: #93C;
+}
+#page5 div #contenido .favorito.gastronomia .datos-favorito .tiempo {
+	margin-top: 5px;
+	margin-bottom: 2px;
+	color: #C06;
+}
+.ui-grid-a .ui-block-a, .ui-grid-a .ui-block-b{
+width: 50% !important;	
+}
+
+ul li a .gast-identificador {
+	background-color: #3eb9f7;
+	height: 10px;
+	width: 10px;
+	display: inline-block;
+}
+ul li a .indum-identificador {
+	background-color: #ed55bf;
+	display: inline-block;
+	height: 10px;
+	width: 10px;
+}
+ul li a .tecno-identificador {
+	background-color: #83f049;
+	display: inline-block;
+	height: 10px;
+	width: 10px;
+}
+ul li a .hogar-identificador {
+	background-color: #f5a03a;
+	display: inline-block;
+	height: 10px;
+	width: 10px;
+}
+ul li a .belle-identificador {
+	background-color: #9453f4;
+	display: inline-block;
+	height: 10px;
+	width: 10px;
+}
+ul li a .ocio-identificador {
+	background-color: #fde44b;
+	display: inline-block;
+	height: 10px;
+	width: 10px;
+}
+ul li a .viaje-identificador {
+	background-color: #0051d8;
+	display: inline-block;
+	height: 10px;
+	width: 10px;
+}
+ul li a .compra-identificador {
+	background-color: #d3402c;
+	display: inline-block;
+	height: 10px;
+	width: 10px;
+}
+ul li a .forma-identificador {
+	background-color: #a0a0a0;
+	display: inline-block;
+	height: 10px;
+	width: 10px;
+}
+ul li a .servi-identificador {
+	background-color: #5cd8b7;
+	display: inline-block;
+	height: 10px;
+	width: 10px;
+}
+#page6 div #favoritos {
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+}
+#page6 div #favoritos .favorito {
+	height: 160px;
+	width: 360px;
+	display: inline-block;
+	margin: 5px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	background: #FFF
+}
+#page6 div #favoritos .favorito .imgfavorito {
+	height: 150px;
+	width: 150px;
+	float: left;
+	margin:5px;
+}
+#page6 div #favoritos .favorito .datos-favorito {
+	height: 150px;
+	width: 200px;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+}
+#page6 div #favoritos .favorito .datos-favorito p {
+	font-size: 10px;
+	line-height: 10px;
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 2px;
+	margin-left: 2px;
+	color: #666;
+}
+#page6 div #favoritos .favorito .datos-favorito .tiempo {
+	color: #C06;
+}
+#page6 div #favoritos .favorito .datos-favorito h4 {
+	padding: 0px;
+	margin-top: 5px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	color: #666;
+}
+#page6 div #favoritos .favorito .datos-favorito .tags .tag {
+	background-color: #93b4a7;
+	padding: 2px;
+	float: left;
+	text-align: center;
+	color: #FFF;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+
+}
+#page6 div #favoritos .favorito.gastronomia {
+	border-bottom-style: solid;
+	border-bottom-color: #09F;
+}
+#page6 div #favoritos .favorito .beneficio {
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	margin-left:-10px;
+	margin-top:-10px
+}
+#page6 div #favoritos .favorito .beneficio.descuento {
+	background-color: #46b979;
+}
+#page6 div #favoritos .favorito .beneficio h3 {
+	padding: 0px;
+	color: #FFF;
+	text-align: center;
+	margin-top: 12px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+#page6 div #favoritos .favorito .borrar {
+	background-color: #666;
+	height: 20px;
+	width: 20px;
+	position: absolute;
+	margin-left: 350px;
+	margin-top: 150px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+}
+#page6 div #favoritos .favorito .borrar p {
+	padding: 0px;
+	color: #FFF;
+	text-align: center;
+	font-size: 10px;
+	margin-top: 3px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+#page6 div #favoritos .favorito.gastronomia .beneficio.dosporuno {
+	background-color: #93C;
+}

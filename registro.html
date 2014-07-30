@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" />
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.mobile-1.4.0-rc.1.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/registro.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/estilosB.css" />
+  </head>
+  <body>
+ <div data-role="page" data-control-title="configuracion" id="pageregistro" data-theme="b">
+     <div data-role="header" data-theme="a">
+    <h1> BIGDESCUENTO </h1>
+    </div>
+    <div data-role="content" data-theme="b">
+     <form>
+       <p>Complete el formulario con sus datos:</p>
+       <input type="text" name="nombre" id="nombre" value="" placeholder="Nombre">
+       <p id="ernombre" class="error"></p>
+       <input type="text" name="apellido" id="apellido" value="" placeholder="Apellido">
+       <p id="erapellido" class="error"></p>
+       <input type="text" data-clear-btn="true" name="emailreg" id="emailreg" value="" placeholder="E-mail">
+       <p id="eremail" class="error"></p>
+       <input type="password" data-clear-btn="true" name="text-7" id="passreg" value="" placeholder="Contraseña">
+       <p id="erpass" class="error"></p>
+       <select name="sexo" id="sexo" data-theme="c">
+            <option value="0" selected="selected">Seleccione su sexo</option>
+            <option value="male" >Hombre</option>
+            <option value="female">Mujer</option>
+       </select>
+       <fieldset data-role="controlgroup" data-theme="c">
+          <input type="checkbox" name="terminos-1a" id="terminos-1a" checked="">
+          <label for="terminos-1a">Deseo recibir información a mi e-mail sobre esta aplicación.</label>
+          <input type="checkbox" name="terminos-1b" id="terminos-1b" checked="">
+          <label for="terminos-1b">Acépto los términos y condiciones.</label>
+      <p class="full centrar" style="margin-top:.5em"><a href="#pageterminos" class="leer">Leer términos y condiciones</a></p>
+       <p id="erterminos" class="error"></p>
+       </fieldset>
+       <a data-role="button" data-theme="a" data-icon="flat-checkround" id="registrar" href="#">ACEPTAR</a>
+   </form>
+  </div><!-- /content -->
+</div><!-- /page -->
+<div data-role="page" id="pageterminos">
+
+ <div data-role="header" data-theme="a"><h1> BIGDESCUENTO </h1></div><!-- /header -->
+
+<div data-role="content" data-theme="a">
+<h2>Términos y condiciones de uso de BigDescuento</h2>
+ <p class="justificado">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et malesuada metus. Pellentesque vehicula eget risus quis porttitor. Donec porta magna vel lorem rhoncus dignissim. In hac habitasse platea dictumst. Nullam eget dapibus nibh. Donec vitae erat nec velit luctus facilisis. Aenean sit amet lorem ornare, aliquam massa vitae, ullamcorper metus. Nunc fermentum tempor lectus, ut suscipit tortor vulputate vel. Proin lacus quam, tempus a ligula id, pretium elementum odio. Vestibulum nec pretium dolor, vitae faucibus elit. Ut eros ligula, tincidunt et viverra at, ullamcorper ut ante. Donec lectus urna, rhoncus vel tincidunt eget, consectetur non lorem.</p>
+
+<p class="justificado">Nullam a dolor at tortor mollis auctor. Proin accumsan placerat pretium. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer sodales massa non interdum luctus. Proin accumsan ipsum rutrum venenatis eleifend. Maecenas sit amet risus erat. Vestibulum viverra, ipsum eget feugiat feugiat, elit orci vehicula lacus, sagittis consequat libero diam sed odio. Integer vitae accumsan felis. Proin tincidunt lectus leo, eget malesuada sem tincidunt ac. Curabitur quis dui neque. Integer eget dolor ut justo porttitor accumsan sed sed elit. Donec at velit felis.</p>
+
+<p class="justificado">Maecenas sed gravida purus. Duis aliquam vitae massa ut interdum. Praesent lorem sapien, iaculis ut tincidunt at, lobortis a augue. Sed elementum magna quis cursus iaculis. Mauris nec rhoncus augue, et congue dolor. Proin laoreet neque dolor, molestie aliquet ante viverra sed. Donec lacinia lobortis enim in elementum. Vivamus mi eros, interdum et hendrerit ut, euismod vel lacus. Suspendisse pharetra bibendum nunc in hendrerit. Vivamus mattis sapien at elit ultricies porttitor. Nullam iaculis ligula a nisi consequat facilisis adipiscing vel lorem. Quisque iaculis lorem diam, nec feugiat sem malesuada quis. Aliquam erat volutpat.</p>
+
+<p class="justificado">Donec condimentum velit quis dui venenatis accumsan a in nisi. Donec molestie gravida risus, a malesuada sem pretium et. In porttitor tincidunt dolor sit amet interdum. In odio libero, hendrerit a tempor in, scelerisque eu ligula. Sed porttitor tellus sed sodales euismod. Ut facilisis, nulla ut sagittis cursus, dui diam condimentum turpis, sit amet pulvinar sem ligula non arcu. Phasellus a tellus consectetur, lobortis lectus non, egestas quam. Suspendisse rhoncus dictum cursus. Maecenas porta interdum blandit. Nullam leo enim, mollis sit amet venenatis vitae, pharetra ut risus. Etiam eleifend massa quis erat tempor tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus ut pellentesque nulla. Cras fringilla ipsum dignissim erat luctus commodo. Curabitur hendrerit id mi porttitor accumsan.</p>
+
+<p class="justificado">Maecenas vel feugiat eros. Aliquam arcu mauris, varius quis imperdiet nec, porta a quam. Cras ante eros, euismod vitae dolor eget, suscipit cursus ipsum. Maecenas semper tellus odio, sit amet hendrerit est fringilla vel. Nulla pharetra nisl porttitor nisl adipiscing, ac pellentesque nunc semper. Praesent adipiscing elementum gravida. Morbi eu malesuada quam. Proin placerat auctor elit, a laoreet ligula varius eget. Sed facilisis egestas purus, mattis sagittis turpis pulvinar non. In rutrum ullamcorper sapien, in aliquet ante tincidunt nec. Duis ultrices augue et urna euismod porta. Morbi consectetur odio et nisi tempor viverra. Pellentesque aliquam est orci, at aliquet sem euismod quis. Proin porta arcu consectetur vulputate tristique. Quisque commodo faucibus sem, eu luctus augue scelerisque ac. Nulla facilisi.</p>
+<a href="#" data-rel="back" class="ui-btn ui-shadow ui-corner-all volver" data-theme="a">VOLVER</a>
+</div><!-- /content -->
+</div><!-- /page -->
+  </body>
+</html>

@@ -1,0 +1,149 @@
+body{background-color:#c1c1c1 !important;}
+html .ui-body-c{
+    background:#f2f2f2;
+}
+html .ui-body-b{
+	background:#c1c1c1;	
+    border:none;
+}
+.ui-corner-all{
+    border-radius:.5em;
+}
+
+.resultados > li.ui-first-child >a.ui-btn{
+    border-radius:.5em;
+}
+.resultados > li.ui-last-child >a.ui-btn{
+    border-radius:.5em;
+}
+.resultados > li > a.ui-btn{
+    border-radius:.5em;
+	margin:.5em 0em .9em 0em !important;
+    min-height: 4.6em !important;
+    padding-left:6.8em !important;
+    padding-right:.5em !important;
+    padding-top:.4em;
+    background:#fff !important;
+}
+.resultados > li > a.ui-btn h2{
+    color:#575757;
+    font-size:1em;
+    margin-top:0px;
+    margin-bottom:0px;
+    text-overflow: none;
+    overflow:initial;
+    width:100%;
+    height:auto;
+    white-space: normal;
+}
+.resultados > li > a.ui-btn p{
+    color:#575757;
+    font-size:0.8em;
+    margin-top:0px;
+    text-overflow: none;
+    overflow:initial;
+    width:100%;
+    height:auto;
+    white-space: normal;
+}
+html body .ui-group-theme-z .ui-btn{
+	background:#fff;
+    border:none;
+}
+.resultados .ui-li-has-thumb img{
+	width:6em;
+    height:auto !important;
+    padding:0.3em;
+}
+.resultados .ui-li-has-thumb > .ui-btn > img:first-child{
+    max-width: 6em;
+    max-height:6em;
+}
+.promocion{
+    font-size:.8em;
+    color:#fff;
+    border-radius:3.2em;
+    padding:.7em .5em .7em .5em;
+    position:absolute;
+    top:-.9em;
+    left:-1em;
+    z-index:40000;
+}
+.tiempo{
+    font-size:.9em !important;
+    color:#d87272 !important;
+    padding:0em !important;
+    margin:0em !important;
+}
+.atributo{
+    padding:0em !important;
+    font-size:.9em !important;
+    margin:0em !important;
+}
+.tags{width:100%; margin:0em !important;}
+.tag{
+    display:inline-block;
+    background:#8cb6a5;
+    border-radius:.2em;
+    padding:.2em .4em;
+    color:#fff;
+    margin-top:.3em;
+    font-weight: normal;text-shadow:none;
+    font-size:1em !important;
+    margin-right:.3em;
+}
+.catecolor{display:block;height:.2em;border-radius:.2em;position:absolute;bottom:0;z-index:90000;width:100%;}
+#destacado{width: 100%; margin-bottom:20px;}
+.full{width:100%;}
+.sin-borde{border:none !important;}
+.btn-gris{background-color:#c2c3cb !important;}
+.btn-lila{background-color:#969dc1 !important;}
+.btn-facebook{background-color:#3c5897 !important}
+.centrar{text-align:center !important;}
+.txt-blanco{color:#fff !important;font-size:.8em !important;}
+.txt-gris{color:#333 !important;}
+.leer{font-size:.8em !important;color:#666 !important;text-decoration:none !important;}
+.justificado{text-align:justify;}
+.grande{zoom:1.2;}
+.nohay{opacity:.5;}
+.error{color:#cc2141 !important;margin-top:.1em !important;font-size:.7em !important;}
+.good{color:#36c903 !important;margin-top:.1em !important;font-size:.7em !important;}
+/*LOGIN*/
+#logincontent{max-width:20em;margin-left:auto;margin-right:auto;}
+#logoBig{display:block;width:100px;margin:1.6em auto 0em auto;}
+#fconnect i{font-size:1.4em;margin-right:20px;display:inline-block;}
+
+/*TARJETAS*/
+.tarjetas{text-align:center; width:100%;}
+.tarjeta{display:inline-block;position:relative;}
+.medio{margin:0em .6em .6em .6em;}
+.activo{display:block;color:#16a085;font-size:3em;opacity:.7;position:absolute;top:0px;width:70px;height:67px;border:solid 5px #16a085;border-radius:8px;}
+
+/*RESULSTADO*/
+.miga{margin:0em 0em 2em 0em;}
+
+#destacado{
+    background-color:#eee;
+    border-radius:8px;
+    text-align:center;
+    position:relative;overflow:hidden;
+}
+#destacado i{font-size:3em;color:#000;opacity:.4;display:inline-block;margin-top:2em;}
+#destacado img{position:absolute;left:-50%;height:100%;}
+
+/*DETALLE*/
+#img-detalle{border-radius:8px;display:inline-block;width:100%;max-width:400px;}
+#datos{display:inline-block;width:100%;max-width:400px; vertical-align: top;}
+#detallepost .tags{margin-top:.5em !important;}
+#datos .tiempo{margin-top:.2em !important;}
+#datos h2{margin:.4em 0em .3em 0em;}
+#detallepost .ui-block-a,#detallepost .ui-block-b{width:50%;}
+.masinfo{color:#666;font-size:.8em; border-top:dashed 2px #ccc; margin-top:1.5em;}
+.breve{ color:#575757;
+    font-size:0.8em;
+    margin-top:0px;
+    text-overflow: none;
+    overflow:initial;
+    width:100%;
+    height:auto;
+    white-space: normal;}
