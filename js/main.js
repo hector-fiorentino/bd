@@ -218,10 +218,10 @@ $(document).ready(function(){
 					}
 					$("#tarjetas").append('<div class="tarjeta'+medio+'" data-id="'+exito.tarjetas[a].id+'">'+tag+'</div>')
 				}
-				console.log("Tarjetas OK");
+				alert("Tarjetas OK");
 				var totbanc=exito.bancos.length
-				console.log("Total Bancos"+totbanc);
-				console.log("BANCOS="+JSON.stringify(exito.bancos));
+				alert("Total Bancos"+totbanc);
+				alert("BANCOS="+JSON.stringify(exito.bancos));
 				var tag2="";
 				var medio2 = "";
 				var counter2 = 0;
@@ -243,11 +243,11 @@ $(document).ready(function(){
 						tag2 = exito.bancos[b].tag;
 					}
 					$("#bancos").append('<div class="tarjeta'+medio2+'" data-id="'+exito.bancos[b].id+'">'+tag2+'</div>')
-					console.log("FOR Bancos"+b);
+					alert("FOR Bancos"+b);
 				}
-				console.log("Bancos OK");
+				alert("Bancos OK");
 				$.mobile.loading( 'hide');
-				console.log("Se escondió");
+				alert("Se escondió");
 				var consulta = $.post(RUTA+"tarjetas/vinculadas",{userid:userID},function(dato){
 					if(dato){
 						var dt = dato.length;
