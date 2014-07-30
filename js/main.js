@@ -241,6 +241,8 @@ $(document).ready(function(){
 					}
 					$("#bancos").append('<div class="tarjeta'+medio2+'" data-id="'+exito.bancos[b].id+'">'+tag2+'</div>')
 				}
+				$.mobile.loading( 'hide');
+				console.log("Se escondió");
 				var consulta = $.post(RUTA+"tarjetas/vinculadas",{userid:userID},function(dato){
 					if(dato){
 						var dt = dato.length;
@@ -305,6 +307,7 @@ $(document).ready(function(){
 			})
 			//alert(userselect);
 		})
+
 	})
 
 	/* CONFIGURACIONES */////////////////////////////////////////
