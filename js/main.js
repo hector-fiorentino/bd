@@ -226,6 +226,7 @@ $(document).ready(function(){
 				var medio2 = "";
 				var counter2 = 0;
 				for(var b=0;b<totbanc;b++){
+					alert("FOR Bancos1"+b);
 					//alert(exito.tarjetas[a].id);
 					if(counter2==1){
 						medio2 = " medio";
@@ -238,12 +239,14 @@ $(document).ready(function(){
 						counter2 = 0;
 					}
 					if(exito.bancos[a].icono != ""){
+						alert("FOR Bancos2"+b);
 						tag2 = '<img src="'+RUTA+'public/assets/tarjetas/'+foldernum+'/'+exito.bancos[b].icono+'" width="80" height="80" />';
 					}else{
+						alert("FOR Bancos3"+b);
 						tag2 = exito.bancos[b].tag;
 					}
 					$("#bancos").append('<div class="tarjeta'+medio2+'" data-id="'+exito.bancos[b].id+'">'+tag2+'</div>')
-					alert("FOR Bancos"+b);
+					alert("FOR Bancos4"+b);
 				}
 				alert("Bancos OK");
 				$.mobile.loading( 'hide');
