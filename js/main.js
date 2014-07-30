@@ -242,13 +242,13 @@ $(document).ready(function(){
 						//alert("FOR Bancos2"+b);
 						tag2 = '<img src="'+RUTA+'public/assets/tarjetas/'+foldernum+'/'+exito.bancos[b].icono+'" width="80" height="80" />';
 					}else{
-						alert("FOR Bancos3"+b);
+						//alert("FOR Bancos3"+b);
 						tag2 = exito.bancos[b].tag;
 					}
 					$("#bancos").append('<div class="tarjeta'+medio2+'" data-id="'+exito.bancos[b].id+'">'+tag2+'</div>')
 					//alert("FOR Bancos4"+b);
 				}
-				alert("Bancos OK");
+				//alert("Bancos OK");
 				$.mobile.loading( 'hide');
 				//alert("Se escondió");
 				var consulta = $.post(RUTA+"tarjetas/vinculadas",{userid:userID},function(dato){
