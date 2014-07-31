@@ -102,7 +102,7 @@ $(document).ready(function(){
 				}
 				$("#dest-home").listview( "refresh" );
 			}else{
-				alert('problemas');
+				alert('No hay tarjetas configuradas');
 			}
 		},"json");
 		posteos.fail(function(){
@@ -221,7 +221,7 @@ $(document).ready(function(){
 				//alert("Tarjetas OK");
 				var totbanc=exito.bancos.length
 				//alert("Total Bancos"+totbanc);
-				alert("BANCOS="+JSON.stringify(exito.bancos));
+				//alert("BANCOS="+JSON.stringify(exito.bancos));
 				var tag2="";
 				var medio2 = "";
 				var counter2 = 0;
