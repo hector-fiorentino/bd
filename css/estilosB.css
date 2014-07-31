@@ -1,3 +1,9 @@
+@font-face {
+    font-family: "customfont";
+    src: url("../fonts/HelveticaNeueLTCom-Th.ttf") format("opentype");   
+        /* Make sure you defined the correct path, which is related to
+            the location of your file `my_css.css` */ 
+}
 body{background-color:#c1c1c1 !important;}
 html .ui-body-c{
     background:#f2f2f2;
@@ -108,6 +114,19 @@ html body .ui-group-theme-z .ui-btn{
 .nohay{opacity:.5;}
 .error{color:#cc2141 !important;margin-top:.1em !important;font-size:.7em !important;}
 .good{color:#36c903 !important;margin-top:.1em !important;font-size:.7em !important;}
+
+/*MENU*/
+.ui-panel-inner ul {margin: 0px;padding: 0px;list-style: none;}
+#mypanel {background: #685c5c;}
+#mypanel .ui-panel-inner{margin:0px;padding:0px;}
+.usercontent{background:#919191;padding: 9px !important;color: #fff;font-size: 1.25em;font-family:"arial"}
+.usercontent i{margin-right:10px;margin-left:5px;}
+.cerrarmenu i{margin-left:10px;margin-right:5px;float:right;font-size:1.25em;}
+.ui-panel-inner ul li{padding:15px 10px 10px 10px; border-bottom:solid thin #4a4242;}
+.ui-panel-inner ul li a{color:#fff;font-family:"customfont";font-size:1.25em;text-decoration:none;}
+.ui-panel-inner ul li a i{margin-right:10px;margin-left:5px;}
+#mypanel .closeSession{font-size:1em;}
+#mypanel .fin{background:#4a4242;}
 /*LOGIN*/
 #logincontent{max-width:20em;margin-left:auto;margin-right:auto;}
 #logoBig{display:block;width:100px;margin:1.6em auto 0em auto;}
