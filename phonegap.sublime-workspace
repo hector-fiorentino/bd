@@ -1,0 +1,763 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"text-",
+				"text-transform"
+			],
+			[
+				"in",
+				"in_array"
+			],
+			[
+				"font-",
+				"font-style"
+			],
+			[
+				"error",
+				"errorrec"
+			],
+			[
+				"recuperar",
+				"recuperarPass"
+			],
+			[
+				"repea",
+				"repeat-x"
+			],
+			[
+				"j",
+				"jqhrx"
+			],
+			[
+				"page",
+				"pageconfig"
+			],
+			[
+				"jq",
+				"jqhrx"
+			],
+			[
+				"us",
+				"userID"
+			],
+			[
+				"local",
+				"localStorage"
+			],
+			[
+				"User",
+				"userID"
+			],
+			[
+				"top",
+				"text-top"
+			],
+			[
+				"st",
+				"stringify"
+			],
+			[
+				"close",
+				"closeSession"
+			],
+			[
+				"align",
+				"vertical-align"
+			],
+			[
+				"l",
+				"length"
+			],
+			[
+				"getExa",
+				"getExamenByParent"
+			],
+			[
+				"colo",
+				"colorpicker-default"
+			],
+			[
+				"_",
+				"_config"
+			],
+			[
+				"new",
+				"newwidth"
+			],
+			[
+				"lo",
+				"logoclip"
+			],
+			[
+				"v",
+				"vertical-align"
+			],
+			[
+				"block",
+				"inline-block"
+			],
+			[
+				"backgr",
+				"background-size"
+			],
+			[
+				"ui-",
+				"ui-title"
+			],
+			[
+				"popup",
+				"popupDialog"
+			],
+			[
+				"border-bo",
+				"border-bottom-width"
+			],
+			[
+				"background",
+				"background-repeat"
+			],
+			[
+				"ma",
+				"margin-left"
+			],
+			[
+				"table-",
+				"table-cell"
+			],
+			[
+				"inline-",
+				"inline-block"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"tota",
+				"totalPreg"
+			],
+			[
+				"nombre",
+				"nombreExamen"
+			],
+			[
+				"u",
+				"usuarioID"
+			],
+			[
+				"guarda",
+				"guardarUsuario"
+			],
+			[
+				"interru",
+				"interrupcion"
+			],
+			[
+				"na",
+				"nameExamen"
+			],
+			[
+				"fetch",
+				"fetchAll"
+			],
+			[
+				"back",
+				"background-repeat"
+			],
+			[
+				"backgro",
+				"background-position"
+			],
+			[
+				"upload",
+				"move_uploaded_file"
+			],
+			[
+				"file",
+				"fileupload-preview"
+			],
+			[
+				"utf",
+				"utf8_encode"
+			],
+			[
+				"mysql_fetch_",
+				"mysql_fetch_array"
+			],
+			[
+				"list",
+				"list-style-type"
+			],
+			[
+				"user_",
+				"user_secret"
+			],
+			[
+				"d",
+				"disc"
+			],
+			[
+				"blog",
+				"blog-cat-view"
+			],
+			[
+				"blog-",
+				"blog-index-list"
+			],
+			[
+				"eee",
+				"eeeeee"
+			],
+			[
+				"sa",
+				"sans-serif"
+			],
+			[
+				"icon_c",
+				"icon_cart_listing_mask"
+			],
+			[
+				"mysql_i",
+				"mysql_insert_id"
+			],
+			[
+				"mysql_num_",
+				"mysql_num_rows"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"ut",
+				"utf8_encode"
+			],
+			[
+				"g",
+				"g"
+			],
+			[
+				"res",
+				"response"
+			],
+			[
+				"WHERE",
+				"WHERE"
+			],
+			[
+				"uid",
+				"uid"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "js/main.js",
+			"settings":
+			{
+				"buffer_size": 20861,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<!DOCTYPE html>\n<html>\n  <head>\n  <meta charset=\"utf-8\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"css/jquery.mobile.flatui.css\" />\n  <link href=\"css/font-awesome.min.css\" rel=\"stylesheet\">\n  <script src=\"js/jquery.js\"></script>\n  <script src=\"js/jquery.mobile-1.4.0-rc.1.js\"></script>\n  <script src=\"js/main.js\"></script>\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"css/estilosB.css\" />\n  </head>\n  <body>\n  <!-- LOGIN -->\n  <div data-role=\"panel\" id=\"mypanel\" data-position=\"left\" data-display=\"push\" data-theme=\"z\">\n\n    <ul data-role=\"listview\" data-divider-theme=\"b\" data-inset=\"false\">\n        <li class=\"usercontent\" data-theme=\"b\"><i class=\"fa fa-user\"></i><span id=\"nameuser\">Usuario</span><span class=\"cerrarmenu\"><i class=\"fa fa-times-circle\"></i></span></li>\n        <li data-theme=\"b\"> <a href=\"#pagehome\" data-transition=\"fade\"><i class=\"fa fa-home\"></i> Home </a> </li>\n        <li data-theme=\"b\"> <a href=\"#pagetarjetas\" data-transition=\"fade\"><i class=\"fa fa-credit-card\"></i> Mis Tarjetas </a> </li>\n        <li data-theme=\"b\"> <a href=\"#pagefavorito\" data-transition=\"fade\"><i class=\"fa fa-star\"></i> Mis Favoritos </a> </li>\n        <li data-theme=\"b\"> <a href=\"#pageconfig\" data-transition=\"fade\"><i class=\"fa fa-cog\"></i> Configuraciones </a> </li>\n        <li data-theme=\"a\" class=\"fin\"> <a href=\"#\" data-transition=\"fade\" class=\"closeSession\"><i class=\"fa fa-power-off\"></i> Cerrar sesión </a> </li>\n      </ul>\n  </div>\n  <!-- Final Panel-->\n  <div data-role=\"panel\" id=\"catespanel\" data-position=\"right\" data-display=\"push\" data-theme=\"z\">\n\n    <ul data-role=\"listview\" data-divider-theme=\"b\" data-inset=\"false\" id=\"categorias\">\n    </ul>\n  </div>\n  <!-- Final Panel-->\n\n  <div data-role=\"page\" id=\"pagelogin\" data-theme=\"b\">\n    <div data-role=\"content\" data-theme=\"c\">\n      <div id=\"logincontent\">\n      <h1><img src=\"images/res-dpi/logo-login.png\" class=\"dpi-var\" id=\"logoBig\"></h1>\n        <form>\n        <input type=\"text\" name=\"email\" id=\"email\" value=\"\" placeholder=\"E-mail\" data-theme=\"a\">\n        <input type=\"password\" data-clear-btn=\"true\" name=\"pass\" id=\"pass\" value=\"\" placeholder=\"Contraseña\" data-theme=\"a\">\n          <p id=\"erlogin\" class=\"error\"></p>\n          <p id=\"glogin\" class=\"good\"></p>\n        </form>\n        <a href=\"#\" id=\"login\" class=\"ui-btn ui-corner-all btn-gris sin-borde txt-blanco\">INGRESAR</a>\n        <a href=\"#pageregistro\" class=\"registrobtn ui-btn ui-corner-all btn-lila sin-borde txt-blanco\">REGISTRARME</a>\n        <a href=\"#\" id=\"fconnect\" class=\"ui-btn ui-corner-all btn-facebook sin-borde txt-blanco\"><i class=\"fa fa-facebook\"></i><span>Iniciar sesión con <strong>Facebook</strong></span></a>\n        <p class=\"centrar full\"><a href=\"\" class=\"recuperar leer\" >Olvidé mi contraseña</a></p>\n      </div>\n  </div><!-- /content -->\n</div><!-- /page Login -->\n  \n  <!-- REGISTRO -->\n  <div data-role=\"page\" data-control-title=\"configuracion\" id=\"pageregistro\" data-theme=\"b\">\n     <div data-role=\"header\" data-theme=\"a\">\n    <h1> BIGDESCUENTO </h1>\n    </div>\n    <div data-role=\"content\" data-theme=\"b\">\n     <form>\n       <p>Complete el formulario con sus datos:</p>\n       <input type=\"text\" name=\"nombre\" id=\"nombre\" value=\"\" placeholder=\"Nombre\">\n       <p id=\"ernombre\" class=\"error\"></p>\n       <input type=\"text\" name=\"apellido\" id=\"apellido\" value=\"\" placeholder=\"Apellido\">\n       <p id=\"erapellido\" class=\"error\"></p>\n       <input type=\"text\" data-clear-btn=\"true\" name=\"emailreg\" id=\"emailreg\" value=\"\" placeholder=\"E-mail\">\n       <p id=\"eremail\" class=\"error\"></p>\n       <input type=\"password\" data-clear-btn=\"true\" name=\"text-7\" id=\"passreg\" value=\"\" placeholder=\"Contraseña\">\n       <p id=\"erpass\" class=\"error\"></p>\n       <select name=\"sexo\" id=\"sexo\" data-theme=\"c\">\n            <option value=\"0\" selected=\"selected\">Seleccione su sexo</option>\n            <option value=\"male\" >Hombre</option>\n            <option value=\"female\">Mujer</option>\n       </select>\n       <fieldset data-role=\"controlgroup\" data-theme=\"c\">\n          <input type=\"checkbox\" name=\"terminos-1a\" id=\"terminos-1a\" checked=\"\">\n          <label for=\"terminos-1a\">Deseo recibir notificaciones con descuentos de mi interés.</label>\n          <input type=\"checkbox\" name=\"terminos-1b\" id=\"terminos-1b\" checked=\"\">\n          <label for=\"terminos-1b\">Acépto los términos y condiciones.</label>\n      <p class=\"full centrar\" style=\"margin-top:.5em\"><a href=\"#pageterminos\" class=\"leer\">Leer términos y condiciones</a></p>\n       <p id=\"erterminos\" class=\"error\"></p>\n       </fieldset>\n       <a data-role=\"button\" data-theme=\"a\" data-icon=\"flat-checkround\" id=\"registrar\" href=\"#\">ACEPTAR</a>\n   </form>\n  </div><!-- /content -->\n \n</div><!-- /page Registro-->\n<div data-role=\"page\" id=\"pageterminos\">\n\n <div data-role=\"header\" data-theme=\"a\"><h1> BIGDESCUENTO </h1></div><!-- /header -->\n\n<div data-role=\"content\" data-theme=\"a\">\n<h2>Términos y condiciones de uso de BigDescuento</h2>\n <p class=\"justificado\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et malesuada metus. Pellentesque vehicula eget risus quis porttitor. Donec porta magna vel lorem rhoncus dignissim. In hac habitasse platea dictumst. Nullam eget dapibus nibh. Donec vitae erat nec velit luctus facilisis. Aenean sit amet lorem ornare, aliquam massa vitae, ullamcorper metus. Nunc fermentum tempor lectus, ut suscipit tortor vulputate vel. Proin lacus quam, tempus a ligula id, pretium elementum odio. Vestibulum nec pretium dolor, vitae faucibus elit. Ut eros ligula, tincidunt et viverra at, ullamcorper ut ante. Donec lectus urna, rhoncus vel tincidunt eget, consectetur non lorem.</p>\n\n<p class=\"justificado\">Nullam a dolor at tortor mollis auctor. Proin accumsan placerat pretium. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer sodales massa non interdum luctus. Proin accumsan ipsum rutrum venenatis eleifend. Maecenas sit amet risus erat. Vestibulum viverra, ipsum eget feugiat feugiat, elit orci vehicula lacus, sagittis consequat libero diam sed odio. Integer vitae accumsan felis. Proin tincidunt lectus leo, eget malesuada sem tincidunt ac. Curabitur quis dui neque. Integer eget dolor ut justo porttitor accumsan sed sed elit. Donec at velit felis.</p>\n\n<p class=\"justificado\">Maecenas sed gravida purus. Duis aliquam vitae massa ut interdum. Praesent lorem sapien, iaculis ut tincidunt at, lobortis a augue. Sed elementum magna quis cursus iaculis. Mauris nec rhoncus augue, et congue dolor. Proin laoreet neque dolor, molestie aliquet ante viverra sed. Donec lacinia lobortis enim in elementum. Vivamus mi eros, interdum et hendrerit ut, euismod vel lacus. Suspendisse pharetra bibendum nunc in hendrerit. Vivamus mattis sapien at elit ultricies porttitor. Nullam iaculis ligula a nisi consequat facilisis adipiscing vel lorem. Quisque iaculis lorem diam, nec feugiat sem malesuada quis. Aliquam erat volutpat.</p>\n\n<p class=\"justificado\">Donec condimentum velit quis dui venenatis accumsan a in nisi. Donec molestie gravida risus, a malesuada sem pretium et. In porttitor tincidunt dolor sit amet interdum. In odio libero, hendrerit a tempor in, scelerisque eu ligula. Sed porttitor tellus sed sodales euismod. Ut facilisis, nulla ut sagittis cursus, dui diam condimentum turpis, sit amet pulvinar sem ligula non arcu. Phasellus a tellus consectetur, lobortis lectus non, egestas quam. Suspendisse rhoncus dictum cursus. Maecenas porta interdum blandit. Nullam leo enim, mollis sit amet venenatis vitae, pharetra ut risus. Etiam eleifend massa quis erat tempor tristique. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus ut pellentesque nulla. Cras fringilla ipsum dignissim erat luctus commodo. Curabitur hendrerit id mi porttitor accumsan.</p>\n\n<p class=\"justificado\">Maecenas vel feugiat eros. Aliquam arcu mauris, varius quis imperdiet nec, porta a quam. Cras ante eros, euismod vitae dolor eget, suscipit cursus ipsum. Maecenas semper tellus odio, sit amet hendrerit est fringilla vel. Nulla pharetra nisl porttitor nisl adipiscing, ac pellentesque nunc semper. Praesent adipiscing elementum gravida. Morbi eu malesuada quam. Proin placerat auctor elit, a laoreet ligula varius eget. Sed facilisis egestas purus, mattis sagittis turpis pulvinar non. In rutrum ullamcorper sapien, in aliquet ante tincidunt nec. Duis ultrices augue et urna euismod porta. Morbi consectetur odio et nisi tempor viverra. Pellentesque aliquam est orci, at aliquet sem euismod quis. Proin porta arcu consectetur vulputate tristique. Quisque commodo faucibus sem, eu luctus augue scelerisque ac. Nulla facilisi.</p>\n<a href=\"#\" data-rel=\"back\" class=\"ui-btn ui-shadow ui-corner-all volver\" data-theme=\"a\">VOLVER</a>\n</div><!-- /content -->\n</div><!-- /page Terminos -->\n\n  <!-- CONFIGURACIONES -->\n  <div data-role=\"page\" data-control-title=\"configuracion\" id=\"pageconfig\" data-theme=\"b\">\n    <div data-theme=\"a\" data-role=\"header\" data-position=\"fixed\">\n    <a data-controltype=\"panelbutton\" data-role=\"button\" href=\"#mypanel\" data-icon=\"bars\" data-iconpos=\"notext\" class=\"ui-btn-left\"> </a>\n     <a data-controltype=\"panelbutton\" data-role=\"button\" href=\"#catespanel\" data-icon=\"flat-new\" data-iconpos=\"notext\" class=\"ui-btn-right\" data-theme=\"c\"></a>\n    <h1> BIGDESCUENTO </h1>\n  </div>\n    <div data-role=\"content\" data-theme=\"z\">\n    <div data-controltype=\"textblock\">\n        <p style=\"text-align: center;\"> Configuración </p>\n      </div>\n    <hr style=\"height:1px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;\">\n    <table width=\"100%\" height=\"50px\" border=\"0\" cellpadding=\"00\">\n        <tr>\n        <td><p><strong>¿Desea recibir notificaciones con descuentos de su interés?</strong></p></td>\n        <td><div data-role=\"fieldcontain\" data-controltype=\"toggleswitch\">\n            <select name=\"toggleswitch3\" id=\"toggleswitch3\" data-theme=\"g\" data-role=\"slider\">\n              <option value=\"off\"> Off </option>\n              <option value=\"on\"> On </option>\n            </select>\n          </div></td>\n      </tr>\n      </table>\n    <hr style=\"height:1px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;\">\n    <p id=\"texto-medidores\">Indique con los medidores el porcentaje de prioridad de cada tarjeta al momento de efectuar la búsqueda de descuentos</p>\n    <table width=\"100%\" border=\"0\" cellpadding=\"00\" id=\"medidores\">\n        \n      </table>\n      <p class=\"error\" style=\"display:none\">No posee tarjetas asociadas a su usuario.</p>\n      <p class=\"good\" style=\"display:none\">Se guardó correctamente.</p>\n       <a data-role=\"button\" data-theme=\"a\" href=\"#\" id=\"guardarconf\">\n            Guardar\n        </a>\n  </div>\n  </div><!-- /page Configuraciones-->\n  <!-- HOME -->\n  <div data-role=\"page\" data-control-title=\"Home\" id=\"pagehome\" data-theme=\"b\">\n    <div data-theme=\"a\" data-role=\"header\" data-position=\"fixed\">\n      <a href=\"#mypanel\" class=\"ui-btn-left options\" data-icon=\"bars\" data-iconpos=\"notext\"></a>\n    <!--<a data-controltype=\"panelbutton\" data-role=\"button\" href=\"#mypanel\" data-icon=\"bars\" data-iconpos=\"notext\" class=\"ui-btn-left\"> </a>-->\n     <a data-controltype=\"panelbutton\" data-role=\"button\" href=\"#catespanel\" data-icon=\"flat-new\" data-iconpos=\"notext\" class=\"ui-btn-right\" data-theme=\"c\"></a>\n        <h1>\n            BigDescuento\n        </h1>\n    </div>\n    <div data-role=\"content\" data-theme=\"b\">\n    <div data-role=\"fieldcontain\" data-controltype=\"searchinput\">\n            <input name=\"q\" id=\"searchinput\" class=\"buscinput\" placeholder=\"Buscar\" value=\"\" type=\"search\">\n        </div>\n        <div id=\"destacado\" data-controltype=\"image\" style=\"height:15em\">\n          <i class=\"fa fa-spinner fa-spin\"></i>\n        </div>\n        <p class=\"miga\" style=\"display:none\"></p>\n    <ul data-role=\"listview\" data-inset=\"true\" id=\"dest-home\" class=\"resultados\" data-theme=\"z\">\n\n    </ul>\n    </div>\n</div> <!-- /page home -->\n\n  <!-- BUSQUEDA -->\n    <div data-role=\"page\" data-control-title=\"Home\" id=\"pagebusqueda\" data-theme=\"b\">\n      <div data-theme=\"a\" data-role=\"header\" data-position=\"fixed\">\n      <a data-controltype=\"panelbutton\" data-role=\"button\" href=\"#mypanel\" data-icon=\"bars\" data-iconpos=\"notext\" class=\"ui-btn-left\"> </a>\n       <a data-controltype=\"panelbutton\" data-role=\"button\" href=\"#catespanel\" data-icon=\"flat-new\" data-iconpos=\"notext\" class=\"ui-btn-right\" data-theme=\"c\"></a>\n          <h1>\n              BigDescuento\n          </h1>\n      </div>\n      <div data-role=\"content\" data-theme=\"b\">\n        <div data-role=\"fieldcontain\" data-controltype=\"searchinput\">\n                <input name=\"q\" id=\"searchinput2\" class=\"buscinput2\" placeholder=\"Buscar\" value=\"\" type=\"search\">\n        </div>\n          \n          <ul data-role=\"listview\" data-inset=\"true\" id=\"resultado\" class=\"resultados\" data-theme=\"z\">\n\n          </ul>\n      </div>\n  </div><!-- /page busqueda -->\n\n  <!-- DETALLE -->\n  <div data-role=\"page\" data-control-title=\"Home\" id=\"pagedetalle\" data-theme=\"b\">\n    <div data-theme=\"a\" data-role=\"header\" data-position=\"fixed\">\n    <a data-controltype=\"panelbutton\" data-role=\"button\" href=\"#mypanel\" data-icon=\"bars\" data-iconpos=\"notext\" class=\"ui-btn-left\"> </a>\n     <a data-controltype=\"panelbutton\" data-role=\"button\" href=\"#catespanel\" data-icon=\"flat-new\" data-iconpos=\"notext\" class=\"ui-btn-right\" data-theme=\"c\"></a>\n        <h1>\n            BigDescuento\n        </h1>\n    </div>\n    <div data-role=\"content\" data-theme=\"z\">\n        <div id=\"contenido\">\n          <div id=\"img-detalle\"><img src=\"assets/posts/hdpi/Entity000697.jpg\" width=\"100%\"/></div>\n          <div id=\"datos\">\n              <p class=\"tiempo grande\"><i class=\"fa fa-clock-o\"></i> Quedan 7 días</p>\n              <h2 id=\"posttitle\">Sushi Night</h2>\n              <p class=\"breve\" id=\"postbreve\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a aliquet dui. Integer consequat ipsum et cursus congue.</p>\n              <p class=\"atributo\"><i class=\"fa fa-map-marker\"></i> Florida 971</p>\n              <p class=\"atributo\"><i class=\"fa fa-map-marker\"></i> Florida 971</p>\n              <p class=\"atributo\"><i class=\"fa fa-map-marker\"></i> Florida 971</p>\n          </div>\n          <p class=\"tags\"><span class=\"tag\">Visa</span><span class=\"tag nohay\">Banco Galicia</span><span class=\"tag\">Visa</span><span class=\"tag nohay\">Banco Galicia</span></p>\n        <div class=\"masinfo\">\n        <h4>Condiciones</h4>\n        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque lobortis arcu et facilisis. Aenean ut nibh risus. Ut ornare eu nunc eu auctor. Ut luctus ut mauris non volutpat. Aenean nulla nunc, pretium vitae dictum id, dapibus in magna. Vestibulum in tellus nec ligula porttitor dapibus vitae sit amet est. Mauris quis enim et augue tincidunt viverra in eu ligula. Proin porttitor dui sit amet tempor pretium. Quisque eu lacus pharetra lacus fringilla viverra eget id nisi. In erat metus, lobortis fringilla bibendum a, convallis eget magna. Nullam vel leo quam. In venenatis dolor dolor, in fermentum erat convallis sed. In hac habitasse platea dictumst. Vestibulum ornare nibh et auctor sollicitudin. In vitae semper enim.</p>\n        <h4>Descripcion</h4>\n        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque lobortis arcu et facilisis. Aenean ut nibh risus. Ut ornare eu nunc eu auctor. Ut luctus ut mauris non volutpat. Aenean nulla nunc, pretium vitae dictum id, dapibus in magna. Vestibulum in tellus nec ligula porttitor dapibus vitae sit amet est. Mauris quis enim et augue tincidunt viverra in eu ligula. Proin porttitor dui sit amet tempor pretium. Quisque eu lacus pharetra lacus fringilla viverra eget id nisi. In erat metus, lobortis fringilla bibendum a, convallis eget magna. Nullam vel leo quam. In venenatis dolor dolor, in fermentum erat convallis sed. In hac habitasse platea dictumst. Vestibulum ornare nibh et auctor sollicitudin. In vitae semper enim.\n\n  Praesent non urna sed eros consequat euismod a sed est. Nullam molestie, diam vitae semper ultricies, lorem dui gravida nisi, eu iaculis arcu tortor vitae ligula. Nunc rhoncus libero vitae posuere pulvinar. Aenean vehicula viverra consequat. Etiam felis arcu, porttitor sit amet ipsum sed, aliquet adipiscing magna. Integer vel elit lectus. Duis blandit quis sapien non hendrerit. Proin non lacinia turpis. Proin viverra leo a massa viverra, rhoncus consectetur sapien luctus.</p>\n      </div>\n    </div>\n  </div>\n<div data-role=\"footer\" data-theme=\"b\" data-position=\"fixed\">\n          <div data-role=\"navbar\">\n              <ul>\n                  <li><a href=\"#\" data-icon=\"back\">Volver</a></li>\n                  <li><a href=\"#\" data-icon=\"star\">Agregar a favoritos</a></li>\n              </ul>\n          </div><!-- /navbar -->\n  </div><!-- /footer -->\n</div><!-- /page detalle -->\n  <!-- MIS TARJETAS -->\n  <div data-role=\"page\" data-control-title=\"bancostarjetas\" id=\"pagetarjetas\" data-theme=\"b\">\n    <div data-theme=\"a\" data-role=\"header\" data-position=\"fixed\">\n    <a data-controltype=\"panelbutton\" data-role=\"button\" href=\"#mypanel\" data-icon=\"bars\" data-iconpos=\"notext\" class=\"ui-btn-left\"> </a>\n     <a data-controltype=\"panelbutton\" data-role=\"button\" href=\"#catespanel\" data-icon=\"flat-new\" data-iconpos=\"notext\" class=\"ui-btn-right\" data-theme=\"c\"></a>\n        <h1>\n            BIGDESCUENTO\n        </h1>\n    </div>\n    <div data-role=\"content\" data-theme=\"b\">\n    <div data-controltype=\"textblock\">\n        <p style=\"text-align: center;\">Bancos</p>\n     </div>\n     <hr style=\"height:1px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;\">\n     <p>Marque sus bancos</p>\n     <div id=\"bancos\" class=\"tarjetas\">\n      </div>\n      <a href=\"#popupLogin\" data-rel=\"popup\" data-position-to=\"window\" class=\"ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a\" data-transition=\"pop\">Sign in</a>\n      <a data-role=\"button\" data-theme=\"a\" href=\"#\" class=\"guardar\">Guardar</a>\n    </div>\n    <div data-role=\"popup\" id=\"popupTarj\" data-theme=\"a\" class=\"ui-corner-all\">\n      <form>\n      </form>\n    </div>\n  </div><!-- /page mistarjetas -->\n\n  </body>\n</html>",
+			"file": "index.html",
+			"file_size": 18314,
+			"file_write_time": 1406788971000000,
+			"settings":
+			{
+				"buffer_size": 18365,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Library/WebServer/Documents/bigdesc/backend/views/layout/default/footer.php",
+		"/Library/WebServer/Documents/bigdesc/backend/models/tarjetasModel.php",
+		"/Library/WebServer/Documents/bigdesc/backend/models/entidadesModel.php",
+		"/Library/WebServer/Documents/bigdesc/backend/views/usuario/agregar.phtml",
+		"/Library/WebServer/Documents/bigdesc/backend/models/usuarioModel.php",
+		"/Library/WebServer/Documents/bigdesc/backend/models/registroModel.php",
+		"/Library/WebServer/Documents/bigdesc/backend/views/usuario/js/funciones.js",
+		"/Library/WebServer/Documents/bigdesc/backend/controllers/usuarioController.php",
+		"/Library/WebServer/Documents/lol/wp-content/themes/base/page-services.php",
+		"/Library/WebServer/Documents/bigdesc/bd/index.html",
+		"/Library/WebServer/Documents/lol/wp-content/themes/base/js/imagesloaded.pkgd.min.js",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanaprematuro-preprod/wp-content/themes/Explorable/page-instituciones.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanaprematuro-preprod/wp-content/themes/Explorable/page-padres.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanaprematuro-preprod/wp-content/themes/Explorable/page-home.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanaprematuro-preprod/wp-content/themes/Explorable/footer.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanaprematuro-preprod/wp-content/themes/Explorable/style.css",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanaprematuro-preprod/wp-content/themes/Explorable/page-institucion.php",
+		"/Library/WebServer/Documents/bigdesc/bd/css/estilosB.css",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanadelprematuro/wp-content/themes/Explorable/content.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanadelprematuro/wp-content/themes/Explorable/page-login-padres.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanadelprematuro/wp-content/themes/Explorable/page-regpadres.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanadelprematuro/wp-content/themes/Explorable/page-institucion.php",
+		"/Library/WebServer/Documents/lol/wp-content/themes/base/page-trip.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanadelprematuro/wp-content/themes/Explorable/entry.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanadelprematuro/wp-content/themes/Explorable/page-padres.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanadelprematuro/wp-content/themes/Explorable/style.css",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanadelprematuro/wp-admin/css/login.min.css",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanadelprematuro/wp-content/themes/Explorable/page-confirmar-padres.php",
+		"/Library/WebServer/Documents/medchoice/views/index/index.phtml",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanadelprematuro/wp-content/themes/Explorable/functions.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanadelprematuro/wp-content/themes/Explorable/page-full.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanadelprematuro/wp-content/themes/Explorable/page-institucionesOLD.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanadelprematuro/wp-content/themes/Explorable/page-acciones.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanadelprematuro/wp-content/themes/Explorable/page-institucionesPROD.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanadelprematuro/wp-content/plugins/visual-form-builder-pro/visual-form-builder-pro.php",
+		"/Library/WebServer/Documents/backend/views/admin/js/nuevo.js",
+		"/Library/WebServer/Documents/medchoice/controllers/consultasController.php",
+		"/Library/WebServer/Documents/medchoice/www/js/main.js",
+		"/Library/WebServer/Documents/medchoice/controllers/erroresController.php",
+		"/Library/WebServer/Documents/backend/views/admin/pregedit.phtml",
+		"/Library/WebServer/Documents/backend/views/admin/preguntas.phtml",
+		"/Library/WebServer/Documents/backend/controllers/erroresController.php",
+		"/Library/WebServer/Documents/backend/models/usuarioModel.php",
+		"/Library/WebServer/Documents/bigdesc/backend/views/posts/index.phtml",
+		"/Library/WebServer/Documents/backend/views/index/examenes.phtml",
+		"/Library/WebServer/Documents/backend/controllers/indexController.php",
+		"/Library/WebServer/Documents/medchoice/public/css/style.css",
+		"/Library/WebServer/Documents/medchoice/www/<IfModule mod_headers.c>",
+		"/Library/WebServer/Documents/info.php",
+		"/Library/WebServer/Documents/medchoice/models/evaluacionesModel.php",
+		"/Library/WebServer/Documents/medchoice/controllers/evaluacionesController.php",
+		"/Library/WebServer/Documents/medchoice/www/index.php",
+		"/Library/WebServer/Documents/medchoice/www/js/facebook.js",
+		"/Library/WebServer/Documents/medchoice/views/index/js/nuevo.js",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/medchoice-web/admin/views/admin/js/consultas.js",
+		"/Library/WebServer/Documents/medchoice/controllers/loginController.php",
+		"/Library/WebServer/Documents/medchoice/controllers/registroController.php",
+		"/Library/WebServer/Documents/medchoice/www/registro.html",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/medchoice-web/backend/login.html",
+		"/Library/WebServer/Documents/medchoice/www/close.php",
+		"/Library/WebServer/Documents/medchoice/www/css/nuevo.css",
+		"/Library/WebServer/Documents/medchoice/www/js/registro.js",
+		"/Library/WebServer/Documents/medchoice/www/registro.php",
+		"/Library/WebServer/Documents/medchoice/www/js/index.js",
+		"/Library/WebServer/Documents/bigdesc/bd/js/main.js",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/medchoice-web/admin/views/index/js/consultas.js",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/medchoice-web/admin/views/admin/js/nuevo.js",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/medchoice-web/admin/views/admin/js/update.js",
+		"/Library/WebServer/Documents/medchoice/controllers/recuperoController.php",
+		"/Library/WebServer/Documents/bigdesc/www/js/main.js",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/loquieroenminicuotas/views/layout/default/header.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanadelprematuro/wp-content/themes/Explorable/page-listado.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanadelprematuro/wp-content/themes/Explorable/page-institucione.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/medchoice/www/css/estilos.css",
+		"/Library/WebServer/Documents/medchoice/www/css/style.css",
+		"/Library/WebServer/Documents/medchoice/www/css/estilos copy.css",
+		"/Library/WebServer/Documents/medchoice/www/css/estilos.css",
+		"/Library/WebServer/Documents/bigdesc/www/main2.html",
+		"/Library/WebServer/Documents/bigdesc/www/css/estilos.css",
+		"/Library/WebServer/Documents/bigdesc/www/css/estilosB.css",
+		"/Library/WebServer/Documents/bigdesc/backend/controllers/tarjetasController.php",
+		"/Library/WebServer/Documents/medchoice/backend/controllers/consultasController.php",
+		"/Library/WebServer/Documents/medchoice/backend/controllers/adminController.php",
+		"/Library/WebServer/Documents/medchoice/www/index.html",
+		"/Library/WebServer/Documents/medchoice/models/preguntasModel.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/medchoice-web/web/controllers/evaluacionesController.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/medchoice-web/web/models/evaluacionesModel.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/medchoice/www/js/main.js",
+		"/Library/WebServer/Documents/bigdesc/www/index.html",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/medchoice/www/main.html",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/medchoice/www/js/index.js",
+		"/Library/WebServer/Documents/bigdesc/www/resultado.html",
+		"/Library/WebServer/Documents/bigdesc/www/js/index.js",
+		"/Library/WebServer/Documents/bigdesc/www/home.html",
+		"/Library/WebServer/Documents/bigdesc/backend/views/categorias/index.phtml",
+		"/Library/WebServer/Documents/bigdesc/backend/controllers/descuentosController.php",
+		"/Library/WebServer/Documents/medchoice/www/css/estilosxhdpi.css",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/Trivias/vueltaalcole/views/layout/default/header.php",
+		"/Library/WebServer/Documents/medchoice/views/layout/default/footer.php",
+		"/Library/WebServer/Documents/medchoice/application/Controller.php",
+		"/Library/WebServer/Documents/medchoice/views/recupero/index.phtml",
+		"/Library/WebServer/Documents/medchoice/views/recupero/ok.phtml",
+		"/Library/WebServer/Documents/medchoice/views/recupero/fail.phtml",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/medchoice/www/js/dbAdapter.js",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/medchoice/www/index.html",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/medchoice/www/contenido.json",
+		"/Library/WebServer/Documents/medchoice/controllers/respuestasController.php",
+		"/Library/WebServer/Documents/bigdesc/backend/views/_paginador/paginador2.php",
+		"/Library/WebServer/Documents/bigdesc/backend/views/tarjetas/index.phtml",
+		"/Library/WebServer/Documents/bigdesc/backend/libs/imageresize.class.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/encuentros/admin/upload.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/Chistv/backend/updatebanner.php",
+		"/Library/WebServer/Documents/bigdesc/backend/views/promociones/index.phtml",
+		"/Library/WebServer/Documents/bigdesc/backend/models/promocionesModel.php",
+		"/Library/WebServer/Documents/bigdesc/backend/controllers/categoriasController.php",
+		"/Library/WebServer/Documents/bigdesc/backend/models/categoriasModel.php",
+		"/Library/WebServer/Documents/bigdesc/backend/public/assets/bootstrap-colorpicker/css/colorpicker.css",
+		"/Library/WebServer/Documents/bigdesc/backend/views/layout/default/header.php",
+		"/Library/WebServer/Documents/bigdesc/backend/views/promociones/js/funciones.js",
+		"/Library/WebServer/Documents/bigdesc/backend/views/categorias/js/funciones.js",
+		"/Library/WebServer/Documents/bigdesc/backend/controllers/loginController.php",
+		"/Library/WebServer/Documents/bigdesc/backend/controllers/indexController.php",
+		"/Library/WebServer/Documents/bigdesc/backend/views/categorias/iconos.phtml",
+		"/Library/WebServer/Documents/bigdesc/backend/views/index/js/nuevo.js",
+		"/Library/WebServer/Documents/bigdesc/backend/views/admin/js/nuevo.js",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/loquieroenminicuotas/popups/bases.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/loquieroenminicuotas/public/css/style.css",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/loquieroenminicuotas/views/admin/sorteo.phtml"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Library/WebServer/Documents/bigdesc/backend",
+			"<open files>",
+			"http://medchoice.com.ar",
+			"/Library/WebServer/Documents/bigdesc/backend",
+			"/Users/hefiorentino/Documents/ifdevelopers/Tito/twitterimage/ribeirotwitter",
+			"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanadelprematuro/",
+			"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanadelprematuro/wp-content/themes/Explorable",
+			"/Users/hefiorentino/Documents/monster-template",
+			"/Users/hefiorentino/Documents/ifdevelopers/Tito/Trivias/triviacine",
+			"/Users/hefiorentino/Documents/ifdevelopers/Tito/stylewatchRepo/",
+			"/Users/hefiorentino/Documents/ifdevelopers/Tito/stylewatchRepo/app/design/frontend/default/shopper",
+			"/Users/hefiorentino/Documents/ifdevelopers/Tito/stylewatchRepo/",
+			"/Users/hefiorentino/Documents/ifdevelopers/Tito/stylewatchRepo/app/locale/es_ES",
+			"/Users/hefiorentino/Documents/ifdevelopers/Tito/stylewatchRepo",
+			"/Users/hefiorentino/Documents/ifdevelopers/Tito/stylewatchRepo/app/design/frontend/base/default/template/onibi",
+			"/Users/hefiorentino/Documents/ifdevelopers/Tito/stylewatchRepo/app/code/community/Onibi/StoreLocator",
+			"/Users/hefiorentino/Documents/ifdevelopers/Tito/stylewatchRepo/app/design/frontend/default/default/template/aw_blog",
+			"/Users/hefiorentino/Documents/ifdevelopers/Tito/stylewatchRepo",
+			"/Users/hefiorentino/Documents/ifdevelopers/Backup/stylewatch",
+			"/Users/hefiorentino/Documents/ifdevelopers/Tito/stylewatch/app/design/frontend/default/shopper/template"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"mistarjetas",
+			"stepy",
+			"previus",
+			"$('#default')",
+			"twitter",
+			".et_avatar",
+			"//$",
+			"$total",
+			"save_post",
+			"NO",
+			"save_post",
+			"global",
+			"save_",
+			"mio",
+			".entry-content",
+			".entry-post",
+			"user_register",
+			"mio",
+			"centr",
+			"meta-info",
+			"post-description h1",
+			".post-description",
+			".post-thumbnail",
+			".post-thumbnail img",
+			".post-thumbnail",
+			"mio",
+			"et_portfolio_more_icon",
+			"total",
+			"']);\n",
+			"admin/",
+			"header",
+			"examen",
+			"popup",
+			"reiniciar",
+			"examen",
+			"alert",
+			"http://localhost/medchoice/",
+			"registrar",
+			"facebook",
+			"fb.login",
+			"php",
+			"fb",
+			"facebook",
+			"fa",
+			"registro",
+			"fb.",
+			"alert",
+			"window.local",
+			"facebook",
+			"bienvenido",
+			"validarUser",
+			"email",
+			".form-signin",
+			"facebook",
+			"solapa",
+			"contador",
+			"margin-top: 46px !important;",
+			"solapa",
+			"header",
+			"pageexamenes",
+			"pagemenuppal",
+			"data-role=\"page\"",
+			"page",
+			"2em",
+			"ui-title",
+			"background-image",
+			"h1",
+			"style",
+			"redes",
+			"http://medchoice.com.ar/",
+			"dpi",
+			"localhost",
+			"searchinput",
+			"dato",
+			"error",
+			"config",
+			"db.guardar",
+			"login",
+			"alert",
+			"rank",
+			";}\n",
+			"login",
+			"close",
+			"pagetarjetas",
+			"pagedetalle",
+			"menupanel",
+			"panel",
+			"pagemenu",
+			"registrar",
+			"traerScores",
+			"\").",
+			"js_yyyy",
+			"guardar",
+			"fecha",
+			"guardar",
+			"false",
+			"login",
+			"scores",
+			"back",
+			"closeSession",
+			".cerrarSession",
+			"darvueltaFecha",
+			"iniciar",
+			"mcon",
+			"puntaje",
+			"enviando",
+			"http://localhost/medchoice/",
+			"compartir",
+			"0.5",
+			"http://localhost/medchoice",
+			"alert",
+			"alt",
+			"iniciar",
+			"continuar",
+			"aceptar",
+			"http://192.168.0.3/medchoice",
+			"examenes",
+			"evaluaciones",
+			"examenes",
+			"scores",
+			"rank",
+			"examenes",
+			"ranking",
+			"http://medchoice.com.ar",
+			"powered",
+			"firma",
+			"socre",
+			"socres"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"http://medchoice.com.ar/",
+			"http://localhost/medchoice/",
+			"mypanel",
+			"http://medchoice.com.ar/",
+			"http://medchoice.com.ar",
+			"http://localhost/medchoice",
+			"http://medchoice.com.ar",
+			"http://192.168.0.3/medchoice/",
+			"lanacionHEv3.swf",
+			"lanacionHEv2.swf",
+			"http://lumax.cu.cc",
+			"http://lumax.cu.cc/",
+			"class=\"conta\"",
+			"192.168.6.143/lumax",
+			"http://lumax.cu.cc",
+			"192.168.0.6",
+			"192.168.6.143",
+			"wp_posts",
+			"&ntilde;",
+			"&iacute;",
+			"&eacute;",
+			"&uacute;",
+			"&aacute;",
+			"&oacute;"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "js/main.js",
+					"settings":
+					{
+						"buffer_size": 20861,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2677.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 18365,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17847,
+								17847
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4046.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 25.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 181.0,
+	"status_bar_visible": true
+}

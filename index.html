@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" />
-  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
   <script src="js/jquery.js"></script>
   <script src="js/jquery.mobile-1.4.0-rc.1.js"></script>
   <script src="js/main.js"></script>
@@ -15,12 +15,12 @@
   <div data-role="panel" id="mypanel" data-position="left" data-display="push" data-theme="z">
 
     <ul data-role="listview" data-divider-theme="b" data-inset="false">
-        <li class="usercontent" data-theme="b"><i class="fa fa-user"></i><span id="nameuser">Usuario</span><span class="cerrarmenu"><i class="fa fa-times-circle"></i></span></li>
-        <li data-theme="b"> <a href="#pagehome" data-transition="fade"><i class="fa fa-home"></i> Home </a> </li>
-        <li data-theme="b"> <a href="#pagetarjetas" data-transition="fade"><i class="fa fa-credit-card"></i> Mis Tarjetas </a> </li>
-        <li data-theme="b"> <a href="#pagefavorito" data-transition="fade"><i class="fa fa-star"></i> Mis Favoritos </a> </li>
-        <li data-theme="b"> <a href="#pageconfig" data-transition="fade"><i class="fa fa-cog"></i> Configuraciones </a> </li>
-        <li data-theme="a" class="fin"> <a href="#" data-transition="fade" class="closeSession"><i class="fa fa-power-off"></i> Cerrar sesión </a> </li>
+        <li class="usercontent" data-theme="b"><i class="icon-user"></i><span id="nameuser">Usuario</span><span class="cerrarmenu"><i class="fa fa-times-circle"></i></span></li>
+        <li data-theme="b"> <a href="#pagehome" data-transition="fade"><i class="icon-home"></i> Home </a> </li>
+        <li data-theme="b"> <a href="#pagetarjetas" data-transition="fade"><i class="icon-credit-card"></i> Mis Tarjetas </a> </li>
+        <li data-theme="b"> <a href="#pagefavoritos" data-transition="fade"><i class="icon-star"></i> Mis Favoritos </a> </li>
+        <li data-theme="b"> <a href="#pageconfig" data-transition="fade"><i class="icon-cog"></i> Configuraciones </a> </li>
+        <li data-theme="a" class="fin"> <a href="#" data-transition="fade" class="closeSession"><i class="icon-power-off"></i> Cerrar sesión </a> </li>
       </ul>
   </div>
   <!-- Final Panel-->
@@ -152,7 +152,7 @@
             <input name="q" id="searchinput" class="buscinput" placeholder="Buscar" value="" type="search">
         </div>
         <div id="destacado" data-controltype="image" style="height:15em">
-          <i class="fa fa-spinner fa-spin"></i>
+          <i class="icon-spinner icon-spin"></i>
         </div>
         <p class="miga" style="display:none"></p>
     <ul data-role="listview" data-inset="true" id="dest-home" class="resultados" data-theme="z">
@@ -194,14 +194,12 @@
         <div id="contenido">
           <div id="img-detalle"><img src="assets/posts/hdpi/Entity000697.jpg" width="100%"/></div>
           <div id="datos">
-              <p class="tiempo grande"><i class="fa fa-clock-o"></i> Quedan 7 días</p>
+              <p class="tiempo grande"><i class="icon-calendar"></i> <span id="dias"> </span></p>
+              <!-- <p class="tiempo grande"><i class="icon-time"></i> <span id="flimite"></span></p> -->
               <h2 id="posttitle">Sushi Night</h2>
               <p class="breve" id="postbreve">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a aliquet dui. Integer consequat ipsum et cursus congue.</p>
-              <p class="atributo"><i class="fa fa-map-marker"></i> Florida 971</p>
-              <p class="atributo"><i class="fa fa-map-marker"></i> Florida 971</p>
-              <p class="atributo"><i class="fa fa-map-marker"></i> Florida 971</p>
           </div>
-          <p class="tags"><span class="tag">Visa</span><span class="tag nohay">Banco Galicia</span><span class="tag">Visa</span><span class="tag nohay">Banco Galicia</span></p>
+          <p class="tags" id="detTags"></p>
         <div class="masinfo">
         <h4>Condiciones</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque lobortis arcu et facilisis. Aenean ut nibh risus. Ut ornare eu nunc eu auctor. Ut luctus ut mauris non volutpat. Aenean nulla nunc, pretium vitae dictum id, dapibus in magna. Vestibulum in tellus nec ligula porttitor dapibus vitae sit amet est. Mauris quis enim et augue tincidunt viverra in eu ligula. Proin porttitor dui sit amet tempor pretium. Quisque eu lacus pharetra lacus fringilla viverra eget id nisi. In erat metus, lobortis fringilla bibendum a, convallis eget magna. Nullam vel leo quam. In venenatis dolor dolor, in fermentum erat convallis sed. In hac habitasse platea dictumst. Vestibulum ornare nibh et auctor sollicitudin. In vitae semper enim.</p>
@@ -215,12 +213,29 @@
 <div data-role="footer" data-theme="b" data-position="fixed">
           <div data-role="navbar">
               <ul>
-                  <li><a href="#" data-icon="back">Volver</a></li>
-                  <li><a href="#" data-icon="star">Agregar a favoritos</a></li>
+                  <li><a href="#" data-icon="back" class="volver">Volver</a></li>
+                  <li><a href="#" class="addfav" data-icon="star">Agregar a favoritos</a></li>
               </ul>
           </div><!-- /navbar -->
   </div><!-- /footer -->
 </div><!-- /page detalle -->
+<!-- FAVORITOS -->
+  <div data-role="page" data-control-title="misfavoritos" id="pagefavoritos" data-theme="b">
+    <div data-theme="a" data-role="header" data-position="fixed">
+    <a data-controltype="panelbutton" data-role="button" href="#mypanel" data-icon="bars" data-iconpos="notext" class="ui-btn-left"> </a>
+     <a data-controltype="panelbutton" data-role="button" href="#catespanel" data-icon="flat-new" data-iconpos="notext" class="ui-btn-right" data-theme="c"></a>
+        <h1>
+            BIGDESCUENTO
+        </h1>
+    </div>
+    <div data-role="content" data-theme="b">
+    <ul data-role="listview" data-inset="true" id="favoritos" class="resultados" data-theme="z">
+
+    </ul>
+  </div>
+  </div><!-- /page favoritos -->
+
+
   <!-- MIS TARJETAS -->
   <div data-role="page" data-control-title="bancostarjetas" id="pagetarjetas" data-theme="b">
     <div data-theme="a" data-role="header" data-position="fixed">
@@ -231,18 +246,21 @@
         </h1>
     </div>
     <div data-role="content" data-theme="b">
-      <div data-controltype="textblock">
-        <p style="text-align: center;">Mis Tarjetas</p>
-     </div>
-     <hr style="height:1px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;">
-     <div id="tarjetas" class="tarjetas">
-    </div>
     <div data-controltype="textblock">
-        <p style="text-align: center;">Mis Bancos</p>
+        <p style="text-align: center;">Bancos</p>
      </div>
      <hr style="height:1px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;">
+     <p>Marque sus bancos</p>
      <div id="bancos" class="tarjetas">
       </div>
+      <a data-role="button" data-theme="a" href="#" class="finalizar">Finalizar</a>
+    </div>
+    <div data-role="popup" id="popupTarj" data-theme="a" class="ui-corner-all">
+      <h3>Banco X</h3>
+      <p>Marque las tarjetas que posee emitidas por este banco</p>
+      <form id="tarjetas">
+      </form>
+      <input type="hidden" id="bancoactual" value="" />
       <a data-role="button" data-theme="a" href="#" class="guardar">Guardar</a>
     </div>
   </div><!-- /page mistarjetas -->

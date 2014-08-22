@@ -15,7 +15,14 @@ html .ui-body-b{
 .ui-corner-all{
     border-radius:.5em;
 }
-
+.favrem{
+    display:block;
+    position:absolute;
+    bottom:1em;
+    right:.4em;
+    z-index:9999999999;
+}
+.favrem i{color:#666 !important;font-size:48px !important;}
 .resultados > li.ui-first-child >a.ui-btn{
     border-radius:.5em;
 }
@@ -134,10 +141,11 @@ html body .ui-group-theme-z .ui-btn{
 
 /*TARJETAS*/
 .tarjetas{text-align:center; width:100%;}
-.tarjeta{display:inline-block;position:relative;}
+.tarjeta,.banco{display:inline-block;position:relative;}
 .medio{margin:0em .6em .6em .6em;}
 .activo{display:block;color:#16a085;font-size:3em;opacity:.7;position:absolute;top:0px;width:70px;height:67px;border:solid 5px #16a085;border-radius:8px;}
-
+#popuptarj #tarjetas{width:100%;}
+.fieldsettar{width:280px;text-align:left;margin-left:auto;margin-right:auto;display:block;}
 /*RESULSTADO*/
 .miga{margin:0em 0em 2em 0em;}
 
