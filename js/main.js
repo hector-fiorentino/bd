@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var RUTA = "http://192.168.19.102/bigdesc/backend/";
+	var RUTA = "http://localhost/bigdesc/backend/";
 	$( "body>[data-role='panel']" ).panel();
 	//Validación de usuario
 	var userID = window.localStorage.getItem('userID');
@@ -165,6 +165,7 @@ $(document).ready(function(){
 			if(!exito.error){
 				$.mobile.changePage('#pagedetalle');
 				vuelvoDeDetalle=true;
+				$("#postpromo").html("<strong style='color:"+exito.color+"'>Beneficio:</strong> "+exito.promo);
 				$("#img-detalle").html('<img src="'+RUTA+'public/assets/posts/'+folder+'/'+exito.imagen+'" width="100%"/>');
 				if(exito.dias=="Todos"){
 					dias = "Todos los días";
@@ -174,6 +175,7 @@ $(document).ready(function(){
 				$("#dias").html(dias+ "<br>" +tiempoLimite(exito.fhasta));
 				$("#posttitle").html(exito.titulo);
 				$("#postbreve").html(exito.breve);
+				$("#exppromo").html(exito.masinfo);
 				$("#detTags").empty();
 				tinc=pasarArreglo(exito.tarjetasId);
         		for(var mt = 0; mt<tinc.length;mt++){
@@ -507,6 +509,11 @@ $(document).ready(function(){
 	$(".finalizar").click(function(){
 		$.mobile.changePage('#pagehome');
 	})
+$(".miga").on('click','.reiniciar',function(e){
+		e.preventDefault();
+		vuelvoDeDetalle=false;
+		traerHome();
+	})
 	$("#categorias").on('click','.catfil',function(){
 		event.preventDefault();
 		var CAT=$(this).attr('rel');
@@ -527,7 +534,7 @@ $(document).ready(function(){
 				var posteos = $.post(RUTA + 'descuentos/busquedaCat',{cat:CAT,user:userID},function(exito){
 				if(!exito.error){
 					var total=exito.length;
-					$(".miga").html(total+' descuentos en <strong><i>"'+CATNAME+'"</i></strong>');
+					$(".miga").html(total+' descuentos en <strong><i>"'+CATNAME+'"</i></strong> <a href="#" class="reiniciar">[X]</a>');
 					$(".miga").show();
 					var post=""
 					for(var p = 0; p<total; p++){
