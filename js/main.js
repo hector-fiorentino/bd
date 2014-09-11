@@ -196,7 +196,7 @@ $(document).ready(function(){
 
 	//$('#searchinput').click(function(){})
 	$("#searchinput").bind( "change", function(event, ui) {
-		alert("Change");
+		//alert("Change");
   		if($(this).val()!=""){
   			$("#destacado").hide();
   			$("#dest-home").empty();
@@ -206,11 +206,11 @@ $(document).ready(function(){
                 theme: 'a',
                 html: ""
         	});
-        	alert("funciona");
+        	//alert("funciona");
   			var Q = $(this).val();
   			var posteos = $.post(RUTA + 'descuentos/busqueda',{q:Q,user:userID},function(exito){
 			if(!exito.error){
-				alert("SIN ERROR="+exito);
+				//alert("SIN ERROR="+exito);
 				var total=exito.length;
 				$(".miga").html(total+' descuentos de <strong><i>"'+Q+'"</i></strong>');
 				$(".miga").show();
