@@ -840,7 +840,7 @@ $(".miga").on('click','.reiniciar',function(e){
             return false;
     }
 
-    function enArray(arrego,dato){
+    function enArray(arreglo,dato){
     	for(var r=0;r<arreglo.length;r++){
     		if(arreglo[r]==dato){
     			return true;
