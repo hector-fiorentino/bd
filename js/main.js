@@ -93,7 +93,7 @@ $(document).ready(function(){
 				for(var y=0;y<tot;y++){
 					mistarjetasG.push(exito.mias[y].tag_id);
 				}
-				alert(mistarjetasG);
+				//alert(mistarjetasG);
 			}
 		},"json")
 		//TRAER BANNER
@@ -129,7 +129,7 @@ $(document).ready(function(){
 					post += '<p class="tags">';
         			tinc=pasarArreglo(exito[p].tarjetasId);
         			for(var mt = 0; mt<tinc.length;mt++){
-        				if($.inArray(tinc[mt],mistarjetasG)){
+        				if(enArray(mistarjetasG,tinc[mt])){
         					post +='<span class="tag">'+todastarjetas[tinc[mt]]+'</span>';
         				}
         			}
@@ -233,9 +233,9 @@ $(document).ready(function(){
 					post += '<p class="tags">';
         			tinc=pasarArreglo(exito[p].tarjetasId);
         			for(var mt = 0; mt<tinc.length;mt++){
-        				//if($.inArray(tinc[mt],mistarjetasG)){
+        				if(enArray(mistarjetasG,tinc[mt])){
         					post +='<span class="tag">'+todastarjetas[tinc[mt]]+'</span>';
-        				//}
+        				}
         			}
         			post +='</p></a>';
         			colorcat = pasarArreglo(exito[p].categoriasID);
@@ -370,7 +370,7 @@ $(document).ready(function(){
 					post += '<p class="tags">';
         			tinc=pasarArreglo(exito[p].tarjetasId);
         			for(var mt = 0; mt<tinc.length;mt++){
-        				if($.inArray(tinc[mt],mistarjetasG)){
+        				if(enArray(mistarjetasG,tinc[mt])){
         					post +='<span class="tag">'+todastarjetas[tinc[mt]]+'</span>';
         				}
         			}
@@ -558,7 +558,7 @@ $(".miga").on('click','.reiniciar',function(e){
 						post += '<p class="tags">';
 	        			tinc=pasarArreglo(exito[p].tarjetasId);
 	        			for(var mt = 0; mt<tinc.length;mt++){
-	        				if($.inArray(tinc[mt],mistarjetasG)){
+	        				if(enArray(mistarjetasG,tinc[mt])){
 	        					post +='<span class="tag">'+todastarjetas[tinc[mt]]+'</span>';
 	        				}
 	        			}
@@ -838,6 +838,15 @@ $(".miga").on('click','.reiniciar',function(e){
             return true;
         else
             return false;
+    }
+
+    function enArray(arrego,dato){
+    	for(var r=0;r<arreglo.length;r++){
+    		if(arreglo[r]==dato){
+    			return true;
+    		}
+    	}
+    	return false;
     }
 
 })
