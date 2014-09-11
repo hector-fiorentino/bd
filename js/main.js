@@ -91,7 +91,7 @@ $(document).ready(function(){
 				}
 				tot = exito.mias.length;
 				for(var y=0;y<tot;y++){
-					mistarjetasG.push(exito.mias[y].id);
+					mistarjetasG.push(exito.mias[y].tag_id);
 				}
 				alert(JSON.stringify(exito.mias));
 			}
