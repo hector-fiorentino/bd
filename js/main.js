@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var RUTA = "http://192.168.0.2/bigdesc/backend/";
+	var RUTA = "http://192.168.0.109/bigdesc/backend/";
 	$( "body>[data-role='panel']" ).panel();
 	//Validación de usuario
 	var userID = window.localStorage.getItem('userID');
