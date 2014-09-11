@@ -93,7 +93,7 @@ $(document).ready(function(){
 				for(var y=0;y<tot;y++){
 					mistarjetasG.push(exito.mias[y].id);
 				}
-				alert(mistarjetasG);
+				alert(JSON.stringify(exito.mias));
 			}
 		},"json")
 		//TRAER BANNER
