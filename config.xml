@@ -6,7 +6,7 @@
         id        = "ar.com.ifdevelopers.bigdescuento"
         version   = "1.0.0">
 
-    <name>BigDescuentos</name>
+    <name>Big\nDescuento</name>
 
     <description>
         Hello World sample application that responds to the deviceready event.

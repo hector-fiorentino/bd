@@ -20,7 +20,7 @@ $(document).ready(function(){
             FB.Event.subscribe('auth.statusChange', function(response) {
                                //alert('auth.statusChange event');
                                });
-    FB.init({ appId: "1536370399923784", nativeInterface: CDV.FB, useCachedDialogs: false });
+    FB.init({ appId: "853919827954063", nativeInterface: CDV.FB, useCachedDialogs: false });
 	var RUTA = "http://localhost/bigdesc/backend/"; //192.168.0.109
 	$( "body>[data-role='panel']" ).panel();
 	//Validación de usuario
