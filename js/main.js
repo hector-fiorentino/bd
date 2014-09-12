@@ -1,7 +1,7 @@
 function main(){
-	 if ((typeof cordova == 'undefined') && (typeof Cordova == 'undefined')) alert('Error. Vuelva a intentarlo');
-            if (typeof CDV == 'undefined') alert('Error. Vuelva a intentarlo');
-            if (typeof FB == 'undefined') alert('Error. Vuelva a intentarlo');
+	 if ((typeof cordova == 'undefined') && (typeof Cordova == 'undefined')) alert('Error. Vuelva a intentarlo1');
+            if (typeof CDV == 'undefined') alert('Error. Vuelva a intentarlo2');
+            if (typeof FB == 'undefined') alert('Error. Vuelva a intentarlo3');
             
             FB.Event.subscribe('auth.login', function(response) {
                                //alert('auth.login event');
