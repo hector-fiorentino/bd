@@ -3,7 +3,7 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "ar.com.ifdevelopers.bigdescuentos"
+        id        = "ar.com.ifdevelopers.bigdescuento"
         version   = "1.0.0">
 
     <name>BigDescuentos</name>
@@ -51,6 +51,10 @@
         <gap:plugin name="Example" />
         A list of available plugins are available at https://build.phonegap.com/docs/plugins
     -->
+    <gap:plugin name="com.phonegap.plugins.facebookconnect" version="0.4.0">
+        <param name="APP_ID" value="853919827954063" />
+        <param name="APP_NAME" value="bigdescuento" />
+    </gap:plugin>
 	
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />

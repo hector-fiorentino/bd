@@ -5,6 +5,10 @@
             the location of your file `my_css.css` */ 
 }
 body{background-color:#c1c1c1 !important;}
+html .ui-bar-a{
+    background: #569194;
+border-color: #569194;
+}
 html .ui-body-c{
     background:#f2f2f2;
 }
@@ -14,6 +18,22 @@ html .ui-body-b{
 }
 .ui-corner-all{
     border-radius:.5em;
+}
+.vencido{
+    opacity:.5 !important;
+}
+.ui-grid-a > .ui-block-a, .ui-grid-a > .ui-block-b{
+    width:50% !important;
+}
+a.addfav{
+    background-color:#73bca7 !important;
+}
+.ui-header .ui-title img{
+    height:1.875em;
+}
+.ui-header .ui-title{
+    margin:0.25em;
+    padding:0px;
 }
 .favrem{
     display:block;

@@ -1,14 +1,40 @@
 $(document).ready(function(){
-	var RUTA = "http://192.168.0.109/bigdesc/backend/";
+	 if ((typeof cordova == 'undefined') && (typeof Cordova == 'undefined')) alert('Error. Vuelva a intentarlo');
+            if (typeof CDV == 'undefined') alert('Error. Vuelva a intentarlo');
+            if (typeof FB == 'undefined') alert('Error. Vuelva a intentarlo');
+            
+            FB.Event.subscribe('auth.login', function(response) {
+                               //alert('auth.login event');
+                               //alert("ya esta logeado");
+                               //me();
+                               });
+            
+            FB.Event.subscribe('auth.logout', function(response) {
+                               //alert('auth.logout event');
+                               });
+            
+            FB.Event.subscribe('auth.sessionChange', function(response) {
+                               //alert('auth.sessionChange event');
+                               });
+            
+            FB.Event.subscribe('auth.statusChange', function(response) {
+                               //alert('auth.statusChange event');
+                               });
+    FB.init({ appId: "1536370399923784", nativeInterface: CDV.FB, useCachedDialogs: false });
+	var RUTA = "http://localhost/bigdesc/backend/"; //192.168.0.109
 	$( "body>[data-role='panel']" ).panel();
 	//Validación de usuario
 	var userID = window.localStorage.getItem('userID');
 	var userName = window.localStorage.getItem('userName');
+	var fconnect = window.localStorage.getItem("fConnect");
 	var categorias = new Array();
 	var todastarjetas = new Array();
 	var mistarjetasG = new Array();
 	var detalleID = 0;
 	var vuelvoDeDetalle = false;
+	var limitePosts=10;
+	var CAT = 0;
+	var CATNAME="";
 	if(userID>0){
 		if($.mobile.activePage[0].id){
 			$("#nameuser").html(userName);
@@ -79,6 +105,7 @@ $(document).ready(function(){
 	})
 	
 	function traerHome(){
+		$("#searchmore").hide();
 		$("#destacado").show();
 		$(".miga").hide();
 		$("#dest-home").empty();
@@ -162,7 +189,26 @@ $(document).ready(function(){
 
 	$("#dest-home").on("click",".preview", function(){
 		detalleID = $(this).attr('rel');
-		var jqhrx = $.post(RUTA + 'descuentos/detalle',{id:$(this).attr('rel')},function(exito){
+		$('.addfav').attr('data-icon','star');
+		$('.addfav').buttonMarkup({ icon: "star" });
+		$(".addfav").html("Agregar a favoritos");
+		var chfav=$.post(RUTA + 'favoritos/existe',{id:detalleID,user:userID},function(exito){
+			if(exito=="si"){
+				$('.addfav').attr('data-icon','delete');
+				$('.addfav').buttonMarkup({ icon: "delete" });
+				$(".addfav").html("Eliminar de favoritos");
+			}else{
+				$('.addfav').attr('data-icon','star');
+				$('.addfav').buttonMarkup({ icon: "star" });
+				$(".addfav").html("Agregar a favoritos");
+			}
+		});
+		chfav.fail(function(){
+			$('.addfav').attr('data-icon','star');
+			$('.addfav').buttonMarkup({ icon: "star" });
+			$(".addfav").html("Agregar a favoritos");
+		})
+		var jqhrx = $.post(RUTA + 'descuentos/detalle',{id:detalleID},function(exito){
 			if(!exito.error){
 				$.mobile.changePage('#pagedetalle');
 				vuelvoDeDetalle=true;
@@ -176,11 +222,11 @@ $(document).ready(function(){
 				$("#dias").html(dias+ "<br>" +tiempoLimite(exito.fhasta));
 				$("#posttitle").html(exito.titulo);
 				$("#postbreve").html(exito.breve);
-				$("#exppromo").html(exito.masinfo);
+				$("#exppromo").html(urlify(exito.masinfo));
 				$("#detTags").empty();
 				tinc=pasarArreglo(exito.tarjetasId);
         		for(var mt = 0; mt<tinc.length;mt++){
-        				if($.inArray(tinc[mt],mistarjetasG)){
+        				if(enArray(mistarjetasG,tinc[mt])){
         					$("#detTags").append('<span class="tag">'+todastarjetas[tinc[mt]]+'</span>');
         				}else{
         					$("#detTags").append('<span class="tag nohay">'+todastarjetas[tinc[mt]]+'</span>');
@@ -194,27 +240,30 @@ $(document).ready(function(){
 			alert("error");
 		})		
 	})
-
-	//$('#searchinput').click(function(){})
-	$("#searchinput").bind( "change", function(event, ui) {
-		//alert("Change");
-  		if($(this).val()!=""){
-  			$("#destacado").hide();
-  			$("#dest-home").empty();
-  			$.mobile.loading( 'show', {
+	
+	//FUNCION BUSQUEDA
+	function buscador(INIT){
+		$.mobile.loading( 'show', {
                 text: 'Buscando',
                 textVisible: true,
                 theme: 'a',
                 html: ""
         	});
-        	//alert("funciona");
-  			var Q = $(this).val();
-  			var posteos = $.post(RUTA + 'descuentos/busqueda',{q:Q,user:userID},function(exito){
+  			var Q = $("#searchinput").val();
+  			var posteos = $.post(RUTA + 'descuentos/busqueda',{q:Q,user:userID,desde:INIT,hasta:limitePosts},function(exito){
 			if(!exito.error){
-				//alert("SIN ERROR="+exito);
 				var total=exito.length;
-				$(".miga").html(total+' descuentos de <strong><i>"'+Q+'"</i></strong>');
-				$(".miga").show();
+				$("#searchmore").show();
+				$("#searchmore").attr('data-inicio',INIT);
+				$("#searchmore").attr('data-act','search');
+				$("#searchmore").attr("disabled", false);
+				if(total<limitePosts){
+					$("#searchmore").attr("disabled", true);
+				}
+				if(INIT==0){
+					$(".miga").html(total+' descuentos de <strong><i>"'+Q+'"</i></strong>');
+					$(".miga").show();
+				}
 				var post=""
 				for(var p = 0; p<total; p++){
 					post = '<li data-icon="false">';
@@ -248,16 +297,41 @@ $(document).ready(function(){
 				$.mobile.loading('hide');
 			}else{
 				$.mobile.loading('hide');
-				$(".miga").html("No se encontraron resultados con <strong><i>"+Q+"</i></strong>");
-				$(".miga").show();
+				if(INIT==0){
+					$(".miga").html("No se encontraron resultados con <strong><i>"+Q+"</i></strong>");
+					$(".miga").show();
+				}else{
+					$("#dest-home").append('<li>No se encontraron más promociones</li>');
+					$("#searchmore").attr("disabled", true);
+				}
 			}
 		},"json");
 		posteos.fail(function(){
 			alert('error');
 		})
+  	}
+	
+	//$('#searchinput').click(function(){})
+	$("#searchinput").bind( "change", function(event, ui) {
+		//alert("Change");
+  		if($(this).val()!=""){
+  			$("#destacado").hide();
+  			$("#dest-home").empty();
+  			buscador(0);
   		}
 	});
 	
+	$("#searchmore").click(function(){
+		var inicio = $(this).attr('data-inicio');
+		inicio = inicio + 10;
+		$(this).attr('data-inicio',inicio);
+		if($(this).attr('data-act')=='search'){
+			buscador(inicio);
+		}else{
+			busquedaCAT(inicio);
+		}
+	})
+
 	$("#bancos").on("click",".banco", function(){
 			$.mobile.loading( 'show', {
                 text: 'Cargando',
@@ -346,21 +420,29 @@ $(document).ready(function(){
 	
 	// PAGE FAVORITOS //
 	$("#pagefavoritos").on("pageshow", function(event){
-		$("#favoritos").html();
+		$("#favoritos").empty();
 		var posteos = $.post(RUTA + 'favoritos/traer',{user:userID},function(exito){
 			if(!exito.error){
 				var total=exito.length;
 
 				var post=""
+				var trans=""
 				for(var p = 0; p<total; p++){
-					post = '<li data-icon="false" id="ren'+exito[p].id+'">';
+					var vence=tiempoLimite(exito[p].fhasta);
+					if(vence == "VENCIDO"){
+						trans='class="vencido"';
+					}else{
+						trans='';
+					}
+					post = '<li data-icon="false" id="ren'+exito[p].id+'" '+trans+'>';
 					post += '<span class="favrem" data-id="'+exito[p].id+'"><i class="icon-remove-sign"></i></span>';
 					post += '<span class="promocion" style="background-color:'+exito[p].color+';">'+exito[p].tag+'</span>';
 					post += '<a href="#" class="preview" rel="'+exito[p].id+'">';
 					post += '<img src="'+RUTA+'public/assets/posts/'+folder+'/'+exito[p].imagen+'">';
 					post += '<h2 class="titular">'+exito[p].titulo+'</h2>';
 					post += '<p class="breve">'+exito[p].breve+'</p>';
-					post += '<p class="tiempo"><i class="icon-time"> '+tiempoLimite(exito[p].fhasta)+'</i> </p>';
+
+					post += '<p class="tiempo"><i class="icon-time"> '+vence+'</i> </p>';
 					if(exito[p].dias=="Todos"){
 						dias = "Todos los días";
 					}else{
@@ -383,7 +465,7 @@ $(document).ready(function(){
 				}
 				$("#favoritos").listview( "refresh" );
 			}else{
-				alert('No hay descuentos favoritos');
+				$("#favoritos").html('<li>No hay descuentos agregados a favoritos</li>');
 			}
 		},"json");
 		posteos.fail(function(){
@@ -391,17 +473,36 @@ $(document).ready(function(){
 		})
 	})
 	$(".addfav").click(function(){
-		$.post(RUTA + 'favoritos/guardar',{user:userID,desc:detalleID},function(exito){
-			if(exito){
-				alert("Se agregó correctamente");
-			}
-		})
+		$(".addfav").html('<i class="icon-spinner icon-spin"></i>');
+		if($('.addfav').attr('data-icon')=='star'){
+			 $.post(RUTA + 'favoritos/guardar',{user:userID,desc:detalleID},function(exito){
+			 	if(exito){
+			 		$('.addfav').attr('data-icon','delete');
+			 		$('.addfav').buttonMarkup({ icon: "delete" });
+			 		$(".addfav").html("Eliminar de favoritos");
+			 	}
+			 })
+		}else{
+			$.post(RUTA + 'favoritos/borrar',{fav:detalleID,user:userID},function(exito){
+				if(exito != "error"){
+					$('.addfav').attr('data-icon','star');
+					$('.addfav').buttonMarkup({ icon: "star" });
+				 	$(".addfav").html("Agregar a favoritos");
+				}else{
+					$('.addfav').attr('data-icon','delete');
+					$('.addfav').buttonMarkup({ icon: "delete" });
+				 	$(".addfav").html("Eliminar de favoritos");
+				}
+			})
+		}
 	})
 	$("#pagefavoritos").on("click",".favrem",function(){
 		var ID = $(this).attr('data-id');
 		$.post(RUTA + 'favoritos/borrar',{fav:ID,user:userID},function(exito){
-			if(exito){
+			if(exito != "error"){
 				$("#ren"+ID).remove();
+			}else{
+				alert("Error");
 			}
 		})
 	})
@@ -510,36 +611,39 @@ $(document).ready(function(){
 		// })
 
 	})
+	
 	$(".finalizar").click(function(){
 		$.mobile.changePage('#pagehome');
 	})
-$(".miga").on('click','.reiniciar',function(e){
+	
+	$(".miga").on('click','.reiniciar',function(e){
 		e.preventDefault();
 		vuelvoDeDetalle=false;
 		traerHome();
 	})
-	$("#categorias").on('click','.catfil',function(){
-		event.preventDefault();
-		var CAT=$(this).attr('rel');
-		var CATNAME =$(this).attr('title');
-		var activePage = $.mobile.activePage[0].id;
-		//if(activePage == "pagehome" && $("#searchinput").val()!=""){
-			//FILTRO LA BÚSQUEDA.
-		//}else{
-			$("#catespanel").panel("close");
-				$("#destacado").hide();
-  			$("#dest-home").empty();
-  			$.mobile.loading( 'show', {
+
+	//Busqueda por categoria
+	function busquedaCAT(INIT){
+		$.mobile.loading( 'show', {
                 text: 'Buscando',
                 textVisible: true,
                 theme: 'a',
                 html: ""
         	});
-				var posteos = $.post(RUTA + 'descuentos/busquedaCat',{cat:CAT,user:userID},function(exito){
+				var posteos = $.post(RUTA + 'descuentos/busquedaCat',{cat:CAT,user:userID,desde:INIT,hasta:limitePosts},function(exito){
 				if(!exito.error){
 					var total=exito.length;
-					$(".miga").html(total+' descuentos en <strong><i>"'+CATNAME+'"</i></strong> <a href="#" class="reiniciar">[X]</a>');
-					$(".miga").show();
+					$("#searchmore").show();
+					$("#searchmore").attr('data-inicio',INIT);
+					$("#searchmore").attr('data-act','cat');
+					$("#searchmore").attr("disabled", false);
+					if(total<limitePosts){
+						$("#searchmore").attr("disabled", true);
+					}
+					if(INIT==0){
+						$(".miga").html(total+' descuentos en <strong><i>"'+CATNAME+'"</i></strong> <a href="#" class="reiniciar">[X]</a>');
+						$(".miga").show();
+					}
 					var post=""
 					for(var p = 0; p<total; p++){
 						post = '<li data-icon="false">';
@@ -573,13 +677,33 @@ $(".miga").on('click','.reiniciar',function(e){
 					$.mobile.loading('hide');
 				}else{
 					$.mobile.loading('hide');
-					$(".miga").html("No se encontraron resultados con <strong><i>"+Q+"</i></strong>");
-					$(".miga").show();
+					if(INIT==0){
+						$(".miga").html("No se encontraron descuentos en <strong><i>"+CATNAME+"</i></strong>");
+						$(".miga").show();
+					}else{
+						$("#dest-home").append('<li>No se encontraron más promociones</li>');
+						$("#searchmore").attr("disabled", true);
+					}
 				}
 			},"json");
 			posteos.fail(function(){
 				alert('error');
 			})
+	}
+
+	$("#categorias").on('click','.catfil',function(){
+		event.preventDefault();
+		CAT=$(this).attr('rel');
+		CATNAME =$(this).attr('title');
+		var activePage = $.mobile.activePage[0].id;
+		//if(activePage == "pagehome" && $("#searchinput").val()!=""){
+			//FILTRO LA BÚSQUEDA.
+		//}else{
+			$("#catespanel").panel("close");
+			$("#destacado").hide();
+  			$("#dest-home").empty();
+
+  			busquedaCAT(0);
 		//}
 	})
 
@@ -728,9 +852,68 @@ $(".miga").on('click','.reiniciar',function(e){
                 }
             })
     }
+    /*Login FACEBOOK */////////////////////////
+    ////////////////////////* FIN SHARE BUTTON */////////////////////////
+    $("#fconnect").click(function(){
+        FB.login(
+            function(response) {
+                if (response.authResponse.session_key) {
+                    window.localStorage.setItem("fConnect",true);
+                    fconnect = true;
+					var jqhrx = $.post(RUTA + '/login/fbuser',{uid:response.authResponse.userId},function(exito){
+                                	if(exito){
+                                    	if(!exito.error){
+                                    		userID = exito.id;
+	                                		userName = exito.username;
+	                               			window.localStorage.setItem("userID",userID);
+	                                		window.localStorage.setItem("userName",userName);
+	                                		fconnect = true;
+	                                		window.localStorage.setItem("fConnect",true);
+	                                		$("#nameuser").html(userName);
+	                                		$.mobile.loading( 'hide');
+	                                		$.mobile.changePage($("#pagehome"));
+                                    	}else{
+                                        	me();
+                                    	}
+                                	}
+                            	},"json");
+					jqhrx.fail(function(){
+						alert("error en conexión");
+					})                          
+                } else {
+                    alert('Login incompleto.');
+                }
+            },
+            { scope: "email" }
+        );
+    })
+       
+    //DATOS MIOS PARA REGISTRO
+    function me() {
+        FB.api('/me', { fields:'name, email, first_name, last_name, gender' },  function(response) {
+            if (response.error) {
+                // alert(JSON.stringify(response.error));
+            } else {
+            var datos = [];
+			datos.seudonimo = response.name;
+            datos.nombre = response.first_name;
+            datos.apellido = response.last_name;
+            datos.email = response.email;
+            datos.uid = response.id;
+            datos.token = "";
+            datos.sexo = response.gender;
+            datos.pass = "Rj45F";//OCULTAR.
+            datos.terminos = 1;
+                       //alert(response.name+" "+response.first_name+" "+response.last_name+" "+response.email+" "+response.id+" "+response.gender);
+            registro(datos);
+            }
+        });
+    }
+
+
     /*Login*///////////////////////////////////
    $("#login").click(function(){
-     $.mobile.loading( 'show', {
+     	$.mobile.loading( 'show', {
                             text: 'Autenticando',
                             textVisible: true,
                             theme: 'a',
@@ -826,7 +1009,13 @@ $(".miga").on('click','.reiniciar',function(e){
 		if(dias>31){
 			res = "Hasta el "+diaF[2]+"/"+diaF[1]+"/"+diaF[0];
 		}else{
+			if(dias==0){
+				res = "Vence Hoy";
+			}else if(dias<0){
+				res = "VENCIDO";
+			}else{
 			res = "Quedan "+dias+" días.";
+			}
 		}
 		return res;
    }
@@ -848,5 +1037,13 @@ $(".miga").on('click','.reiniciar',function(e){
     	}
     	return false;
     }
+    function urlify(text) {
+    var urlRegex = /(https?:\/\/[^\s]+)/g;
+    return text.replace(urlRegex, function(url) {
+        return '<a href="' + url + '">' + url + '</a>';
+    })
+    // or alternatively
+    // return text.replace(urlRegex, '<a href="$1">$1</a>')
+	}
 
 })
