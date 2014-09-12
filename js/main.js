@@ -21,7 +21,7 @@ $(document).ready(function(){
                                //alert('auth.statusChange event');
                                });
     FB.init({ appId: "853919827954063", nativeInterface: CDV.FB, useCachedDialogs: false });
-	var RUTA = "http://localhost/bigdesc/backend/"; //192.168.0.109
+	var RUTA = "http://backend.bigdescuento.com/"; //192.168.0.109
 	$( "body>[data-role='panel']" ).panel();
 	//Validación de usuario
 	var userID = window.localStorage.getItem('userID');
