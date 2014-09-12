@@ -1,4 +1,4 @@
-$(document).ready(function(){
+function main(){
 	 if ((typeof cordova == 'undefined') && (typeof Cordova == 'undefined')) alert('Error. Vuelva a intentarlo');
             if (typeof CDV == 'undefined') alert('Error. Vuelva a intentarlo');
             if (typeof FB == 'undefined') alert('Error. Vuelva a intentarlo');
@@ -1046,4 +1046,4 @@ $(document).ready(function(){
     // return text.replace(urlRegex, '<a href="$1">$1</a>')
 	}
 
-})
+}
