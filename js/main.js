@@ -39,6 +39,9 @@ function main(){
 		if($.mobile.activePage[0].id){
 			$("#nameuser").html(userName);
 			$.mobile.changePage('#pagehome');
+        	if(channelUri!=""){
+            	var jqxhr = $.post(RUTA + 'channels/nuevo',{code:channelUri,usuario:userID},function(exito){})
+        	}
 		}
 	}
 	var dpi = window.devicePixelRatio;
@@ -872,6 +875,9 @@ function main(){
 	                                		$("#nameuser").html(userName);
 	                                		$.mobile.loading( 'hide');
 	                                		$.mobile.changePage($("#pagehome"));
+	                                		 if(channelUri!=""){
+                             				 	var jqxhr = $.post(RUTA + 'channels/nuevo',{code:channelUri,usuario:userID},function(exito){})
+                            				 }
                                     	}else{
                                         	me();
                                     	}
@@ -956,6 +962,9 @@ function main(){
 	                                $("#nameuser").html(userName);
 	                                $.mobile.loading( 'hide');
 	                                $.mobile.changePage($("#pagehome"))
+	                                 if(channelUri!=""){
+                                		var jqxhr = $.post(RUTA + 'channels/nuevo',{code:channelUri,usuario:userID},function(exito){})
+                            		 }
 	                            }
 	                        }
 	                    },"json");
