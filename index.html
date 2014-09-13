@@ -278,18 +278,19 @@
   </body>
   <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript">
-            $.mobile.loading( 'show', {
-            text: 'Cargando',
-            textVisible: true,
-            theme: 'a',
-            html: ""
-            });
+            
         </script>
         <script type="text/javascript">
             var pushNotification;
             var channelUri;
             
             function onDeviceReady() {
+                $.mobile.loading( 'show', {
+                  text: 'Cargando',
+                  textVisible: true,
+                  theme: 'a',
+                  html: ""  
+                });
                 try 
                 { 
                   pushNotification = window.plugins.pushNotification;

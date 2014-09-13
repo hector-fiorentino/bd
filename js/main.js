@@ -44,6 +44,8 @@ function main(){
             	var jqxhr = $.post(RUTA + 'channels/nuevo',{code:channelUri,usuario:userID},function(exito){})
         	}
 		}
+	}else{
+		$.mobile.changePage('#pagelogin');
 	}
 	var dpi = window.devicePixelRatio;
 	var folder = "mdpi";
