@@ -23,6 +23,7 @@ function main(){
     FB.init({ appId: "853919827954063", nativeInterface: CDV.FB, useCachedDialogs: false });
 	var RUTA = "http://backend.bigdescuento.com/"; //192.168.0.109
 	$( "body>[data-role='panel']" ).panel();
+	$.mobile.loading('hide');
 	//Validación de usuario
 	var userID = window.localStorage.getItem('userID');
 	var userName = window.localStorage.getItem('userName');
