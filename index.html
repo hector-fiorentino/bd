@@ -288,7 +288,7 @@
                   if (device.platform == 'android' || device.platform == 'Android') {
                     pushNotification.register(successHandler, errorHandler, {"senderID":"186405198228","ecb":"onNotificationGCM"});   // required!
                   }
-                  alert("ok");
+                  //alert("ok");
                 }
                   catch(err) 
                   { 
@@ -330,7 +330,7 @@
             // here is where you might want to send it the regID for later use.
             // alert("regID = " + e.regid);
             channelUri = e.regid;
-            alert(e.regid);
+            //alert(e.regid);
             main();
             
           }
