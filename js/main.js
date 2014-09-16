@@ -175,11 +175,11 @@ function main(){
 				}
 				$("#dest-home").listview( "refresh" );
 			}else{
-				alert('No hay tarjetas configuradas');
+				$.mobile.changePage('#pagetarjetas');
 			}
 		},"json");
 		posteos.fail(function(){
-			alert('error');
+			$.mobile.changePage('#pagetarjetas');
 		})
 		vuelvoDeDetalle=false;
 	}

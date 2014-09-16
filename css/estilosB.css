@@ -128,6 +128,7 @@ html body .ui-group-theme-z .ui-btn{
     font-size:1em !important;
     margin-right:.3em;
 }
+#logohoriz{width:204px;height:39px;}
 .catecolor{display:block;height:.2em;border-radius:.2em;position:absolute;bottom:0;z-index:90000;width:100%;}
 #destacado{width: 100%; margin-bottom:20px;}
 .full{width:100%;}
