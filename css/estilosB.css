@@ -168,6 +168,21 @@ html body .ui-group-theme-z .ui-btn{
 .ui-panel-inner ul li a i{margin-right:10px;margin-left:5px;}
 #mypanel .closeSession{font-size:1em;}
 #mypanel .fin{background:#4a4242;}
+
+/*CATEGORIAS*/
+#catespanel {background: #f2f2f2;}
+#catespanel .ui-panel-inner{margin:0px;padding:0px;}
+/*.usercontent{background:#919191;padding: 9px !important;color: #fff;font-size: 1.25em;font-family:"arial"}
+.usercontent i{margin-right:10px;margin-left:5px;}
+*/
+/*.cerrarmenu i{margin-left:10px;margin-right:5px;float:right;font-size:1.25em;}*/
+.ui-panel-inner ul li{padding:15px 10px 10px 10px; border-bottom:solid thin #4a4242;}
+#catespanel .ui-panel-inner ul li a{color:#666;font-family:"customfont";font-size:1.25em;text-decoration:none;}
+.ui-panel-inner ul li a i{margin-right:10px;margin-left:5px;}
+/*#catespanel .closeSession{font-size:1em;}
+#catespanel .fin{background:#4a4242;}*/
+
+
 /*LOGIN*/
 #logincontent{max-width:20em;margin-left:auto;margin-right:auto;}
 #logoBig{display:block;width:100px;margin:1.6em auto 0em auto;}
