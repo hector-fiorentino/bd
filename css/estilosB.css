@@ -8,9 +8,13 @@ body{background-color:#c1c1c1 !important;}
 html .ui-overlay-b, html .ui-page-theme-b, html .ui-page-theme-b .ui-panel-wrapper{
     background:#f2f2f2 !important;
 }
+div#pagehome,div#pagetarjetas,div#pagefavoritos{
+    background-color:#c1c1c1 !important;
+}
 html .ui-bar-a{
     background: #569194;
-border-color: #569194;
+    border-color: #569194;
+    height:3.438em;
 }
 html .ui-body-c{
     background:#f2f2f2;
@@ -128,10 +132,12 @@ html body .ui-group-theme-z .ui-btn{
     font-size:1em !important;
     margin-right:.3em;
 }
-#logohoriz{width:204px;height:39px;}
-.btnconf{width:64px;height:69px;background:none;background-color:transparent;}
-.btncats{background:none;background-color:transparent;}
-.btncats i{font-size:1em;color:#fff;}
+.ui-input-text input, .ui-input-search input{border-radius:.5em;}
+#logohoriz{width:154px;height:29px;margin-top:0.625em}
+.btnconf{background: none !important;border: none;padding: 0px;margin: 0px;position:absolute;top:-5px;left:-15px;}
+.btnconf img {height:75px;}
+.btncats{background:none !important;background-color:transparent !important;border:none;}
+.btncats i{font-size:2.125em;color:#d7df23;margin-top:3px;display:block;}
 .catecolor{display:block;height:.2em;border-radius:.2em;position:absolute;bottom:0;z-index:90000;width:100%;}
 #destacado{width: 100%; margin-bottom:20px;}
 .full{width:100%;}

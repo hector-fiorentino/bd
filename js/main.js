@@ -21,7 +21,7 @@ function main(){
                                //alert('auth.statusChange event');
                                });
     FB.init({ appId: "853919827954063", nativeInterface: CDV.FB, useCachedDialogs: false });
-	var RUTA = "http://backend.bigdescuento.com/"; //192.168.0.109
+	var RUTA = "http://localhost/backend/"; //192.168.0.109
 	$( "body>[data-role='panel']" ).panel();
 	$.mobile.loading('hide');
 	//Validación de usuario
@@ -41,7 +41,7 @@ function main(){
 			$("#nameuser").html(userName);
 			$.mobile.changePage('#pagehome');
         	if(channelUri!=""){
-            	var jqxhr = $.post(RUTA + 'channels/nuevo',{code:channelUri,usuario:userID},function(exito){})
+            	//var jqxhr = $.post(RUTA + 'channels/nuevo',{code:channelUri,usuario:userID},function(exito){})
         	}
 		}
 	}else{
