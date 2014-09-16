@@ -630,6 +630,7 @@ function main(){
 
 	//Busqueda por categoria
 	function busquedaCAT(INIT){
+
 		$.mobile.loading( 'show', {
                 text: 'Buscando',
                 textVisible: true,
@@ -643,11 +644,11 @@ function main(){
 					$("#searchmore").attr('data-inicio',INIT);
 					$("#searchmore").attr('data-act','cat');
 					$("#searchmore").attr("disabled", false);
-					if(total<limitePosts){
+					if(total<limitePosts || total==0 || !total){
 						$("#searchmore").attr("disabled", true);
 					}
 					if(INIT==0){
-						$(".miga").html(total+' descuentos en <strong><i>"'+CATNAME+'"</i></strong> <a href="#" class="reiniciar">[X]</a>');
+						$(".miga").html(total+' descuentos en <strong><i>"'+CATNAME+'"</i></strong> <a href="#" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all reiniciar" title="Reiniciar">Reiniciar</a>');
 						$(".miga").show();
 					}
 					var post=""
@@ -684,7 +685,7 @@ function main(){
 				}else{
 					$.mobile.loading('hide');
 					if(INIT==0){
-						$(".miga").html("No se encontraron descuentos en <strong><i>"+CATNAME+"</i></strong>");
+						$(".miga").html("No se encontraron descuentos en <strong><i>"+CATNAME+"</i></strong> <a href="#" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all reiniciar" title="Reiniciar">Reiniciar</a>");
 						$(".miga").show();
 					}else{
 						$("#dest-home").append('<li>No se encontraron más promociones</li>');
