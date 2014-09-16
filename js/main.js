@@ -1,5 +1,5 @@
 function main(){
-	/* if ((typeof cordova == 'undefined') && (typeof Cordova == 'undefined')) alert('Error. Vuelva a intentarlo1');
+	 /*if ((typeof cordova == 'undefined') && (typeof Cordova == 'undefined')) alert('Error. Vuelva a intentarlo1');
             if (typeof CDV == 'undefined') alert('Error. Vuelva a intentarlo2');
             if (typeof FB == 'undefined') alert('Error. Vuelva a intentarlo3');
             
@@ -644,7 +644,7 @@ function main(){
 					$("#searchmore").attr('data-inicio',INIT);
 					$("#searchmore").attr('data-act','cat');
 					$("#searchmore").attr("disabled", false);
-					if(total<limitePosts || total==0 || !total){
+					if(total<limitePosts || total==0 || total==-1){
 						$("#searchmore").attr("disabled", true);
 					}
 					if(INIT==0){
