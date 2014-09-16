@@ -21,7 +21,7 @@ function main(){
                                //alert('auth.statusChange event');
                                });
     FB.init({ appId: "853919827954063", nativeInterface: CDV.FB, useCachedDialogs: false });
-	var RUTA = "http://localhost/backend/"; //192.168.0.109
+	var RUTA = "http://192.168.0.2/bigdesc/backend/"; //192.168.0.109
 	$( "body>[data-role='panel']" ).panel();
 	$.mobile.loading('hide');
 	//Validación de usuario
