@@ -129,6 +129,9 @@ html body .ui-group-theme-z .ui-btn{
     margin-right:.3em;
 }
 #logohoriz{width:204px;height:39px;}
+.btnconf{width:64px;height:69px;background:none;background-color:transparent;}
+.btncats{background:none;background-color:transparent;}
+.btncats i{font-size:1em;color:#fff;}
 .catecolor{display:block;height:.2em;border-radius:.2em;position:absolute;bottom:0;z-index:90000;width:100%;}
 #destacado{width: 100%; margin-bottom:20px;}
 .full{width:100%;}
