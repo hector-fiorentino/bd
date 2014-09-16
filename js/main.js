@@ -861,6 +861,12 @@ function main(){
     /*Login FACEBOOK */////////////////////////
     ////////////////////////* FIN SHARE BUTTON */////////////////////////
     $("#fconnect").click(function(){
+    	$.mobile.loading( 'show', {
+                text: 'Conectando',
+                textVisible: true,
+                theme: 'a',
+                html: ""
+        });
         FB.login(
             function(response) {
                 if (response.authResponse.session_key) {
@@ -878,6 +884,7 @@ function main(){
 	                                		$("#nameuser").html(userName);
 	                                		$.mobile.loading( 'hide');
 	                                		$.mobile.changePage($("#pagehome"));
+	                                		$.mobile.loading('hide');
 	                                		 if(channelUri!=""){
                              				 	var jqxhr = $.post(RUTA + 'channels/nuevo',{code:channelUri,usuario:userID},function(exito){})
                             				 }
@@ -888,9 +895,11 @@ function main(){
                             	},"json");
 					jqhrx.fail(function(){
 						alert("error en conexión");
+						$.mobile.loading('hide');
 					})                          
                 } else {
                     alert('Login incompleto.');
+                    $.mobile.loading('hide');
                 }
             },
             { scope: "email" }
@@ -915,6 +924,7 @@ function main(){
             datos.terminos = 1;
                        //alert(response.name+" "+response.first_name+" "+response.last_name+" "+response.email+" "+response.id+" "+response.gender);
             registro(datos);
+            $.mobile.loading('hide');
             }
         });
     }
@@ -989,10 +999,10 @@ function main(){
         window.localStorage.removeItem("userID");
         window.localStorage.removeItem("userName");
         if(window.localStorage.getItem('fConnect')==true){
-                //FB.logout(function(response) {
+                FB.logout(function(response) {
 
-                //});
-                //window.localStorage.setItem('fConnect',false);
+                });
+                window.localStorage.setItem('fConnect',false);
         }
         $("#email").html("");
         $("#pass").html("");
