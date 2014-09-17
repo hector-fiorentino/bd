@@ -1,6 +1,6 @@
 function main(){
 
-	 /*if ((typeof cordova == 'undefined') && (typeof Cordova == 'undefined')) alert('Error. Vuelva a intentarlo1');
+	 if ((typeof cordova == 'undefined') && (typeof Cordova == 'undefined')) alert('Error. Vuelva a intentarlo1');
             if (typeof CDV == 'undefined') alert('Error. Vuelva a intentarlo2');
             if (typeof FB == 'undefined') alert('Error. Vuelva a intentarlo3');
             
@@ -21,7 +21,7 @@ function main(){
             FB.Event.subscribe('auth.statusChange', function(response) {
                                //alert('auth.statusChange event');
                                });
-    FB.init({ appId: "853919827954063", nativeInterface: CDV.FB, useCachedDialogs: false });*/
+    FB.init({ appId: "853919827954063", nativeInterface: CDV.FB, useCachedDialogs: false });
 	
 	
 	/*PRIMERAS CONFIGURACIONES DE HTML */
@@ -32,7 +32,7 @@ function main(){
 	/*////////////////*/
 	
 	$.mobile.loading('hide');
-	var RUTA = "http://192.168.0.2/bigdesc/backend/"; //192.168.0.109
+	var RUTA = "http://backend.bigdescuento.com/"; //192.168.0.109
 	
 	/*Datos de usuario///////////////////////////////////*/
 	var userID = window.localStorage.getItem('userID');
@@ -774,7 +774,7 @@ function main(){
 			usernotifi = 1;
 		}
 		var jqhrx = $.post(RUTA + 'registro/notificame',{user:userID,estado:usernotifi},function(exito){
-			
+
 		})
         $.mobile.changePage('#pagehome');		
 	})
