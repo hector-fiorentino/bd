@@ -10,7 +10,15 @@ html .ui-overlay-b, html .ui-page-theme-b, html .ui-page-theme-b .ui-panel-wrapp
 }
 div#pageconfiguracion{
     background-color:#f2f2f2 !important;
+    background:#f2f2f2 !important;
 }
+div#pagelogin {
+background: #f2f2f2 !important;
+background-color: #f2f2f2 !important;
+}
+.ui-page-theme-b .ui-slider-track .ui-btn-active{background-color:#569194 !important;border-color:#569194 !important;}
+html .ui-bar-e, html .ui-page-theme-e .ui-bar-inherit, html .ui-bar-e .ui-bar-inherit, html .ui-body-e .ui-bar-inherit, html body .ui-group-theme-e .ui-bar-inherit{background-color:#d7df23 !important;border-color:#d7df23 !important;}
+html body .ui-btn.ui-btn-e{background:#346e5f !important; border-color:#346e5f !important;}
 html .ui-bar-a{
     background: #569194;
     border-color: #569194;
@@ -132,6 +140,9 @@ html body .ui-group-theme-z .ui-btn{
     font-size:1em !important;
     margin-right:.3em;
 }
+.tag a,.tag a:visited,.tag a:hover,.tag a:active{color:#fff !important; text-decoration: none;}
+
+
 .ui-input-text input, .ui-input-search input{border-radius:.5em;}
 #searchinput{border-radius:.5em !important;}
 #logohoriz{width:154px;height:29px;margin-top:0.625em}
@@ -195,6 +206,26 @@ html body .ui-group-theme-z .ui-btn{
 .activo{display:block;color:#16a085;font-size:3em;opacity:.7;position:absolute;top:0px;width:70px;height:67px;border:solid 5px #16a085;border-radius:8px;}
 #popuptarj #tarjetas{width:100%;}
 .fieldsettar{width:280px;text-align:left;margin-left:auto;margin-right:auto;display:block;}
+#tarjetas .ui-controlgroup, #tarjetas fieldset.ui-controlgroup {
+margin: 0px;
+margin-left: auto;
+margin-right: auto;
+margin-top:.5em;
+}
+#pagetarjetas a.guardar {
+width: 75%;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 20px;
+}
+#pagetarjetas .finalizar {
+width: 75%;
+margin-left: auto;
+margin-right: auto;
+margin-top: 1em;
+}
+#pagetarjetas .subtext{color:#666;font-style: italic}
+
 /*RESULSTADO*/
 .miga{margin:0em 0em 2em 0em;}
 .reiniciar {display: inline-block;vertical-align: middle;margin-left: 10px;}

@@ -22,21 +22,36 @@ function main(){
                                //alert('auth.statusChange event');
                                });
     FB.init({ appId: "853919827954063", nativeInterface: CDV.FB, useCachedDialogs: false });*/
-	var RUTA = "http://192.168.0.2/bigdesc/backend/"; //192.168.0.109
+	
+	
+	/*PRIMERAS CONFIGURACIONES DE HTML */
 	$( "body>[data-role='panel']" ).panel();
+	$('a.addfav').attr('data-icon','star');
+	$('a.addfav').buttonMarkup({ icon: "star" });
+	$("a.addfav").html("Agregar a favoritos");
+	/*////////////////*/
+	
 	$.mobile.loading('hide');
-	//Validación de usuario
+	var RUTA = "http://192.168.0.2/bigdesc/backend/"; //192.168.0.109
+	
+	/*Datos de usuario///////////////////////////////////*/
 	var userID = window.localStorage.getItem('userID');
 	var userName = window.localStorage.getItem('userName');
+	var mistarjetasG = new Array();
+	var usernotifi = "";
 	var fconnect = window.localStorage.getItem("fConnect");
+	/*//////////////////////////////////////////////////*/
+
 	var categorias = new Array();
 	var todastarjetas = new Array();
-	var mistarjetasG = new Array();
+	var tarjetasURLS = new Array();
 	var detalleID = 0;
 	var vuelvoDeDetalle = false;
 	var limitePosts=10;
 	var CAT = 0;
 	var CATNAME="";
+
+	/*Validación de usuario//////////////////////////////*/
 	if(userID>0){
 		if($.mobile.activePage[0].id){
 			$("#nameuser").html(userName);
@@ -48,6 +63,8 @@ function main(){
 	}else{
 		$.mobile.changePage('#pagelogin');
 	}
+	/*//////////////////////////////////////////////////*/
+
 	var dpi = window.devicePixelRatio;
 	var folder = "mdpi";
 	var foldernum = "80";
@@ -122,6 +139,7 @@ function main(){
 				for(var e=0;e<tot;e++){
 					//alert(exito.todas[e].id+" = "+exito.todas[])
 					todastarjetas[exito.todas[e].id]=exito.todas[e].tag;
+					tarjetasURLS[exito.todas[e].id] = exito.todas[e].urlb;
 				}
 				tot = exito.mias.length;
 				for(var y=0;y<tot;y++){
@@ -211,9 +229,9 @@ function main(){
 			}
 		});
 		chfav.fail(function(){
-			$('.addfav').attr('data-icon','star');
-			$('.addfav').buttonMarkup({ icon: "star" });
-			$(".addfav").html("Agregar a favoritos");
+			$('a.addfav').attr('data-icon','star');
+			$('a.addfav').buttonMarkup({ icon: "star",iconpos:"center" }).button('refresh');
+			$("a.addfav").html("Agregar a favoritos");
 		})
 		var jqhrx = $.post(RUTA + 'descuentos/detalle',{id:detalleID},function(exito){
 			if(!exito.error){
@@ -234,7 +252,9 @@ function main(){
 				tinc=pasarArreglo(exito.tarjetasId);
         		for(var mt = 0; mt<tinc.length;mt++){
         				if(enArray(mistarjetasG,tinc[mt])){
-        					$("#detTags").append('<span class="tag">'+todastarjetas[tinc[mt]]+'</span>');
+        					var url = tarjetasURLS[tinc[mt]];
+        					if(url==""){url="#"};
+        					$("#detTags").append('<span class="tag"><a href="'+url+'" target="_blank">'+todastarjetas[tinc[mt]]+'</a></span>');
         				}else{
         					$("#detTags").append('<span class="tag nohay">'+todastarjetas[tinc[mt]]+'</span>');
         				}
@@ -427,6 +447,12 @@ function main(){
 	
 	// PAGE FAVORITOS //
 	$("#pagefavoritos").on("pageshow", function(event){
+		$.mobile.loading( 'show', {
+                text: 'Cargando',
+                textVisible: true,
+                theme: 'a',
+                html: ""
+        });
 		$("#favoritos").empty();
 		var posteos = $.post(RUTA + 'favoritos/traer',{user:userID},function(exito){
 			if(!exito.error){
@@ -471,12 +497,15 @@ function main(){
 					$("#favoritos").append(post);
 				}
 				$("#favoritos").listview( "refresh" );
+				$.mobile.loading('hide');
 			}else{
 				$("#favoritos").html('<li>No hay descuentos agregados a favoritos</li>');
+				$.mobile.loading('hide');
 			}
 		},"json");
 		posteos.fail(function(){
 			alert('error');
+			$.mobile.loading('hide');
 		})
 	})
 	$(".addfav").click(function(){
@@ -484,21 +513,21 @@ function main(){
 		if($('.addfav').attr('data-icon')=='star'){
 			 $.post(RUTA + 'favoritos/guardar',{user:userID,desc:detalleID},function(exito){
 			 	if(exito){
-			 		$('.addfav').attr('data-icon','delete');
-			 		$('.addfav').buttonMarkup({ icon: "delete" });
-			 		$(".addfav").html("Eliminar de favoritos");
+			 		$('a.addfav').attr('data-icon','delete');
+			 		$('a.addfav').buttonMarkup({ icon: "delete" });
+			 		$("a.addfav").html("Eliminar de favoritos");
 			 	}
 			 })
 		}else{
 			$.post(RUTA + 'favoritos/borrar',{fav:detalleID,user:userID},function(exito){
 				if(exito != "error"){
-					$('.addfav').attr('data-icon','star');
-					$('.addfav').buttonMarkup({ icon: "star" });
-				 	$(".addfav").html("Agregar a favoritos");
+					$('a.addfav').attr('data-icon','star');
+					$('a.addfav').buttonMarkup({ icon: "star" });
+				 	$("a.addfav").html("Agregar a favoritos");
 				}else{
-					$('.addfav').attr('data-icon','delete');
-					$('.addfav').buttonMarkup({ icon: "delete" });
-				 	$(".addfav").html("Eliminar de favoritos");
+					$('a.addfav').attr('data-icon','delete');
+					$('a.addfav').buttonMarkup({ icon: "delete" });
+				 	$("a.addfav").html("Eliminar de favoritos");
 				}
 			})
 		}
@@ -532,16 +561,21 @@ function main(){
 				var counter = 0;
 				for(var a=0;a<tottar;a++){
 					//alert(exito.tarjetas[a].id);
-					if(counter==1){
-						medio = " medio";
-						counter++
-					}else{
-						medio = "";
+					switch(counter){
+						case 0:
+						medio="";
 						counter++;
+						break;
+						case 1:
+						medio=" medio";
+						counter++;
+						break;
+						case 2:
+						medio="";
+						counter=0;
+						break;
 					}
-					if(counter==3){
-						counter ==0;
-					}
+
 					if(exito[a].icono != ""){
 						tag = '<img src="'+RUTA+'public/assets/tarjetas/'+foldernum+'/'+exito[a].icono+'" title="'+exito[a].tag+'" width="80" height="80" />';
 					}else{
@@ -720,25 +754,29 @@ function main(){
 	$("#pageconfig").on("pageshow", function(event){		
         $("#pageconfig .error").hide();
         $("#pageconfig .good").hide();
+        var est = '';
+        if(usernotifi==1){
+        	est = 'off';
+        }else{
+        	est = 'on';
+        }
+        $("#notificaciones").val(est);
+        $("#notificaciones").change();
+         $("#notificaciones").slider("refresh", true);
+
+        //$('#notificaciones option[value="' + est + '"]').prop("selected", true);
 	})
 	$("#guardarconf").click(function(){
-        $.mobile.changePage('#pagehome');
-		// var porcentajes = [];
-		// $(".medidor").each(function(index){
-		// 	var ID = $(this).attr('data-val');
-		// 	porcentajes.push({id:ID,porcentaje:$(this).val()});
-		// })
-		// var jqhrx = $.post(RUTA+"tarjetas/porcentajes",{user:userID,porcen:porcentajes},function(exito){
-		// 		if(exito=="ok"){
-		// 			$("#pageconfig .good").show();
-		// 			$.mobile.loading('hide');
-		// 		}else{
-		// 			alert("error");
-		// 		}
-		// 	})
-		// 	jqhrx.fail(function(){
-		// 		alert('No se pudo guardar la información. Verifique su conexión a internet');
-		// 	})
+		var est = $("#notificaciones").val();
+		if(est=='on'){
+			usernotifi = 2;
+		}else{
+			usernotifi = 1;
+		}
+		var jqhrx = $.post(RUTA + 'registro/notificame',{user:userID,estado:usernotifi},function(exito){
+			alert(exito);
+		})
+        $.mobile.changePage('#pagehome');		
 	})
 
 	$("#pageregistro").on( "pageshow", function(event) {
@@ -880,6 +918,7 @@ function main(){
                                     	if(!exito.error){
                                     		userID = exito.id;
 	                                		userName = exito.username;
+	                                		usernotifi = exito.terminos;
 	                               			window.localStorage.setItem("userID",userID);
 	                                		window.localStorage.setItem("userName",userName);
 	                                		fconnect = true;
@@ -924,7 +963,7 @@ function main(){
             datos.token = "";
             datos.sexo = response.gender;
             datos.pass = "Rj45F";//OCULTAR.
-            datos.terminos = 1;
+            datos.terminos = 2;
                        //alert(response.name+" "+response.first_name+" "+response.last_name+" "+response.email+" "+response.id+" "+response.gender);
             registro(datos);
             $.mobile.loading('hide');
@@ -973,6 +1012,7 @@ function main(){
 	                            }else{
 	                                userID = exito.id;
 	                                userName = exito.username;
+	                                usernotifi = exito.terminos;
 	                                window.localStorage.setItem("userID",userID);
 	                                window.localStorage.setItem("userName",userName);
 	                                $("#nameuser").html(userName);
@@ -998,6 +1038,7 @@ function main(){
     /*LOGOUT*////////////////////////////////
    $('.closeSession').click(function(){
         userID = 0;
+        usernotifi = 0;
         userName = "";
         window.localStorage.removeItem("userID");
         window.localStorage.removeItem("userName");
