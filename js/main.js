@@ -1,4 +1,5 @@
 function main(){
+
 	 /*if ((typeof cordova == 'undefined') && (typeof Cordova == 'undefined')) alert('Error. Vuelva a intentarlo1');
             if (typeof CDV == 'undefined') alert('Error. Vuelva a intentarlo2');
             if (typeof FB == 'undefined') alert('Error. Vuelva a intentarlo3');
@@ -21,7 +22,7 @@ function main(){
                                //alert('auth.statusChange event');
                                });
     FB.init({ appId: "853919827954063", nativeInterface: CDV.FB, useCachedDialogs: false });*/
-	var RUTA = "http://backend.bigdescuento.com/"; //192.168.0.109
+	var RUTA = "http://192.168.0.2/bigdesc/backend/"; //192.168.0.109
 	$( "body>[data-role='panel']" ).panel();
 	$.mobile.loading('hide');
 	//Validación de usuario
@@ -267,7 +268,7 @@ function main(){
 					$("#searchmore").attr("disabled", true);
 				}
 				if(INIT==0){
-					$(".miga").html(total+' descuentos de <strong><i>"'+Q+'"</i></strong>');
+					$(".miga").html(total+' descuentos de <strong><i>"'+Q+'"</i></strong> <a href="#" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all reiniciar" title="Reiniciar">Reiniciar</a>');
 					$(".miga").show();
 				}
 				var post=""
@@ -304,7 +305,7 @@ function main(){
 			}else{
 				$.mobile.loading('hide');
 				if(INIT==0){
-					$(".miga").html("No se encontraron resultados con <strong><i>"+Q+"</i></strong>");
+					$(".miga").html("No se encontraron resultados con <strong><i>"+Q+"</i></strong> <a href='#' class='ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all reiniciar' title='Reiniciar'>Reiniciar</a>");
 					$(".miga").show();
 				}else{
 					$("#dest-home").append('<li>No se encontraron más promociones</li>');
@@ -625,6 +626,7 @@ function main(){
 	$(".miga").on('click','.reiniciar',function(e){
 		e.preventDefault();
 		vuelvoDeDetalle=false;
+		$("#searchinput").val("");
 		traerHome();
 	})
 
@@ -685,7 +687,7 @@ function main(){
 				}else{
 					$.mobile.loading('hide');
 					if(INIT==0){
-						$(".miga").html("No se encontraron descuentos en <strong><i>"+CATNAME+"</i></strong> <a href="#" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all reiniciar" title="Reiniciar">Reiniciar</a>");
+						$(".miga").html("No se encontraron descuentos en <strong><i>"+CATNAME+"</i></strong> <a href='#' class='ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all reiniciar' title='Reiniciar'>Reiniciar</a>");
 						$(".miga").show();
 					}else{
 						$("#dest-home").append('<li>No se encontraron más promociones</li>');

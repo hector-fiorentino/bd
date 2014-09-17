@@ -197,7 +197,7 @@ html body .ui-group-theme-z .ui-btn{
 .fieldsettar{width:280px;text-align:left;margin-left:auto;margin-right:auto;display:block;}
 /*RESULSTADO*/
 .miga{margin:0em 0em 2em 0em;}
-
+.reiniciar {display: inline-block;vertical-align: middle;margin-left: 10px;}
 #destacado{
     background-color:#eee;
     border-radius:8px;
