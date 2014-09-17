@@ -774,7 +774,7 @@ function main(){
 			usernotifi = 1;
 		}
 		var jqhrx = $.post(RUTA + 'registro/notificame',{user:userID,estado:usernotifi},function(exito){
-			alert(exito);
+			
 		})
         $.mobile.changePage('#pagehome');		
 	})
