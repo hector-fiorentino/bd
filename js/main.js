@@ -221,7 +221,6 @@ function main(){
 		$('.addfav').attr('data-icon','star');
 		$('.addfav').buttonMarkup({ icon: "star" });
 		$(".addfav").html("Agregar a favoritos");
-		$.mobile.changePage('#pagedetalle');
 		$.mobile.loading( 'show', {
                 text: 'Cargando',
                 textVisible: true,
@@ -246,6 +245,7 @@ function main(){
 		})
 		var jqhrx = $.post(RUTA + 'descuentos/detalle',{id:detalleID},function(exito){
 			if(!exito.error){
+				$.mobile.changePage('#pagedetalle');
 				vuelvoDeDetalle=true;
 				$("#postpromo").html("<strong style='color:"+exito.color+"'>Beneficio:</strong> "+exito.promo);
 				$("#img-detalle").html('<img src="'+RUTA+'public/assets/posts/'+folder+'/'+exito.imagen+'" width="100%"/>');
@@ -264,7 +264,14 @@ function main(){
         				if(enArray(mistarjetasG,tinc[mt])){
         					var url = tarjetasURLS[tinc[mt]];
         					if(url==""){url="#"};
-        					$("#detTags").append('<span class="tag"><a href="'+url+'" target="_blank">'+todastarjetas[tinc[mt]]+'</a></span>');
+        					var enlace = '<a href="#" ';
+        						if(url!="#"){
+        							enlace += 'onclick="window.open(';
+        							enlace += "'" + url + "', '_system');";
+									enlace += '" ';
+								}
+								enlace += '>';
+        					$("#detTags").append('<span class="tag">'+enlace+todastarjetas[tinc[mt]]+'</a></span>');
         				}else{
         					$("#detTags").append('<span class="tag nohay">'+todastarjetas[tinc[mt]]+'</span>');
         				}
@@ -1117,7 +1124,12 @@ function main(){
     function urlify(text) {
     var urlRegex = /(https?:\/\/[^\s]+)/g;
     return text.replace(urlRegex, function(url) {
-        return '<a href="' + url + '">' + url + '</a>';
+    	var enlace = '<a href="#" ';
+        enlace += 'onclick="window.open(';
+        enlace += "'" + url + "', '_system');";
+		enlace += '" ';
+		enlace += '>';
+        return enlace;
     })
     // or alternatively
     // return text.replace(urlRegex, '<a href="$1">$1</a>')

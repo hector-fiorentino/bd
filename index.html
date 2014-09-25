@@ -276,11 +276,15 @@
                   textVisible: true,
                   theme: 'a',
                   html: ""  
-                });
+                });        
+                var defaultPageTransition = 'slidefade';
                 var networkState = navigator.connection.type;
-                if(networkState != "Connection.WIFI"){
-                  alert("Conexion="+networkState);
-                  main();
+                if(networkState != "wifi"){
+                  if(networkState=="none"){
+                    alert("La aplicación requiere de conexión a internet.");
+                  }else{
+                    main();
+                  }
                 }else{
                   try
                   { 
