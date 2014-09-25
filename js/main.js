@@ -115,7 +115,6 @@ function main(){
 				categorias[exito[c].id]=exito[c].color;
 			} 
 			$("#categorias").trigger('create');
-			
 		}
 	},"json");
 	cates.fail(function(){
@@ -150,16 +149,7 @@ function main(){
 		},"json")
 		//TRAER BANNER
 		$("#destacado").html('<i class="fa fa-spinner fa-spin"></i>');
-		var banner = $.post(RUTA + 'destacados/service',{},function(exito){
-			if(exito){
-				$("#destacado").html("<img src='"+RUTA+"public/assets/banners/"+folder+"/"+exito+"'/>");
-			}else{
-				alert('error');
-			}
-		});
-		banner.fail(function(){
-			alert("sin conexión");
-		})
+		
 		var posteos = $.post(RUTA + 'descuentos/home',{user:userID},function(exito){
 			if(!exito.error){
 				var total=exito.length;
@@ -193,6 +183,7 @@ function main(){
 					$("#dest-home").append(post);
 				}
 				$("#dest-home").listview( "refresh" );
+				traerBanner();
 			}else{
 				$.mobile.changePage('#pagetarjetas');
 			}
@@ -201,6 +192,19 @@ function main(){
 			$.mobile.changePage('#pagetarjetas');
 		})
 		vuelvoDeDetalle=false;
+	}
+
+	function traerBanner(){
+		var banner = $.post(RUTA + 'destacados/service',{},function(exito){
+			if(exito){
+				$("#destacado").html("<img src='"+RUTA+"public/assets/banners/"+folder+"/"+exito+"'/>");
+			}else{
+				alert('error');
+			}
+		});
+		banner.fail(function(){
+			alert("sin conexión");
+		})
 	}
 
 	$(".volver").click(function(){
@@ -217,6 +221,13 @@ function main(){
 		$('.addfav').attr('data-icon','star');
 		$('.addfav').buttonMarkup({ icon: "star" });
 		$(".addfav").html("Agregar a favoritos");
+		$.mobile.changePage('#pagedetalle');
+		$.mobile.loading( 'show', {
+                text: 'Cargando',
+                textVisible: true,
+                theme: 'a',
+                html: ""
+        });
 		var chfav=$.post(RUTA + 'favoritos/existe',{id:detalleID,user:userID},function(exito){
 			if(exito=="si"){
 				$('.addfav').attr('data-icon','delete');
@@ -235,7 +246,6 @@ function main(){
 		})
 		var jqhrx = $.post(RUTA + 'descuentos/detalle',{id:detalleID},function(exito){
 			if(!exito.error){
-				$.mobile.changePage('#pagedetalle');
 				vuelvoDeDetalle=true;
 				$("#postpromo").html("<strong style='color:"+exito.color+"'>Beneficio:</strong> "+exito.promo);
 				$("#img-detalle").html('<img src="'+RUTA+'public/assets/posts/'+folder+'/'+exito.imagen+'" width="100%"/>');
@@ -261,6 +271,7 @@ function main(){
 
         		}
         		$(".masinfo").html("<br>"+exito.descripcion);
+        		$.mobile.loading('hide');
 			}
 		},"json");
 		jqhrx.fail(function(){

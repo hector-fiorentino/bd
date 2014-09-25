@@ -36,7 +36,6 @@
   <!-- VACIO -->
   <div data-role="page" id="pageclean" data-theme="b">
       <div data-role="content" data-theme="c">
-        
     </div><!-- /content -->
   </div><!-- /page VACIO -->
 
@@ -278,14 +277,19 @@
                   theme: 'a',
                   html: ""  
                 });
-                try 
-                { 
-                  pushNotification = window.plugins.pushNotification;
-                  if (device.platform == 'android' || device.platform == 'Android') {
-                    pushNotification.register(successHandler, errorHandler, {"senderID":"186405198228","ecb":"onNotificationGCM"});   // required!
-                  }
+                var networkState = navigator.connection.type;
+                if(networkState != "Connection.WIFI"){
+                  alert("Conexion="+networkState);
+                  main();
+                }else{
+                  try
+                  { 
+                    pushNotification = window.plugins.pushNotification;
+                    if (device.platform == 'android' || device.platform == 'Android') {
+                      pushNotification.register(successHandler, errorHandler, {"senderID":"186405198228","ecb":"onNotificationGCM"});   // required!
+                    }
                   //alert("ok");
-                }
+                  }
                   catch(err) 
                   { 
                     txt="There was an error on this page.\n\n"; 
@@ -293,6 +297,7 @@
                     alert(txt);
                     //main(); 
                   } 
+                }
             }
             
             // handle APNS notifications for iOS

@@ -57,6 +57,7 @@
     </gap:plugin>
     <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.1.1" />
     <gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="org.apache.cordova.network-information" />
 	
     <!-- Define app icon for each platform. -->
     <icon src="res/icon/android/icon-96-xhdpi.png" />
