@@ -35,8 +35,6 @@ function main(){
 	$('a.addfav').buttonMarkup({ icon: "star" });
 	$("a.addfav").html("Agregar a favoritos");
 	/*////////////////*/
-	
-	$.mobile.loading('hide');
 	var RUTA = "http://backend.bigdescuento.com/"; //192.168.0.109
 	
 	/*Datos de usuario///////////////////////////////////*/
@@ -61,28 +59,13 @@ function main(){
 		if($.mobile.activePage[0].id){
 			$("#nameuser").html(userName);
 			$.mobile.changePage('#pagehome');
-			var cates = $.post(RUTA + 'categorias/service',{},function(exito){
-			if(exito){
-				var tot = exito.length;
-				for(var c =0; c<tot; c++){
-					var icono = exito[c].icono;
-					icono = icono.replace("icon","fa");
-					$("#categorias").append('<li><a href="#pagehome" class="catfil" data-transition="fade" rel="'+exito[c].id+'" title="'+exito[c].tag+'"><i class="'+exito[c].icono+'"></i> '+exito[c].tag+' </a></li>');
-					//categorias.push(new Array(exito[c].id,exito[c].color));
-					categorias[exito[c].id]=exito[c].color;
-				} 
-				$("#categorias").trigger('create');
-			}
-			},"json");
-			cates.fail(function(){
-				alert("Lo sentimos. Hubo un problema cargando las categorias");
-			})
         	if(channelUri!=""){
             	var jqxhr = $.post(RUTA + 'channels/nuevo',{code:channelUri,usuario:userID},function(exito){})
         	}
 		}
 	}else{
 		$.mobile.changePage('#pagelogin');
+		$.mobile.loading('hide');
 	}
 	/*//////////////////////////////////////////////////*/
 
@@ -131,13 +114,9 @@ function main(){
 		}
 	})
 	
-	function traerHome(){
-		$("#searchmore").hide();
-		$("#destacado").show();
-		$(".miga").hide();
-		$("#dest-home").empty();
+	function tarjetas(){
 		var tar = $.post(RUTA + 'tarjetas/todas',{user:userID},function(exito){
-			if(exito){
+				if(exito){
 				tot = exito.todas.length;
 				for(var e=0;e<tot;e++){
 					//alert(exito.todas[e].id+" = "+exito.todas[])
@@ -149,8 +128,39 @@ function main(){
 					mistarjetasG.push(exito.mias[y].tag_id);
 				}
 				//alert(mistarjetasG);
-			}
-		},"json")
+				$.mobile.loading('hide');
+					}
+				},"json")
+	}
+
+	function traerHome(){
+		$("#searchmore").hide();
+		$("#destacado").show();
+		$(".miga").hide();
+		$("#dest-home").empty();
+		if(categorias.length>0){
+			tarjetas();
+		}else{
+			var cates = $.post(RUTA + 'categorias/service',{},function(exito){
+				if(exito){
+					var tot = exito.length;
+					for(var c =0; c<tot; c++){
+						var icono = exito[c].icono;
+						icono = icono.replace("icon","fa");
+						$("#categorias").append('<li><a href="#pagehome" class="catfil" data-transition="fade" rel="'+exito[c].id+'" title="'+exito[c].tag+'"><i class="'+exito[c].icono+'"></i> '+exito[c].tag+' </a></li>');
+						//categorias.push(new Array(exito[c].id,exito[c].color));
+						categorias[exito[c].id]=exito[c].color;
+					} 
+					$("#categorias").trigger('create');
+					tarjetas();
+				}
+				},"json");
+				cates.fail(function(){
+					$.mobile.loading('hide');
+					alert("Lo sentimos. Hubo un problema cargando las categorias");
+			})
+		}
+	
 		//TRAER BANNER
 		$("#destacado").html('<i class="fa fa-spinner fa-spin"></i>');
 		
