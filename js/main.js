@@ -1,10 +1,4 @@
 function main(){
-	$.mobile.loading( 'show', {
-                  text: 'Autenticando Usuario',
-                  textVisible: true,
-                  theme: 'a',
-                  html: ""  
-    });
 	 if ((typeof cordova == 'undefined') && (typeof Cordova == 'undefined')) alert('Error. Vuelva a intentarlo1');
             if (typeof CDV == 'undefined') alert('Error. Vuelva a intentarlo2');
             if (typeof FB == 'undefined') alert('Error. Vuelva a intentarlo3');
@@ -109,6 +103,7 @@ function main(){
 	}
 
 	$("#pagehome").on("pageshow", function(event){
+		$.mobile.loading('hide');
 		if(vuelvoDeDetalle==false){
 			traerHome();
 		}
@@ -134,6 +129,12 @@ function main(){
 	}
 
 	function traerHome(){
+		$.mobile.loading( 'show', {
+                text: 'Cargando Home',
+                textVisible: true,
+                theme: 'a',
+                html: ""
+        });
 		$("#searchmore").hide();
 		$("#destacado").show();
 		$(".miga").hide();
