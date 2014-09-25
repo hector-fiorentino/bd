@@ -1,5 +1,10 @@
 function main(){
-
+	$.mobile.loading( 'show', {
+                  text: 'Autenticando Usuario',
+                  textVisible: true,
+                  theme: 'a',
+                  html: ""  
+    });
 	 if ((typeof cordova == 'undefined') && (typeof Cordova == 'undefined')) alert('Error. Vuelva a intentarlo1');
             if (typeof CDV == 'undefined') alert('Error. Vuelva a intentarlo2');
             if (typeof FB == 'undefined') alert('Error. Vuelva a intentarlo3');
@@ -56,9 +61,25 @@ function main(){
 		if($.mobile.activePage[0].id){
 			$("#nameuser").html(userName);
 			$.mobile.changePage('#pagehome');
-        	//if(channelUri!=""){
-            	//var jqxhr = $.post(RUTA + 'channels/nuevo',{code:channelUri,usuario:userID},function(exito){})
-        	//}
+			var cates = $.post(RUTA + 'categorias/service',{},function(exito){
+			if(exito){
+				var tot = exito.length;
+				for(var c =0; c<tot; c++){
+					var icono = exito[c].icono;
+					icono = icono.replace("icon","fa");
+					$("#categorias").append('<li><a href="#pagehome" class="catfil" data-transition="fade" rel="'+exito[c].id+'" title="'+exito[c].tag+'"><i class="'+exito[c].icono+'"></i> '+exito[c].tag+' </a></li>');
+					//categorias.push(new Array(exito[c].id,exito[c].color));
+					categorias[exito[c].id]=exito[c].color;
+				} 
+				$("#categorias").trigger('create');
+			}
+			},"json");
+			cates.fail(function(){
+				alert("Lo sentimos. Hubo un problema cargando las categorias");
+			})
+        	if(channelUri!=""){
+            	var jqxhr = $.post(RUTA + 'channels/nuevo',{code:channelUri,usuario:userID},function(exito){})
+        	}
 		}
 	}else{
 		$.mobile.changePage('#pagelogin');
@@ -103,23 +124,6 @@ function main(){
 			src = src.replace("res-dpi", folder);
 			els[i].src = src;
 	}
-
-	var cates = $.post(RUTA + 'categorias/service',{},function(exito){
-		if(exito){
-			var tot = exito.length;
-			for(var c =0; c<tot; c++){
-				var icono = exito[c].icono;
-				icono = icono.replace("icon","fa");
-				$("#categorias").append('<li><a href="#pagehome" class="catfil" data-transition="fade" rel="'+exito[c].id+'" title="'+exito[c].tag+'"><i class="'+exito[c].icono+'"></i> '+exito[c].tag+' </a></li>');
-				//categorias.push(new Array(exito[c].id,exito[c].color));
-				categorias[exito[c].id]=exito[c].color;
-			} 
-			$("#categorias").trigger('create');
-		}
-	},"json");
-	cates.fail(function(){
-		alert("Lo sentimos. Hubo un problema cargando las categorias");
-	})
 
 	$("#pagehome").on("pageshow", function(event){
 		if(vuelvoDeDetalle==false){

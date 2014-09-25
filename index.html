@@ -272,17 +272,19 @@
             
             function onDeviceReady() {
                 $.mobile.loading( 'show', {
-                  text: 'Cargando',
+                  text: 'Iniciando App',
                   textVisible: true,
                   theme: 'a',
                   html: ""  
                 });        
-                var defaultPageTransition = 'slidefade';
+                $.mobile.defaultPageTransition = 'slidefade';
                 var networkState = navigator.connection.type;
                 if(networkState != "wifi"){
                   if(networkState=="none"){
-                    alert("La aplicación requiere de conexión a internet.");
+                    alert("La aplicación requiere de conexión a internet. Conéctese y vuelva a ingresar. \n Muchas Gracias.");
+                    navigator.app.exitApp();
                   }else{
+                    alert(networkState)
                     main();
                   }
                 }else{
