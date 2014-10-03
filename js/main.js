@@ -388,7 +388,7 @@ function main(){
 	
 	$("#searchmore").click(function(){
 		var inicio = $(this).attr('data-inicio');
-		inicio = inicio + 10;
+		inicio = parseInt(inicio) + 10;
 		$(this).attr('data-inicio',inicio);
 		if($(this).attr('data-act')=='search'){
 			buscador(inicio);
@@ -711,11 +711,10 @@ function main(){
                 theme: 'a',
                 html: ""
         	});
-				alert("DESDE="+INIT+" HASTA="+limitePosts);
+				//alert("DESDE="+INIT+" HASTA="+limitePosts);
 				var posteos = $.post(RUTA + 'descuentos/busquedaCat',{cat:CAT,user:userID,desde:INIT,hasta:limitePosts},function(exito){
 				if(!exito.error){
 					var total=exito.length;
-					alert(total);
 					$("#searchmore").show();
 					$("#searchmore").attr('data-inicio',INIT);
 					$("#searchmore").attr('data-act','cat');
@@ -764,7 +763,7 @@ function main(){
 						$(".miga").html("No se encontraron descuentos en <strong><i>"+CATNAME+"</i></strong> <a href='#' class='ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all reiniciar' title='Reiniciar'>Reiniciar</a>");
 						$(".miga").show();
 					}else{
-						alert(JSON.stringify(exito));
+						//alert(JSON.stringify(exito));
 						$("#dest-home").append('<li>No se encontraron más promociones</li>');
 						$("#searchmore").attr("disabled", true);
 					}
