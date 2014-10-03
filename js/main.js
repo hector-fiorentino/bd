@@ -22,7 +22,6 @@ function main(){
                                });
     FB.init({ appId: "853919827954063", nativeInterface: CDV.FB, useCachedDialogs: false });
 	
-	
 	/*PRIMERAS CONFIGURACIONES DE HTML */
 	$( "body>[data-role='panel']" ).panel();
 	$('a.addfav').attr('data-icon','star');
@@ -1094,6 +1093,20 @@ function main(){
         $.mobile.changePage($("#pagelogin"));
    })
    /////////*FIN LOGOUT*///////////////////
+
+   /*Backbutton*///////////////////////////
+   document.addEventListener("backbutton", onBackKeyDown, false);
+
+    function onBackKeyDown() {
+        // Maneja el evento del botón atrás
+       var p = $.mobile.path.parseLocation();
+        if(p.hash!="#pagehome" && p.hash!="#pagelogin"){
+            navigator.app.backHistory();
+        }
+    }
+    ////////////////*FIN BACKBUTTON*///////
+
+
 
    function pasarArreglo(valor){
    		var res = valor.split(",");
