@@ -376,14 +376,14 @@ function main(){
   	}
 	
 	//$('#searchinput').click(function(){})
-	$("#searchinput").bind( "change", function(event, ui) {
-		//alert("Change");
-  		if($(this).val()!=""){
+	$(document).on('change','#searchinput',function(){ 
+    	if($(this).val()!=""){
   			$("#destacado").hide();
   			$("#dest-home").empty();
   			buscador(0);
   		}
 	});
+
 	
 	$("#searchmore").click(function(){
 		var inicio = $(this).attr('data-inicio');
