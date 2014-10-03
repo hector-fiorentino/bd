@@ -263,8 +263,11 @@ function main(){
 				$.mobile.changePage('#pagedetalle');
 				vuelvoDeDetalle=true;
 				$("#postpromo").html("<strong style='color:"+exito.color+"'>Beneficio:</strong> "+exito.promo);
+				$("#img-detalle").html('<img src="'+RUTA+'public/assets/posts/'+folder+'/'+exito.imagen+'" width="100%"/>');
 				if(exito.imagen!="sin-imagen.jpg"){
-					$("#img-detalle").html('<img src="'+RUTA+'public/assets/posts/'+folder+'/'+exito.imagen+'" width="100%"/>');
+					$("#img-detalle").show();
+				}else{
+					$("#img-detalle").hide();
 				}
 				if(exito.dias=="Todos"){
 					dias = "Todos los días";
@@ -760,6 +763,7 @@ function main(){
 						$(".miga").html("No se encontraron descuentos en <strong><i>"+CATNAME+"</i></strong> <a href='#' class='ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all reiniciar' title='Reiniciar'>Reiniciar</a>");
 						$(".miga").show();
 					}else{
+						alert(exito);
 						$("#dest-home").append('<li>No se encontraron más promociones</li>');
 						$("#searchmore").attr("disabled", true);
 					}
