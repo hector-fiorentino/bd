@@ -763,7 +763,7 @@ function main(){
 						$(".miga").html("No se encontraron descuentos en <strong><i>"+CATNAME+"</i></strong> <a href='#' class='ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all reiniciar' title='Reiniciar'>Reiniciar</a>");
 						$(".miga").show();
 					}else{
-						alert(exito);
+						alert(JSON.stringify(exito));
 						$("#dest-home").append('<li>No se encontraron más promociones</li>');
 						$("#searchmore").attr("disabled", true);
 					}
