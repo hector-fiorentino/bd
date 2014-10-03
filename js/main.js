@@ -711,6 +711,7 @@ function main(){
                 theme: 'a',
                 html: ""
         	});
+				alert("DESDE="+INIT+" HASTA="+limitePosts);
 				var posteos = $.post(RUTA + 'descuentos/busquedaCat',{cat:CAT,user:userID,desde:INIT,hasta:limitePosts},function(exito){
 				if(!exito.error){
 					var total=exito.length;
