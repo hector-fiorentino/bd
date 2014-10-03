@@ -263,7 +263,9 @@ function main(){
 				$.mobile.changePage('#pagedetalle');
 				vuelvoDeDetalle=true;
 				$("#postpromo").html("<strong style='color:"+exito.color+"'>Beneficio:</strong> "+exito.promo);
-				$("#img-detalle").html('<img src="'+RUTA+'public/assets/posts/'+folder+'/'+exito.imagen+'" width="100%"/>');
+				if(exito.imagen!="sin-imagen.jpg"){
+					$("#img-detalle").html('<img src="'+RUTA+'public/assets/posts/'+folder+'/'+exito.imagen+'" width="100%"/>');
+				}
 				if(exito.dias=="Todos"){
 					dias = "Todos los días";
 				}else{
@@ -709,6 +711,7 @@ function main(){
 				var posteos = $.post(RUTA + 'descuentos/busquedaCat',{cat:CAT,user:userID,desde:INIT,hasta:limitePosts},function(exito){
 				if(!exito.error){
 					var total=exito.length;
+					alert(total);
 					$("#searchmore").show();
 					$("#searchmore").attr('data-inicio',INIT);
 					$("#searchmore").attr('data-act','cat');
