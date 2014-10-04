@@ -374,6 +374,13 @@ function main(){
 			alert('error');
 		})
   	}
+
+  	$(document).on('click','#appshare',function(){
+  		//SHARE
+  	})
+  	$(document).on('click','#share',function(){
+  		//SHARE
+  	})
 	
 	//$('#searchinput').click(function(){})
 	$(document).on('change','#searchinput',function(){ 
