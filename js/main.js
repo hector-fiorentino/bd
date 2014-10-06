@@ -46,6 +46,7 @@ function main(){
 	var limitePosts=10;
 	var CAT = 0;
 	var CATNAME="";
+	var shareinfo = "";
 
 	/*Validación de usuario//////////////////////////////*/
 	if(userID>0){
@@ -297,6 +298,7 @@ function main(){
 
         		}
         		$(".masinfo").html("<br>"+exito.descripcion);
+        		shareinfo = exito.promo + " en " + exito.titulo + " "+ dias + ". Encontrá más promos en Big Descuentos.";
         		$.mobile.loading('hide');
 			}
 		},"json");
@@ -377,9 +379,11 @@ function main(){
 
   	$(document).on('click','#appshare',function(){
   		//SHARE
+        window.plugins.socialsharing.share('Bajate Big Descuentos y encontrá todos las promos para tus tarjetas de crédito en un solo lugar.', null, 'http://backend.bigdescuento.com/public/img/fbicon.png', 'http://bigdescuento.com');
   	})
   	$(document).on('click','#share',function(){
   		//SHARE
+        window.plugins.socialsharing.share(shareinfo, null, 'http://backend.bigdescuento.com/public/img/fbicon.png', 'http://bigdescuento.com')
   	})
 	
 	//$('#searchinput').click(function(){})
