@@ -379,12 +379,12 @@ function main(){
 
   	$(document).on('click','#appshare',function(){
   		//SHARE
-        window.plugins.socialsharing.shareViaFacebook('Bajate Big Descuentos y encontrá todos las promos para tus tarjetas de crédito en un solo lugar.', 'http://backend.bigdescuento.com/public/img/fbicon.png' /* img */, 'http://bit.ly/1vHbUgh' /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)});
+        window.plugins.socialsharing.shareViaFacebook('Bajate Big Descuentos y encontrá todos las promos para tus tarjetas de crédito en un solo lugar.', null /* img */, 'http://bit.ly/1vHbUgh' /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)});
         //window.plugins.socialsharing.share('', null, '', '');
   	})
-  	$(document).on('click','#share',function(){
+  	$(document).on('click','.share',function(){
   		//SHARE
-  		window.plugins.socialsharing.shareViaFacebook(shareinfo, 'http://backend.bigdescuento.com/public/img/fbicon.png' /* img */, 'http://bit.ly/1vHbUgh' /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)});
+  		window.plugins.socialsharing.shareViaFacebook(shareinfo, null /* img */, 'http://bit.ly/1vHbUgh' /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)});
         //window.plugins.socialsharing.share(, null, 'http://backend.bigdescuento.com/public/img/fbicon.png', 'http://bit.ly/1vHbUgh')
   	})
 	
