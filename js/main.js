@@ -26,7 +26,7 @@ function main(){
 	$( "body>[data-role='panel']" ).panel();
 	$('a.addfav').attr('data-icon','star');
 	$('a.addfav').buttonMarkup({ icon: "star" });
-	$("a.addfav").html("Agregar a favoritos");
+	$("a.addfav").html("+ favoritos");
 	/*////////////////*/
 	var RUTA = "http://backend.bigdescuento.com/"; //192.168.0.109
 	
@@ -274,6 +274,7 @@ function main(){
 				}else{
 					dias = "Los "+exito.dias;
 				}
+				var infod = dias;
 				$("#dias").html(dias+ "<br>" +tiempoLimite(exito.fhasta));
 				$("#posttitle").html(exito.titulo);
 				$("#postbreve").html(exito.breve);
@@ -298,7 +299,7 @@ function main(){
 
         		}
         		$(".masinfo").html("<br>"+exito.descripcion);
-        		shareinfo = exito.promo + " en " + exito.titulo + " "+ dias + ". Encontrá más promos en Big Descuentos.";
+        		shareinfo = exito.promo + " en " + exito.titulo + " "+ infod + ". Encontrá más promos en Big Descuentos.";
         		$.mobile.loading('hide');
 			}
 		},"json");
@@ -563,7 +564,7 @@ function main(){
 			 	if(exito){
 			 		$('a.addfav').attr('data-icon','delete');
 			 		$('a.addfav').buttonMarkup({ icon: "delete" });
-			 		$("a.addfav").html("Eliminar de favoritos");
+			 		$("a.addfav").html("- favoritos");
 			 	}
 			 })
 		}else{
@@ -571,11 +572,11 @@ function main(){
 				if(exito != "error"){
 					$('a.addfav').attr('data-icon','star');
 					$('a.addfav').buttonMarkup({ icon: "star" });
-				 	$("a.addfav").html("Agregar a favoritos");
+				 	$("a.addfav").html("+ favoritos");
 				}else{
 					$('a.addfav').attr('data-icon','delete');
 					$('a.addfav').buttonMarkup({ icon: "delete" });
-				 	$("a.addfav").html("Eliminar de favoritos");
+				 	$("a.addfav").html("- favoritos");
 				}
 			})
 		}
