@@ -31,6 +31,10 @@ html .ui-body-b{
 	background:#c1c1c1;	
     border:none;
 }
+div#pagedetalle{
+    background-color:#fff !important;
+    background:#fff !important;
+}
 .ui-corner-all{
     border-radius:.5em;
 }
