@@ -23,6 +23,7 @@ html .ui-bar-a{
     background: #569194;
     border-color: #569194;
     height:3.438em;
+    overflow:hidden;
 }
 html .ui-body-c{
     background:#f2f2f2;
@@ -151,7 +152,7 @@ html body .ui-group-theme-z .ui-btn{
 #searchinput{border-radius:.5em !important;}
 #logohoriz{width:154px;height:29px;margin-top:0.625em}
 .btnconf{background: none !important;border: none;padding: 0px;margin: 0px;position:absolute;top:-5px;left:-15px;}
-.btnconf img {height:75px;}
+.btnconf img {height:75px; position: fixed;z-index:3000;}
 .btncats{background:none !important;background-color:transparent !important;border:none;}
 .btncats i{font-size:2.125em;color:#d7df23;margin-top:3px;display:block;}
 .catecolor{display:block;height:.2em;border-radius:.2em;position:absolute;bottom:0;z-index:90000;width:100%;}
@@ -240,7 +241,7 @@ margin-top: 1em;
     position:relative;overflow:hidden;
 }
 #destacado i{font-size:3em;color:#000;opacity:.4;display:inline-block;margin-top:2em;}
-#destacado img{position:absolute;left:-50%;height:100%;}
+#destacado img{height:100%;}
 
 /*DETALLE*/
 #img-detalle{border-radius:8px;display:inline-block;width:100%;max-width:400px;}

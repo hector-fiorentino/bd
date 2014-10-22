@@ -27,6 +27,9 @@ function main(){
 	$('a.addfav').attr('data-icon','star');
 	$('a.addfav').buttonMarkup({ icon: "star" });
 	$("a.addfav").html("+ favoritos");
+	$('a.addfav').attr('data-icon','star');
+	$('a.addfav').buttonMarkup({ icon: "star" });
+	$("a.addfav").html("+ favoritos");
 	/*////////////////*/
 	var RUTA = "http://backend.bigdescuento.com/"; //192.168.0.109
 	
@@ -380,7 +383,7 @@ function main(){
 
   	$(document).on('click','#appshare',function(){
   		//SHARE
-        window.plugins.socialsharing.share('Bajate Big Descuentos y encontrá todos las promos para tus tarjetas de crédito en un solo lugar.', null, null, 'http://bit.ly/1vHbUgh');
+        window.plugins.socialsharing.share('Bajate BigDescuento y encontrá todas las promos de tus tarjetas de crédito y débito en un solo lugar.', null, null, 'http://bit.ly/1vHbUgh');
   	})
   	$(document).on('click','.share',function(){
   		//SHARE
