@@ -1104,6 +1104,8 @@ function main(){
        var p = $.mobile.path.parseLocation();
         if(p.hash!="#pagehome" && p.hash!="#pagelogin"){
             navigator.app.backHistory();
+        }else{
+        	navigator.app.exitApp();
         }
     }
     ////////////////*FIN BACKBUTTON*///////
