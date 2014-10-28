@@ -352,8 +352,8 @@ La DIRECCION NACIONAL DE PROTECCION DE DATOS PERSONALES, Órgano de Control de l
   </body>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript">
-            var pushNotification;
-            var channelUri;
+           // var pushNotification;
+          var channelUri;
             
             function onDeviceReady() {
                 $.mobile.loading( 'show', {
@@ -363,16 +363,17 @@ La DIRECCION NACIONAL DE PROTECCION DE DATOS PERSONALES, Órgano de Control de l
                   html: ""  
                 });        
                 $.mobile.defaultPageTransition = 'slidefade';
-                var networkState = navigator.connection.type;
-                if(networkState != "wifi"){
-                  if(networkState=="none"){
-                    alert("La aplicación requiere de conexión a internet. Conéctese y vuelva a ingresar. \n Muchas Gracias.");
-                    navigator.app.exitApp();
-                  }else{
-                    main();
-                  }
-                }else{
-                  try
+                main();
+               // var networkState = navigator.connection.type;
+                //if(networkState != "wifi"){
+                  //if(networkState=="none"){
+                    //alert("La aplicación requiere de conexión a internet. Conéctese y vuelva a ingresar. \n Muchas Gracias.");
+                   // navigator.app.exitApp();
+                  //}else{
+                   // main();
+                  //}
+                //}else{
+                 /* try
                   { 
                     pushNotification = window.plugins.pushNotification;
                     if (device.platform == 'android' || device.platform == 'Android') {
@@ -387,11 +388,11 @@ La DIRECCION NACIONAL DE PROTECCION DE DATOS PERSONALES, Órgano de Control de l
                     alert(txt);
                     //main(); 
                   } 
-                }
+                }*/
             }
             
             // handle APNS notifications for iOS
-            function onNotificationAPN(e) {
+            /*function onNotificationAPN(e) {
                 if (e.alert) {
                      //$("#app-status-ul").append('<li>push-notification: ' + e.alert + '</li>');
                      navigator.notification.alert(e.alert);
@@ -405,10 +406,10 @@ La DIRECCION NACIONAL DE PROTECCION DE DATOS PERSONALES, Órgano de Control de l
                 if (e.badge) {
                     pushNotification.setApplicationIconBadgeNumber(successHandler, e.badge);
                 }
-            }
+            }*/
             
             // handle GCM notifications for Android
-            function onNotificationGCM(e) {
+          /*  function onNotificationGCM(e) {
                 //$("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
                 
                 switch( e.event )
@@ -472,7 +473,7 @@ La DIRECCION NACIONAL DE PROTECCION DE DATOS PERSONALES, Órgano de Control de l
             
             function errorHandler (error) {
                 //$("#app-status-ul").append('<li>error:'+ error +'</li>');
-            }
+            }*/
             
       document.addEventListener('deviceready', onDeviceReady, true);
 
