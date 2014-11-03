@@ -352,7 +352,7 @@ La DIRECCION NACIONAL DE PROTECCION DE DATOS PERSONALES, Órgano de Control de l
   </body>
         <script type="text/javascript" src="phonegap.js"></script>
         <script type="text/javascript">
-           // var pushNotification;
+            var pushNotification;
           var channelUri;
             
             function onDeviceReady() {
@@ -363,7 +363,7 @@ La DIRECCION NACIONAL DE PROTECCION DE DATOS PERSONALES, Órgano de Control de l
                   html: ""  
                 });        
                 $.mobile.defaultPageTransition = 'slidefade';
-                main();
+                //main();
                // var networkState = navigator.connection.type;
                 //if(networkState != "wifi"){
                   //if(networkState=="none"){
@@ -373,11 +373,29 @@ La DIRECCION NACIONAL DE PROTECCION DE DATOS PERSONALES, Órgano de Control de l
                    // main();
                   //}
                 //}else{
-                 /* try
+                  try
                   { 
                     pushNotification = window.plugins.pushNotification;
-                    if (device.platform == 'android' || device.platform == 'Android') {
-                      pushNotification.register(successHandler, errorHandler, {"senderID":"186405198228","ecb":"onNotificationGCM"});   // required!
+                    if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
+                        pushNotification.register(
+                        successHandler,
+                        errorHandler,
+                        {
+                            "senderID":"186405198228",
+                            "ecb":"onNotificationGCM"
+                        });
+                    } else if ( device.platform == 'blackberry10'){
+                       
+                    } else {
+                        pushNotification.register(
+                        tokenHandler,
+                        errorHandler,
+                        {
+                            "badge":"true",
+                            "sound":"true",
+                            "alert":"true",
+                            "ecb":"onNotificationAPN"
+                        });
                     }
                   //alert("ok");
                   }
@@ -385,12 +403,35 @@ La DIRECCION NACIONAL DE PROTECCION DE DATOS PERSONALES, Órgano de Control de l
                   { 
                     txt="There was an error on this page.\n\n"; 
                     txt+="Error description: " + err.message + "\n\n"; 
-                    alert(txt);
-                    //main(); 
+                    //alert(txt);
+                    main(); 
                   } 
-                }*/
             }
-            
+            // iOS
+            function onNotificationAPN (event) {
+                if ( event.alert )
+                {
+                    navigator.notification.alert(event.alert);
+                }
+
+                if ( event.sound )
+                {
+                    var snd = new Media(event.sound);
+                    snd.play();
+                }
+
+                if ( event.badge )
+                {
+                    pushNotification.setApplicationIconBadgeNumber(successHandler, errorHandler, event.badge);
+                }
+            }
+            function tokenHandler (result) {
+              channelUri = result;
+              main();
+            }
+            function errorHandler(event){
+              main();
+            }
             // handle APNS notifications for iOS
             /*function onNotificationAPN(e) {
                 if (e.alert) {
