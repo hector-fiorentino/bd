@@ -32,6 +32,20 @@ html .ui-body-b{
 	background:#c1c1c1;	
     border:none;
 }
+.mismo{
+    display:inline-block !important;
+}
+
+i.correr{
+    width:10px;
+    overflow: hidden;
+    margin-left:5px;
+}
+.ui-btn-especial-right{
+    position:absolute;
+    top:.24em;
+    right:-1em;
+}
 div#pagedetalle{
     background-color:#fff !important;
     background:#fff !important;
