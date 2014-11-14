@@ -714,7 +714,7 @@ function main(){
 		$("#searchinput").val("");
 		traerHome();
 	})
-
+//test
 	//Busqueda por categoria
 	function busquedaCAT(INIT){
 
