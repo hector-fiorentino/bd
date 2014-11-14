@@ -354,7 +354,7 @@ La DIRECCION NACIONAL DE PROTECCION DE DATOS PERSONALES, Órgano de Control de l
         <script type="text/javascript" src="PushNotification.js"></script>
          <script type="text/javascript">
             var pushNotification;
-            var channelUri;
+          var channelUri;
             
             function onDeviceReady() {
                 $.mobile.loading( 'show', {
@@ -364,20 +364,39 @@ La DIRECCION NACIONAL DE PROTECCION DE DATOS PERSONALES, Órgano de Control de l
                   html: ""  
                 });        
                 $.mobile.defaultPageTransition = 'slidefade';
-                var networkState = navigator.connection.type;
-                if(networkState != "wifi"){
-                  if(networkState=="none"){
-                    alert("La aplicación requiere de conexión a internet. Conéctese y vuelva a ingresar. \n Muchas Gracias.");
-                    navigator.app.exitApp();
-                  }else{
-                    main();
-                  }
-                }else{
+                //main();
+               // var networkState = navigator.connection.type;
+                //if(networkState != "wifi"){
+                  //if(networkState=="none"){
+                    //alert("La aplicación requiere de conexión a internet. Conéctese y vuelva a ingresar. \n Muchas Gracias.");
+                   // navigator.app.exitApp();
+                  //}else{
+                   // main();
+                  //}
+                //}else{
                   try
                   { 
                     pushNotification = window.plugins.pushNotification;
-                    if (device.platform == 'android' || device.platform == 'Android') {
-                      pushNotification.register(successHandler, errorHandler, {"senderID":"186405198228","ecb":"onNotificationGCM"});   // required!
+                    if ( device.platform == 'android' || device.platform == 'Android' || device.platform == "amazon-fireos" ){
+                        pushNotification.register(
+                        successHandler,
+                        errorHandler,
+                        {
+                            "senderID":"186405198228",
+                            "ecb":"onNotificationGCM"
+                        });
+                    } else if ( device.platform == 'blackberry10'){
+                       
+                    } else {
+                        pushNotification.register(
+                        tokenHandler,
+                        errorHandler,
+                        {
+                            "badge":"true",
+                            "sound":"true",
+                            "alert":"true",
+                            "ecb":"onNotificationAPN"
+                        });
                     }
                   //alert("ok");
                   }
@@ -385,12 +404,35 @@ La DIRECCION NACIONAL DE PROTECCION DE DATOS PERSONALES, Órgano de Control de l
                   { 
                     txt="There was an error on this page.\n\n"; 
                     txt+="Error description: " + err.message + "\n\n"; 
-                    alert(txt);
-                    //main(); 
+                    //alert(txt);
+                    main(); 
                   } 
+            }
+            // iOS
+            function onNotificationAPN (event) {
+                if ( event.alert )
+                {
+                    navigator.notification.alert(event.alert);
+                }
+
+                if ( event.sound )
+                {
+                    var snd = new Media(event.sound);
+                    snd.play();
+                }
+
+                if ( event.badge )
+                {
+                    pushNotification.setApplicationIconBadgeNumber(successHandler, errorHandler, event.badge);
                 }
             }
-            
+            function tokenHandler (result) {
+              channelUri = result;
+              main();
+            }
+            function errorHandler(event){
+              main();
+            }
             // handle APNS notifications for iOS
             function onNotificationAPN(e) {
                 if (e.alert) {
@@ -415,17 +457,17 @@ La DIRECCION NACIONAL DE PROTECCION DE DATOS PERSONALES, Órgano de Control de l
                 switch( e.event )
                 {
                     case 'registered':
-          if ( e.regid.length > 0 )
-          {
-            //$("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
-            // Your GCM push server needs to know the regID before it can push to this device
-            // here is where you might want to send it the regID for later use.
-            // alert("regID = " + e.regid);
-            channelUri = e.regid;
-            //alert(e.regid);
-            main();
-            
-          }
+                      if ( e.regid.length > 0 )
+                      {
+                        //$("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
+                        // Your GCM push server needs to know the regID before it can push to this device
+                        // here is where you might want to send it the regID for later use.
+                        // alert("regID = " + e.regid);
+                        channelUri = e.regid;
+                        //alert(e.regid);
+                        main();
+                        
+                      }
                     break;
                     
                     case 'message':
@@ -436,16 +478,16 @@ La DIRECCION NACIONAL DE PROTECCION DE DATOS PERSONALES, Órgano de Control de l
               //$("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
               
               // if the notification contains a soundname, play it.
-              var my_media = new Media("/android_asset/www/"+e.soundname);
-              my_media.play();
-            }
-            else
-            { // otherwise we were launched because the user touched a notification in the notification tray.
-              //if (e.coldstart)
-                //$("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
-             // else
-              //$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
-            }
+                        var my_media = new Media("/android_asset/www/"+e.soundname);
+                        my_media.play();
+                      }
+                      else
+                      { // otherwise we were launched because the user touched a notification in the notification tray.
+                        //if (e.coldstart)
+                          //$("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
+                       // else
+                        //$("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
+                      }
               
             //$("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
             //$("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
@@ -461,7 +503,7 @@ La DIRECCION NACIONAL DE PROTECCION DE DATOS PERSONALES, Órgano de Control de l
                 }
             }
             
-            function tokenHandler (result) {
+            /*function tokenHandler (result) {
                 //$("#app-status-ul").append('<li>token: '+ result +'</li>');
                 // Your iOS push server needs to know the token before it can push to this device
                 // here is where you might want to send it the token for later use.
@@ -473,8 +515,9 @@ La DIRECCION NACIONAL DE PROTECCION DE DATOS PERSONALES, Órgano de Control de l
             
             function errorHandler (error) {
                 //$("#app-status-ul").append('<li>error:'+ error +'</li>');
-            }
+            }*/
             
       document.addEventListener('deviceready', onDeviceReady, true);
+
          </script>
 </html>

@@ -265,7 +265,7 @@ function main(){
 					dias = "Los "+exito.dias;
 				}
 				var infod = dias;
-				$("#dias").html(dias+ "<br>" +tiempoLimite(exito.fhasta));
+				$("#dias").html(dias+ "<br>" +tiempoLimite(exito.fhasta) + "<br>(" + exit.fhasta + ")");
 				$("#posttitle").html(exito.titulo);
 				$("#postbreve").html(exito.breve);
 				$("#exppromo").html(urlify(exito.masinfo));
@@ -307,7 +307,20 @@ function main(){
                 html: ""
         	});
   			var Q = $("#searchinput").val();
+  			var RESULTADO = $.post(RUTA + 'descuentos/busquedaTotal',{q:Q,user:userID},function(exito){
+ 				alert(exito);
+ 				if(exito>0){
+	 				if(INIT==0){
+						$(".miga").html(exito+' descuentos de <strong><i>"'+Q+'"</i></strong> <a href="#" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all reiniciar" title="Reiniciar">Reiniciar</a>');
+						$(".miga").show();
+					}
+				}
+ 			});
+ 			RESULTADO.fail(function(){
+ 				alert("error");
+ 			})
   			var posteos = $.post(RUTA + 'descuentos/busqueda',{q:Q,user:userID,desde:INIT,hasta:limitePosts},function(exito){
+			
 			if(!exito.error){
 				var total=exito.length;
 				$("#searchmore").show();
@@ -317,10 +330,7 @@ function main(){
 				if(total<limitePosts){
 					$("#searchmore").attr("disabled", true);
 				}
-				if(INIT==0){
-					$(".miga").html(total+' descuentos de <strong><i>"'+Q+'"</i></strong> <a href="#" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all reiniciar" title="Reiniciar">Reiniciar</a>');
-					$(".miga").show();
-				}
+				
 				var post=""
 				for(var p = 0; p<total; p++){
 					post = '<li data-icon="false">';
@@ -712,7 +722,18 @@ function main(){
                 theme: 'a',
                 html: ""
         	});
-				//alert("DESDE="+INIT+" HASTA="+limitePosts);
+				var RESULTADO = $.post(RUTA + 'descuentos/busquedaCatTotal',{cat:CAT,user:userID},function(exito){
+					//alert(exito);
+ 					if(exito>0){
+	 					if(INIT==0){
+							$(".miga").html(exito+' descuentos en <strong><i>"'+CATNAME+'"</i></strong> <a href="#" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all reiniciar" title="Reiniciar">Reiniciar</a>');
+							$(".miga").show();
+						}
+					}
+ 				});
+ 				RESULTADO.fail(function(){
+ 					alert("error");
+ 				})
 				var posteos = $.post(RUTA + 'descuentos/busquedaCat',{cat:CAT,user:userID,desde:INIT,hasta:limitePosts},function(exito){
 				if(!exito.error){
 					var total=exito.length;
@@ -722,10 +743,6 @@ function main(){
 					$("#searchmore").attr("disabled", false);
 					if(total<limitePosts || total==0 || total==-1){
 						$("#searchmore").attr("disabled", true);
-					}
-					if(INIT==0){
-						$(".miga").html(total+' descuentos en <strong><i>"'+CATNAME+'"</i></strong> <a href="#" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all reiniciar" title="Reiniciar">Reiniciar</a>');
-						$(".miga").show();
 					}
 					var post=""
 					for(var p = 0; p<total; p++){
@@ -1122,7 +1139,7 @@ function main(){
    		var meses = {"01":" Jan","02":" Feb","03":" Mar","04":" Apr","05":" May","06":" Jun","07":" Jul","08":" Aug","09":" Sep","10":" Oct","11":" Nov","12":" Dec"};
    		diaF = ff.split("-");
    		La_fecha = new Date();
-		La_fecha_total = new Date (meses[diaF[1]] +" "+diaF[2]+" 00:00:00:"+diaF[0]);
+		La_fecha_total = new Date(meses[diaF[1]] + " " + diaF[2] + ", " + diaF[0] + " 00:00:00");
 		segundos = (La_fecha_total - La_fecha) / 1000;
 		minutos = segundos /60;
 		horas = minutos / 60;
