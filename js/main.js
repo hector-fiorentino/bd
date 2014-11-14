@@ -264,8 +264,11 @@ function main(){
 				}else{
 					dias = "Los "+exito.dias;
 				}
+				var fechabien = exito.fhasta;
+				fechabien = fechabien.split("-");
+				fechabien = fechabien[2] + "/" + fechabien[1] + "/" + fechabien[0];
 				var infod = dias;
-				$("#dias").html(dias+ "<br>" +tiempoLimite(exito.fhasta) + "<br>(" + exit.fhasta + ")");
+				$("#dias").html(dias+ "<br>" +tiempoLimite(exito.fhasta) + "<br>( Vence el " + fechabien + ")");
 				$("#posttitle").html(exito.titulo);
 				$("#postbreve").html(exito.breve);
 				$("#exppromo").html(urlify(exito.masinfo));
@@ -308,7 +311,6 @@ function main(){
         	});
   			var Q = $("#searchinput").val();
   			var RESULTADO = $.post(RUTA + 'descuentos/busquedaTotal',{q:Q,user:userID},function(exito){
- 				alert(exito);
  				if(exito>0){
 	 				if(INIT==0){
 						$(".miga").html(exito+' descuentos de <strong><i>"'+Q+'"</i></strong> <a href="#" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all reiniciar" title="Reiniciar">Reiniciar</a>');
