@@ -910,6 +910,23 @@ function main(){
 	        }
 	    })
 	})
+	$(".recuperar").click(function(){
+        var mail = $("#email").val();
+        if(validar_email(mail)){
+            $.post('http://backend.bigdescuento.com/registro/recuperarPass',{email:mail},function(exito){
+                if(exito=="no"){
+                    $("#erlogin").html("El e-mail no posee un formato adecuado.");
+                }else{
+                    $("#erlogin").empty();
+                    $("#glogin").html('Le hemos enviado un enlace de recupero a su email');
+                    //window.localStorage.setItem("recupero")
+                    $("#glogin").show();
+                }
+            });
+        }else{
+            $('#erlogin').html("Debe ingresar el e-mail que corresponda a su cuenta");
+        }
+    })
 ///////////*FIN DE REGISTRO*///////////////////////////////////
    function registro(datos){
     $.mobile.loading( 'show', {
@@ -943,7 +960,6 @@ function main(){
                             userID = exito;
                             userName = datos.seudonimo;
                             $("#nameuser").html(userName);
-
                             $("#nombre").val("");
                             $("#apellido").val("");
                             $("#emailreg").val("");
