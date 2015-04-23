@@ -5,7 +5,11 @@
 		[
 			[
 				"user",
-				"userID"
+				"usernotifi"
+			],
+			[
+				"tarjetas",
+				"tarjetasURLS"
 			],
 			[
 				"deta",
@@ -279,7 +283,7 @@
 			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 29518,
+				"buffer_size": 42474,
 				"line_ending": "Unix"
 			}
 		},
@@ -287,7 +291,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 16822,
+				"buffer_size": 37819,
 				"line_ending": "Unix"
 			}
 		},
@@ -295,17 +299,24 @@
 			"file": "css/estilosB.css",
 			"settings":
 			{
-				"buffer_size": 5529,
+				"buffer_size": 8666,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "Gabriel,\nLamentablemente, hemos decidido no trabajar más para el Almacen ya que consideramos poco serio el sistema de pago a sus proveedores. Nosotros siempre cumplimos y nos involucramos plenamente con los trabajos que nos fueron otorgados por la agencia. Nunca dejamos de cumplir con las entregas y somos consientes que nuestra participación como proveedores de desarrollo ha ayudado en el crecimiento del area digital. Pero tomamos como una seria falta de respeto el constante retraso en la cancelación de facturas. Queremos remarcar el incumplimiento haciendo mención de una factura adeudada por $500 hace 3 meses que deja en claro el poco interes por mantener una buena relación con sus proveedores habiendo sido reclamado su pago a lo largo de 2 meses.\nSe produce una relación laboral desgastante la cual en ningún momento fue nuestra intención generar.\nEl día de mañana estaremos haciendo llegar la factura por el último trabajo realizado y desde ya esperamos no tener que llegar a instancias mayores para cobrar el saldo adeudado.\nSaludos atte.,",
+			"file": "config.xml",
 			"settings":
 			{
-				"buffer_size": 1053,
-				"line_ending": "Unix",
-				"name": "Gabriel,"
+				"buffer_size": 8264,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "phonegap.sublime-project",
+			"settings":
+			{
+				"buffer_size": 83,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -333,6 +344,13 @@
 	},
 	"file_history":
 	[
+		"/Library/WebServer/Documents/bigdesc/bd/main2.html",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/medchoice/www/js/main.js",
+		"/Library/WebServer/Documents/bigdesc/bd/config.xml",
+		"/Library/WebServer/Documents/abrazos/views/layout/default/header.php",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/medchoice/www/config.xml",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/medchoice/www/main.html",
+		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanaprematuro-preprod/wp-content/themes/Explorable/style.css",
 		"/Users/hefiorentino/Google Drive/APPs/QlikView_QVD/FlatFiles/MarsAUP/Nielsen/DATA_Nielsen_Sales.qvw",
 		"/Library/WebServer/Documents/medchoice/www/js/main.js",
 		"/Library/WebServer/Documents/bigdesc/backend/views/layout/default/footer.php",
@@ -350,7 +368,6 @@
 		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanaprematuro-preprod/wp-content/themes/Explorable/page-padres.php",
 		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanaprematuro-preprod/wp-content/themes/Explorable/page-home.php",
 		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanaprematuro-preprod/wp-content/themes/Explorable/footer.php",
-		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanaprematuro-preprod/wp-content/themes/Explorable/style.css",
 		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanaprematuro-preprod/wp-content/themes/Explorable/page-institucion.php",
 		"/Library/WebServer/Documents/bigdesc/bd/css/estilosB.css",
 		"/Users/hefiorentino/Documents/ifdevelopers/Tito/semanadelprematuro/wp-content/themes/Explorable/content.php",
@@ -421,9 +438,7 @@
 		"/Library/WebServer/Documents/medchoice/models/preguntasModel.php",
 		"/Users/hefiorentino/Documents/ifdevelopers/Tito/medchoice-web/web/controllers/evaluacionesController.php",
 		"/Users/hefiorentino/Documents/ifdevelopers/Tito/medchoice-web/web/models/evaluacionesModel.php",
-		"/Users/hefiorentino/Documents/ifdevelopers/Tito/medchoice/www/js/main.js",
 		"/Library/WebServer/Documents/bigdesc/www/index.html",
-		"/Users/hefiorentino/Documents/ifdevelopers/Tito/medchoice/www/main.html",
 		"/Users/hefiorentino/Documents/ifdevelopers/Tito/medchoice/www/js/index.js",
 		"/Library/WebServer/Documents/bigdesc/www/resultado.html",
 		"/Library/WebServer/Documents/bigdesc/www/js/index.js",
@@ -456,11 +471,7 @@
 		"/Library/WebServer/Documents/bigdesc/backend/views/categorias/js/funciones.js",
 		"/Library/WebServer/Documents/bigdesc/backend/controllers/loginController.php",
 		"/Library/WebServer/Documents/bigdesc/backend/controllers/indexController.php",
-		"/Library/WebServer/Documents/bigdesc/backend/views/categorias/iconos.phtml",
-		"/Library/WebServer/Documents/bigdesc/backend/views/index/js/nuevo.js",
-		"/Library/WebServer/Documents/bigdesc/backend/views/admin/js/nuevo.js",
-		"/Users/hefiorentino/Documents/ifdevelopers/Tito/loquieroenminicuotas/popups/bases.php",
-		"/Users/hefiorentino/Documents/ifdevelopers/Tito/loquieroenminicuotas/public/css/style.css"
+		"/Library/WebServer/Documents/bigdesc/backend/views/categorias/iconos.phtml"
 	],
 	"find":
 	{
@@ -498,6 +509,84 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"registro",
+			"el email",
+			"detalle",
+			"resultado",
+			"detalle de",
+			"detalle",
+			"search",
+			"catespanel",
+			"PushNotification",
+			"icon.png",
+			"destacado",
+			"agregar",
+			"todastarjetas",
+			"mistarjetasG",
+			"detalle",
+			".btconf",
+			"share",
+			" banco",
+			" .banco",
+			" banco",
+			"share",
+			"shareinfo",
+			"addfav",
+			"shareinfo",
+			"share",
+			"detalle",
+			"share",
+			"detalle",
+			"guuardar",
+			"detalle",
+			"search",
+			"alert",
+			"searchmore",
+			"detalle",
+			"pagetarjetas",
+			"mistarjetas",
+			"$.mobile.loading('hide')",
+			"$.mobile.loading(",
+			"$.mobile.loading('",
+			"channelUri",
+			"detalle",
+			"$.post",
+			"cat",
+			"login",
+			"tarjetas",
+			"tinc",
+			"favoritos",
+			"detalle",
+			"addfav",
+			"detalle",
+			"ui-input-clear",
+			"reiniciar",
+			"miga",
+			"i span",
+			"error",
+			"channels/nuevo",
+			"CAT",
+			"sear",
+			"traerhome",
+			"home",
+			"sear",
+			"BIGDESCUENTO",
+			"<h1> BIGDESCUENTO </h1>",
+			"addfav",
+			"no hay",
+			"nohay",
+			"addfav",
+			"detalleID",
+			".addfav",
+			"detalle",
+			"addfav",
+			"agregar a favoritos",
+			"favoritos",
+			"favrem",
+			"detalle",
+			"mistarjetasG",
+			"search",
+			"localhost",
 			"cate",
 			"close",
 			"detalle",
@@ -547,92 +636,15 @@
 			"$total",
 			"save_post",
 			"NO",
-			"save_post",
-			"global",
-			"save_",
-			"mio",
-			".entry-content",
-			".entry-post",
-			"user_register",
-			"mio",
-			"centr",
-			"meta-info",
-			"post-description h1",
-			".post-description",
-			".post-thumbnail",
-			".post-thumbnail img",
-			".post-thumbnail",
-			"mio",
-			"et_portfolio_more_icon",
-			"total",
-			"']);\n",
-			"admin/",
-			"header",
-			"examen",
-			"popup",
-			"reiniciar",
-			"examen",
-			"alert",
-			"http://localhost/medchoice/",
-			"registrar",
-			"facebook",
-			"fb.login",
-			"php",
-			"fb",
-			"facebook",
-			"fa",
-			"registro",
-			"fb.",
-			"alert",
-			"window.local",
-			"facebook",
-			"bienvenido",
-			"validarUser",
-			"email",
-			".form-signin",
-			"facebook",
-			"solapa",
-			"contador",
-			"margin-top: 46px !important;",
-			"solapa",
-			"header",
-			"pageexamenes",
-			"pagemenuppal",
-			"data-role=\"page\"",
-			"page",
-			"2em",
-			"ui-title",
-			"background-image",
-			"h1",
-			"style",
-			"redes",
-			"http://medchoice.com.ar/",
-			"dpi",
-			"localhost",
-			"searchinput",
-			"dato",
-			"error",
-			"config",
-			"db.guardar",
-			"login",
-			"alert",
-			"rank",
-			";}\n",
-			"login",
-			"close",
-			"pagetarjetas",
-			"pagedetalle",
-			"menupanel",
-			"panel",
-			"pagemenu",
-			"registrar"
+			"save_post"
 		],
 		"highlight": true,
-		"in_selection": true,
+		"in_selection": false,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
 		[
+			"<h1><img src=\"images/big-horiz.png\" /></h1>",
 			"http://medchoice.com.ar/",
 			"http://localhost/medchoice/",
 			"mypanel",
@@ -667,7 +679,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -675,15 +687,15 @@
 					"file": "js/main.js",
 					"settings":
 					{
-						"buffer_size": 29518,
+						"buffer_size": 42474,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								16725,
-								16725
+								32229,
+								32229
 							]
 						],
 						"settings":
@@ -691,8 +703,8 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 1873.0,
+						"translation.x": 71.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -702,15 +714,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 16822,
+						"buffer_size": 37819,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								14270,
-								14270
+								26805,
+								26805
 							]
 						],
 						"settings":
@@ -720,7 +732,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3130.0,
+						"translation.y": 5280.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -730,15 +742,15 @@
 					"file": "css/estilosB.css",
 					"settings":
 					{
-						"buffer_size": 5529,
+						"buffer_size": 8666,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5506,
-								5506
+								1454,
+								1454
 							]
 						],
 						"settings":
@@ -748,30 +760,58 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1943.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
+					"file": "config.xml",
 					"settings":
 					{
-						"buffer_size": 1053,
+						"buffer_size": 8264,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1053,
+								293,
+								293
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1632.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "phonegap.sublime-project",
+					"settings":
+					{
+						"buffer_size": 83,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
 								0
 							]
 						],
 						"settings":
 						{
-							"auto_name": "Gabriel,",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -835,6 +875,10 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"",
+				"/Library/WebServer/Documents/bigdesc/bd/phonegap.sublime-project"
+			]
 		],
 		"width": 380.0
 	},

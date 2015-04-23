@@ -126,17 +126,21 @@ function main(){
 				},"json")
 	}
 
-	function traerHome(){
+	function traerHome(INIT){
+		if(!INIT){
+			INIT = 0;
+			$("#dest-home").empty();
+		}
 		$.mobile.loading( 'show', {
                 text: 'Cargando Home',
                 textVisible: true,
                 theme: 'a',
                 html: ""
         });
-		$("#searchmore").hide();
+		//$("#searchmore").hide();
 		$("#destacado").show();
 		$(".miga").hide();
-		$("#dest-home").empty();
+		//$("#dest-home").empty();
 		if(categorias.length>0){
 			tarjetas();
 		}else{
@@ -163,9 +167,14 @@ function main(){
 		//TRAER BANNER
 		$("#destacado").html('<i class="fa fa-spinner fa-spin"></i>');
 		
-		var posteos = $.post(RUTA + 'descuentos/home',{user:userID},function(exito){
+		var posteos = $.post(RUTA + 'descuentos/home',{user:userID,desde:INIT,hasta:limitePosts},function(exito){
 			if(!exito.error){
 				var total=exito.length;
+				$("#searchmore").attr('data-inicio',INIT);
+				$("#searchmore").attr('data-act','home');
+				if(total<limitePosts){
+					$("#searchmore").attr("disabled", true);
+				}
 				var post=""
 				for(var p = 0; p<total; p++){
 					post = '<li data-icon="false">';
@@ -198,6 +207,7 @@ function main(){
 				$("#dest-home").listview( "refresh" );
 				traerBanner();
 			}else{
+
 				$.mobile.changePage('#pagetarjetas');
 			}
 		},"json");
@@ -405,6 +415,8 @@ function main(){
 		$(this).attr('data-inicio',inicio);
 		if($(this).attr('data-act')=='search'){
 			buscador(inicio);
+		}else if($(this).attr('data-act')=='home'){
+			traerHome(inicio);
 		}else{
 			busquedaCAT(inicio);
 		}

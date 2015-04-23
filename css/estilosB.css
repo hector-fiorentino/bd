@@ -24,6 +24,7 @@ html .ui-bar-a{
     border-color: #569194;
     height:3.438em;
     overflow:hidden;
+    z-index:99999;
 }
 html .ui-body-c{
     background:#f2f2f2;
@@ -120,7 +121,7 @@ html body .ui-group-theme-z .ui-btn{
 .resultados .ui-li-has-thumb img{
 	width:6em;
     height:auto !important;
-    padding:0.3em;
+    padding:1.250em;
 }
 .resultados .ui-li-has-thumb > .ui-btn > img:first-child{
     max-width: 6em;
@@ -146,6 +147,7 @@ html body .ui-group-theme-z .ui-btn{
     padding:0em !important;
     font-size:.9em !important;
     margin:0em !important;
+    text-transform: capitalize;
 }
 .tags{width:100%; margin:0em !important;}
 .tag{
