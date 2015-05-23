@@ -26,7 +26,7 @@ function main(){
 	$( "body>[data-role='panel']" ).panel();
 
 	/*////////////////*/
-	var RUTA = "http://backend.bigdescuento.com/"; //192.168.0.109
+	var RUTA = "http://192.168.0.6/"; //192.168.0.109
 	
 	/*Datos de usuario///////////////////////////////////*/
 	var userID = window.localStorage.getItem('userID');
@@ -1176,6 +1176,7 @@ function main(){
 		horas = Math.round (horas);
 		dias = horas / 24;
 		dias = Math.round (dias);
+		dias = dias + 1;
 		if(dias>31){
 			res = "Hasta el "+diaF[2]+"/"+diaF[1]+"/"+diaF[0];
 		}else{

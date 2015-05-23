@@ -283,7 +283,7 @@
 			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 42474,
+				"buffer_size": 42816,
 				"line_ending": "Unix"
 			}
 		},
@@ -299,7 +299,7 @@
 			"file": "css/estilosB.css",
 			"settings":
 			{
-				"buffer_size": 8666,
+				"buffer_size": 8719,
 				"line_ending": "Unix"
 			}
 		},
@@ -344,6 +344,11 @@
 	},
 	"file_history":
 	[
+		"/Users/hefiorentino/Documents/HF/TRABAJOS/CICSP/incre.php",
+		"/Library/WebServer/Documents/ilu/www/index.html",
+		"/Library/WebServer/Documents/testing/www/index.html",
+		"/Library/WebServer/Documents/bersa/views/layout/default/footer.php",
+		"/Library/WebServer/Documents/bersa/views/layout/default/header.php",
 		"/Library/WebServer/Documents/bigdesc/bd/main2.html",
 		"/Users/hefiorentino/Documents/ifdevelopers/Tito/medchoice/www/js/main.js",
 		"/Library/WebServer/Documents/bigdesc/bd/config.xml",
@@ -466,12 +471,7 @@
 		"/Library/WebServer/Documents/bigdesc/backend/controllers/categoriasController.php",
 		"/Library/WebServer/Documents/bigdesc/backend/models/categoriasModel.php",
 		"/Library/WebServer/Documents/bigdesc/backend/public/assets/bootstrap-colorpicker/css/colorpicker.css",
-		"/Library/WebServer/Documents/bigdesc/backend/views/layout/default/header.php",
-		"/Library/WebServer/Documents/bigdesc/backend/views/promociones/js/funciones.js",
-		"/Library/WebServer/Documents/bigdesc/backend/views/categorias/js/funciones.js",
-		"/Library/WebServer/Documents/bigdesc/backend/controllers/loginController.php",
-		"/Library/WebServer/Documents/bigdesc/backend/controllers/indexController.php",
-		"/Library/WebServer/Documents/bigdesc/backend/views/categorias/iconos.phtml"
+		"/Library/WebServer/Documents/bigdesc/backend/views/layout/default/header.php"
 	],
 	"find":
 	{
@@ -509,6 +509,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"login",
+			"searchmore",
+			"search",
+			"traerHome",
 			"registro",
 			"el email",
 			"detalle",
@@ -632,11 +636,7 @@
 			"$('#default')",
 			"twitter",
 			".et_avatar",
-			"//$",
-			"$total",
-			"save_post",
-			"NO",
-			"save_post"
+			"//$"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -679,7 +679,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -687,15 +687,15 @@
 					"file": "js/main.js",
 					"settings":
 					{
-						"buffer_size": 42474,
+						"buffer_size": 42816,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								32229,
-								32229
+								1346,
+								1346
 							]
 						],
 						"settings":
@@ -703,8 +703,8 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 71.0,
-						"translation.y": 0.0,
+						"translation.x": 0.0,
+						"translation.y": 595.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -721,8 +721,8 @@
 						"selection":
 						[
 							[
-								26805,
-								26805
+								32365,
+								32307
 							]
 						],
 						"settings":
@@ -732,7 +732,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5280.0,
+						"translation.y": 6705.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -742,15 +742,15 @@
 					"file": "css/estilosB.css",
 					"settings":
 					{
-						"buffer_size": 8666,
+						"buffer_size": 8719,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1454,
-								1454
+								2334,
+								2334
 							]
 						],
 						"settings":
@@ -760,7 +760,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 891.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -805,8 +805,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								1,
+								1
 							]
 						],
 						"settings":

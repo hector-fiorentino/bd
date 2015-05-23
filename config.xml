@@ -4,9 +4,9 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "ar.com.ifdevelopers.bigdescuento"
-        version   = "3.9">
+        version   = "3.0.1">
 
-    <name>Big\nDescuento</name>
+    <name>BigDescuento</name>
 
     <description>
         A través de esta aplicación usted podrá tener la información actualizada de todas las promociones existentes para su tarjeta.
