@@ -283,7 +283,7 @@
 			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 42816,
+				"buffer_size": 42832,
 				"line_ending": "Unix"
 			}
 		},
@@ -679,7 +679,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -687,15 +687,15 @@
 					"file": "js/main.js",
 					"settings":
 					{
-						"buffer_size": 42816,
+						"buffer_size": 42832,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1346,
-								1346
+								1363,
+								1363
 							]
 						],
 						"settings":
@@ -703,8 +703,8 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 595.0,
+						"translation.x": 6.0,
+						"translation.y": 293.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -732,7 +732,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 6705.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

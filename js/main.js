@@ -26,7 +26,7 @@ function main(){
 	$( "body>[data-role='panel']" ).panel();
 
 	/*////////////////*/
-	var RUTA = "http://192.168.0.6/bigdesc/backend/"; //192.168.0.109
+	var RUTA = "http://backend.brainloaded.com/"; //192.168.0.109
 	
 	/*Datos de usuario///////////////////////////////////*/
 	var userID = window.localStorage.getItem('userID');
