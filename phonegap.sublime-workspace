@@ -283,7 +283,7 @@
 			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 42832,
+				"buffer_size": 42834,
 				"line_ending": "Unix"
 			}
 		},
@@ -344,6 +344,7 @@
 	},
 	"file_history":
 	[
+		"/Library/WebServer/Documents/bigdesc/bd/js/login.js",
 		"/Users/hefiorentino/Documents/HF/TRABAJOS/CICSP/incre.php",
 		"/Library/WebServer/Documents/ilu/www/index.html",
 		"/Library/WebServer/Documents/testing/www/index.html",
@@ -470,8 +471,7 @@
 		"/Library/WebServer/Documents/bigdesc/backend/models/promocionesModel.php",
 		"/Library/WebServer/Documents/bigdesc/backend/controllers/categoriasController.php",
 		"/Library/WebServer/Documents/bigdesc/backend/models/categoriasModel.php",
-		"/Library/WebServer/Documents/bigdesc/backend/public/assets/bootstrap-colorpicker/css/colorpicker.css",
-		"/Library/WebServer/Documents/bigdesc/backend/views/layout/default/header.php"
+		"/Library/WebServer/Documents/bigdesc/backend/public/assets/bootstrap-colorpicker/css/colorpicker.css"
 	],
 	"find":
 	{
@@ -509,6 +509,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"me",
+			"me(",
+			"me",
+			"me()",
 			"login",
 			"searchmore",
 			"search",
@@ -632,11 +636,7 @@
 			"tarjeta",
 			"mistarjetas",
 			"stepy",
-			"previus",
-			"$('#default')",
-			"twitter",
-			".et_avatar",
-			"//$"
+			"previus"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -687,15 +687,15 @@
 					"file": "js/main.js",
 					"settings":
 					{
-						"buffer_size": 42832,
+						"buffer_size": 42834,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1363,
-								1363
+								36248,
+								36839
 							]
 						],
 						"settings":
@@ -703,8 +703,8 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 6.0,
-						"translation.y": 293.0,
+						"translation.x": 0.0,
+						"translation.y": 15397.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -721,8 +721,8 @@
 						"selection":
 						[
 							[
-								32365,
-								32307
+								1223,
+								1225
 							]
 						],
 						"settings":
