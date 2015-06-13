@@ -188,7 +188,11 @@ function main(){
 						dias = "Todos los Días";
 					}else{
 						dias = exito[p].dias;
-						dias = dias.replace("Miercoles","Míercoles");
+						dias = dias.replace("lunes", "Lunes");
+						dias = dias.replace("martes", "Martes");
+						dias = dias.replace("miercoles", "Miércoles");
+						dias = dias.replace("jueves", "Jueves");
+						dias = dias.replace("viernes", "Viernes");
 						dias = dias.replace("sabado", "Sábados");
 						dias = dias.replace("domingo", "Domingos");
 					}
@@ -276,8 +280,13 @@ function main(){
 					dias = "Todos los Días";
 				}else{
 					dias = "Los "+exito.dias;
-					dias = dias.replace("sabado", "Sabados");
-					dias = dias.replace("domingo", "Domingos");
+						dias = dias.replace("lunes", "Lunes");
+						dias = dias.replace("martes", "Martes");
+						dias = dias.replace("miercoles", "Miércoles");
+						dias = dias.replace("jueves", "Jueves");
+						dias = dias.replace("viernes", "Viernes");
+						dias = dias.replace("sabado", "Sábados");
+						dias = dias.replace("domingo", "Domingos");
 				}
 				var fechabien = exito.fhasta;
 				fechabien = fechabien.split("-");
@@ -361,7 +370,12 @@ function main(){
 						dias = "Todos los Días";
 					}else{
 						dias = exito[p].dias;
-						dias = dias.replace("sabado", "Sabados");
+						dias = dias.replace("lunes", "Lunes");
+						dias = dias.replace("martes", "Martes");
+						dias = dias.replace("miercoles", "Miércoles");
+						dias = dias.replace("jueves", "Jueves");
+						dias = dias.replace("viernes", "Viernes");
+						dias = dias.replace("sabado", "Sábados");
 						dias = dias.replace("domingo", "Domingos");
 					}
 					post += '<p class="atributo"><i class="icon-calendar"></i> '+dias+'</p>';
@@ -550,7 +564,12 @@ function main(){
 						dias = "Todos los Días";
 					}else{
 						dias = exito[p].dias;
-						dias = dias.replace("sabado", "Sabados");
+						dias = dias.replace("lunes", "Lunes");
+						dias = dias.replace("martes", "Martes");
+						dias = dias.replace("miercoles", "Miércoles");
+						dias = dias.replace("jueves", "Jueves");
+						dias = dias.replace("viernes", "Viernes");
+						dias = dias.replace("sabado", "Sábados");
 						dias = dias.replace("domingo", "Domingos");
 					}
 					post += '<p class="atributo"><i class="icon-calendar"></i> '+dias+'</p>';
@@ -780,7 +799,12 @@ function main(){
 						dias = "Todos los Días";
 					}else{
 						dias = exito[p].dias;
-						dias = dias.replace("sabado", "Sabados");
+						dias = dias.replace("lunes", "Lunes");
+						dias = dias.replace("martes", "Martes");
+						dias = dias.replace("miercoles", "Miércoles");
+						dias = dias.replace("jueves", "Jueves");
+						dias = dias.replace("viernes", "Viernes");
+						dias = dias.replace("sabado", "Sábados");
 						dias = dias.replace("domingo", "Domingos");
 					}
 						post += '<p class="atributo"><i class="icon-calendar"></i> '+dias+'</p>';
