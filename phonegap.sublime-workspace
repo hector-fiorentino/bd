@@ -283,7 +283,7 @@
 			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 42834,
+				"buffer_size": 42871,
 				"line_ending": "Unix"
 			}
 		},
@@ -687,15 +687,15 @@
 					"file": "js/main.js",
 					"settings":
 					{
-						"buffer_size": 42834,
+						"buffer_size": 42871,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								36248,
-								36839
+								1343,
+								1343
 							]
 						],
 						"settings":
@@ -704,7 +704,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 15397.0,
+						"translation.y": 31.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

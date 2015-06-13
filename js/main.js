@@ -188,6 +188,8 @@ function main(){
 						dias = "Todos los días";
 					}else{
 						dias = exito[p].dias;
+						dias = dias.replace("sabado", "Sabados");
+						dias = dias.replace("domingo", "Domingos");
 					}
 					post += '<p class="atributo"><i class="icon-calendar"></i> '+dias+'</p>';
 					post += '<p class="tags">';
@@ -273,6 +275,8 @@ function main(){
 					dias = "Todos los días";
 				}else{
 					dias = "Los "+exito.dias;
+					dias = dias.replace("sabado", "Sabados");
+					dias = dias.replace("domingo", "Domingos");
 				}
 				var fechabien = exito.fhasta;
 				fechabien = fechabien.split("-");
@@ -356,6 +360,8 @@ function main(){
 						dias = "Todos los días";
 					}else{
 						dias = exito[p].dias;
+						dias = dias.replace("sabado", "Sabados");
+						dias = dias.replace("domingo", "Domingos");
 					}
 					post += '<p class="atributo"><i class="icon-calendar"></i> '+dias+'</p>';
 					post += '<p class="tags">';
@@ -543,6 +549,8 @@ function main(){
 						dias = "Todos los días";
 					}else{
 						dias = exito[p].dias;
+						dias = dias.replace("sabado", "Sabados");
+						dias = dias.replace("domingo", "Domingos");
 					}
 					post += '<p class="atributo"><i class="icon-calendar"></i> '+dias+'</p>';
 					post += '<p class="tags">';
@@ -768,10 +776,12 @@ function main(){
 						post += '<p class="breve">'+exito[p].breve+'</p>';
 						post += '<p class="tiempo"><i class="icon-time"> '+tiempoLimite(exito[p].fhasta)+'</i> </p>';
 						if(exito[p].dias=="Todos"){
-							dias = "Todos los días";
-						}else{
-							dias = exito[p].dias;
-						}
+						dias = "Todos los días";
+					}else{
+						dias = exito[p].dias;
+						dias = dias.replace("sabado", "Sabados");
+						dias = dias.replace("domingo", "Domingos");
+					}
 						post += '<p class="atributo"><i class="icon-calendar"></i> '+dias+'</p>';
 						post += '<p class="tags">';
 	        			tinc=pasarArreglo(exito[p].tarjetasId);
