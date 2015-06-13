@@ -185,7 +185,7 @@ function main(){
 					post += '<p class="breve">'+exito[p].breve+'</p>';
 					post += '<p class="tiempo"><i class="icon-time"> '+tiempoLimite(exito[p].fhasta)+'</i> </p>';
 					if(exito[p].dias=="Todos"){
-						dias = "Todos los días";
+						dias = "Todos los Días";
 					}else{
 						dias = exito[p].dias;
 						dias = dias.replace("Miercoles","Míercoles");
@@ -273,7 +273,7 @@ function main(){
 					$("#img-detalle").hide();
 				}
 				if(exito.dias=="Todos"){
-					dias = "Todos los días";
+					dias = "Todos los Días";
 				}else{
 					dias = "Los "+exito.dias;
 					dias = dias.replace("sabado", "Sabados");
@@ -358,7 +358,7 @@ function main(){
 					post += '<p class="breve">'+exito[p].breve+'</p>';
 					post += '<p class="tiempo"><i class="icon-time"> '+tiempoLimite(exito[p].fhasta)+'</i> </p>';
 					if(exito[p].dias=="Todos"){
-						dias = "Todos los días";
+						dias = "Todos los Días";
 					}else{
 						dias = exito[p].dias;
 						dias = dias.replace("sabado", "Sabados");
@@ -547,7 +547,7 @@ function main(){
 
 					post += '<p class="tiempo"><i class="icon-time"> '+vence+'</i> </p>';
 					if(exito[p].dias=="Todos"){
-						dias = "Todos los días";
+						dias = "Todos los Días";
 					}else{
 						dias = exito[p].dias;
 						dias = dias.replace("sabado", "Sabados");
@@ -777,7 +777,7 @@ function main(){
 						post += '<p class="breve">'+exito[p].breve+'</p>';
 						post += '<p class="tiempo"><i class="icon-time"> '+tiempoLimite(exito[p].fhasta)+'</i> </p>';
 						if(exito[p].dias=="Todos"){
-						dias = "Todos los días";
+						dias = "Todos los Días";
 					}else{
 						dias = exito[p].dias;
 						dias = dias.replace("sabado", "Sabados");
