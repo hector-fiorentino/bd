@@ -188,7 +188,8 @@ function main(){
 						dias = "Todos los días";
 					}else{
 						dias = exito[p].dias;
-						dias = dias.replace("sabado", "Sabados");
+						dias = dias.replace("Miercoles","Míercoles");
+						dias = dias.replace("sabado", "Sábados");
 						dias = dias.replace("domingo", "Domingos");
 					}
 					post += '<p class="atributo"><i class="icon-calendar"></i> '+dias+'</p>';
