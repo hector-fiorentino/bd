@@ -283,7 +283,7 @@
 			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 42871,
+				"buffer_size": 44562,
 				"line_ending": "Unix"
 			}
 		},
@@ -299,7 +299,7 @@
 			"file": "css/estilosB.css",
 			"settings":
 			{
-				"buffer_size": 8719,
+				"buffer_size": 8691,
 				"line_ending": "Unix"
 			}
 		},
@@ -509,6 +509,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"domingo",
+			"atributo",
+			"agregar",
+			"Los",
+			"M",
+			"Los",
+			"dias",
+			"Los",
+			"dias",
+			"Domingo",
+			"Sabado",
 			"me",
 			"me(",
 			"me",
@@ -625,18 +636,7 @@
 			"detalle",
 			"pasarArreglo",
 			"detalle",
-			"categorias",
-			"tarjetas/tarjetasService",
-			"tarjetas",
-			"categorias",
-			"descuentos",
-			"home",
-			"guardar",
-			".guardar",
-			"tarjeta",
-			"mistarjetas",
-			"stepy",
-			"previus"
+			"categorias"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -687,15 +687,15 @@
 					"file": "js/main.js",
 					"settings":
 					{
-						"buffer_size": 42871,
+						"buffer_size": 44562,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1343,
-								1343
+								6564,
+								6564
 							]
 						],
 						"settings":
@@ -704,7 +704,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 31.0,
+						"translation.y": 2759.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -742,15 +742,15 @@
 					"file": "css/estilosB.css",
 					"settings":
 					{
-						"buffer_size": 8719,
+						"buffer_size": 8691,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2334,
-								2334
+								3534,
+								3534
 							]
 						],
 						"settings":
@@ -760,7 +760,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 891.0,
+						"translation.y": 1893.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

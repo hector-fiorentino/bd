@@ -16,12 +16,14 @@
   <!-- LOGIN -->
   <div data-role="panel" id="mypanel" data-position="left" data-display="push" data-theme="z">
 
-    <ul data-role="listview" data-divider-theme="b" data-inset="false">
+    <ul data-role="listview" data-divider-theme="b" data-inset="false" id="mp">
         <li class="usercontent" data-theme="b"><i class="icon-user"></i><span id="nameuser">Usuario</span><span class="cerrarmenu"><i class="fa fa-times-circle"></i></span></li>
-        <li data-theme="b"> <a href="#pagehome" data-transition="fade"><i class="icon-home"></i> Home </a> </li>
+        <li data-theme="b"> <a href="#pagehome" id="mphome" data-transition="fade"><i class="icon-home"></i> Home </a> </li>
         <li data-theme="b"> <a href="#pagetarjetas" data-transition="fade"><i class="icon-credit-card"></i> Mis Tarjetas </a> </li>
         <li data-theme="b"> <a href="#pagefavoritos" data-transition="fade"><i class="icon-star"></i> Mis Favoritos </a> </li>
+        <li data-theme="b"> <a href="#pagegeo" data-transition="fade"><i class="icon-map"></i> GeoDescuento </a> </li>
         <li data-theme="b"> <a href="#pageconfig" data-transition="fade"><i class="icon-cog"></i> Configuraciones </a> </li>
+        <li data-theme="b"> <a href="#pagecorp" data-transition="fade"><i class="icon-plus"></i> Cargá tus descuentos </a> </li>
         <li data-theme="b"> <a href="#" id="appshare"><i class="icon-share"></i> Compartir app </a> </li>
         <li data-theme="a" class="fin"> <a href="#" data-transition="fade" class="closeSession"><i class="icon-power-off"></i> Cerrar sesión </a> </li>
       </ul>
@@ -195,6 +197,21 @@ La DIRECCION NACIONAL DE PROTECCION DE DATOS PERSONALES, Órgano de Control de l
 </div><!-- /content -->
 </div><!-- /page Terminos -->
 
+<div data-role="page" data-control-title="configuracion" id="pagecorp" data-theme="b">
+    <div data-theme="a" data-role="header" data-position="fixed">
+    <a data-controltype="panelbutton" data-role="button" href="#mypanel" class="ui-btn-left btnconf"><img src="images/res-dpi/big-horiz.png" class="dpi-var"/></a>
+     <a data-controltype="panelbutton" data-role="button" href="#catespanel" class="ui-btn-especial-right btncats" data-theme="c"><i class="icon-tags mismo eti"></i><i class="icon-reorder mismo correr"></i></a>
+    <h1></h1>
+  </div>
+
+<div data-role="content" data-theme="a">
+<h2>BigDecuento Para Empresas</h2>
+ <p class="justificado">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et malesuada metus. Pellentesque vehicula eget risus quis porttitor. Donec porta magna vel lorem rhoncus dignissim. In hac habitasse platea dictumst. Nullam eget dapibus nibh. Donec vitae erat nec velit luctus facilisis. Aenean sit amet lorem ornare, aliquam massa vitae, ullamcorper metus. Nunc fermentum tempor lectus, ut suscipit tortor vulputate vel. Proin lacus quam, tempus a ligula id, pretium elementum odio. Vestibulum nec pretium dolor, vitae faucibus elit. Ut eros ligula, tincidunt et viverra at, ullamcorper ut ante. Donec lectus urna, rhoncus vel tincidunt eget, consectetur non lorem.</p>
+ <a href="http://bigdescuento.com/registro" data-rel="external" class="ui-btn ui-shadow ui-corner-all" data-theme="a">REGISTRARME</a>
+<a href="#" data-rel="back" class="ui-btn ui-shadow ui-corner-all volver" data-theme="a">VOLVER</a>
+</div><!-- /content -->
+</div><!-- /page corp -->
+
   <!-- CONFIGURACIONES -->
   <div data-role="page" data-control-title="configuracion" id="pageconfig" data-theme="b">
     <div data-theme="a" data-role="header" data-position="fixed">
@@ -350,7 +367,7 @@ La DIRECCION NACIONAL DE PROTECCION DE DATOS PERSONALES, Órgano de Control de l
   </div><!-- /page mistarjetas -->
 
   </body>
-        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="PushNotification.js"></script>
          <script type="text/javascript">
             var pushNotification;

@@ -39,13 +39,13 @@ html .ui-body-b{
 
 i.correr{
     width:10px;
-    overflow: hidden;
+    /*overflow: hidden;*/
     margin-left:5px;
 }
 .ui-btn-especial-right{
     position:absolute;
     top:.24em;
-    right:-1em;
+    right:-1px;
 }
 div#pagedetalle{
     background-color:#fff !important;
@@ -166,7 +166,7 @@ html body .ui-group-theme-z .ui-btn{
 .ui-input-text input, .ui-input-search input{border-radius:.5em;}
 #searchinput{border-radius:.5em !important;}
 #logohoriz{width:154px;height:29px;margin-top:0.625em}
-.btnconf{background: none !important;border: none;padding: 0px;margin: 0px;position:absolute;top:-5px;left:-15px;}
+.btnconf{background: none !important;border: none;padding: 0px;margin: 0px;position:absolute;top:-5px;left:-5px;}
 .btnconf img {height:75px;}
 .btncats{background:none !important;background-color:transparent !important;border:none;}
 .btncats i{font-size:2.125em;color:#d7df23;margin-top:3px;display:block;}

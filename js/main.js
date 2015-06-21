@@ -106,6 +106,13 @@ function main(){
 			traerHome();
 		}
 	})
+
+	$("#mp").on("click", "#mphome", function(event){
+		vuelvoDeDetalle=false;
+		$("#searchinput").val("");
+		$('#mypanel').panel("close");
+		traerHome();
+	})
 	
 	function tarjetas(){
 		var tar = $.post(RUTA + 'tarjetas/todas',{user:userID},function(exito){
@@ -846,6 +853,7 @@ function main(){
 		CAT=$(this).attr('rel');
 		CATNAME =$(this).attr('title');
 		var activePage = $.mobile.activePage[0].id;
+		vuelvoDeDetalle=true;
 		//if(activePage == "pagehome" && $("#searchinput").val()!=""){
 			//FILTRO LA BÚSQUEDA.
 		//}else{
