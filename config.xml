@@ -60,6 +60,7 @@
     <gap:plugin name="org.apache.cordova.device" />
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.inappbrowser" />
+    <gap:plugin name="org.apache.cordova.geolocation" />
 	
     <!-- Define app icon for each platform. -->
     <icon src="res/icon/android/icon-96-xhdpi.png" />
