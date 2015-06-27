@@ -1102,6 +1102,72 @@ function main(){
         });
     }
 
+    $("#pagegeo").on("pageshow",function(){
+            $('.buscando').show();
+            $('#stores').hide();
+            navigator.geolocation.getCurrentPosition(onSuccess, onError);
+            $('#resgeo').hide();
+            //tiendasCercanas();
+        })
+        function onSuccess(position){
+            lat = position.coords.latitude;
+            lon = position.coords.longitude;
+            tiendasCercanas();
+        }
+        function onError(error){
+            alert("<strong>No hemos podido encontrar su ubicación</strong><br><p>Aseguresé de tener activo el GPS</p>");
+        }
+        function tiendasCercanas(){
+            var distancia = 15;
+            console.log(lat+" & "+lon);
+            $.getJSON(RUTA + 'cercanos.php?lat='+lat+'&lon='+lon+'&k='+distancia+'&user='+userID,function(exito){
+                if(exito){
+                    $('.buscando').hide();
+                    $("#dest-geo").empty();
+                    $('#dest-geo').show();
+                    $('#resgeo').show();
+                    var total = exito.length;
+					var post=""
+					for(var p = 0; p<total; p++){
+						post = '<li data-icon="false">';
+						post += '<span class="promocion" style="background-color:'+exito[p].color+';">'+exito[p].tag+'</span>';
+						post += '<a href="#" class="preview" rel="'+exito[p].id+'">';
+						post += '<img src="'+RUTA+'public/assets/posts/'+folder+'/'+exito[p].imagen+'">';
+						post += '<h2 class="titular">'+exito[p].titulo+'</h2>';
+						post += '<p class="breve">'+exito[p].breve+'</p>';
+						post += '<p class="tiempo"><i class="icon-time"> '+tiempoLimite(exito[p].fhasta)+'</i> </p>';
+						if(exito[p].dias=="Todos"){
+							dias = "Todos los Días";
+						}else{
+							dias = exito[p].dias;
+							dias = dias.replace("lunes", "Lunes");
+							dias = dias.replace("martes", "Martes");
+							dias = dias.replace("miercoles", "Miércoles");
+							dias = dias.replace("jueves", "Jueves");
+							dias = dias.replace("viernes", "Viernes");
+							dias = dias.replace("sabado", "Sábados");
+							dias = dias.replace("domingo", "Domingos");
+						}
+						post += '<p class="atributo"><i class="icon-calendar"></i> '+dias+'</p>';
+						post += '<p class="tags">';
+	        			tinc=pasarArreglo(exito[p].tarjetasId);
+	        			for(var mt = 0; mt<tinc.length;mt++){
+	        				if(enArray(mistarjetasG,tinc[mt])){
+	        					post +='<span class="tag">'+todastarjetas[tinc[mt]]+'</span>';
+	        				}
+	        			}
+	        			post +='</p></a>';
+	        			colorcat = pasarArreglo(exito[p].categoriasID);
+	        			//tarjetas incluidas
+	        			post +='<span class="catecolor" style="background-color:'+categorias[colorcat[0]]+'"></span>';
+	        			post +='</li>';
+						$("#dest-geo").append(post);
+					}
+					$("#dest-geo").listview( "refresh" );
+            }).fail(function(error){
+                alert("Vuelva a intentarlo más tarde.");
+            })
+        }
 
     /*Login*///////////////////////////////////
    $("#login").click(function(){
