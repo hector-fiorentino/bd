@@ -1102,7 +1102,24 @@ function main(){
         });
     }
 
-    
+    $("#pagegeo").on("pageshow",function(){
+            $('.buscando').show();
+            $('#stores').hide();
+            navigator.geolocation.getCurrentPosition(onSuccess, onError);
+            $('#resgeo').hide();
+            //tiendasCercanas();
+    })
+    function onSuccess(position){
+            lat = position.coords.latitude;
+            lon = position.coords.longitude;
+            tiendasCercanas();
+    }
+        function onError(error){
+            alert("<strong>No hemos podido encontrar su ubicación</strong><br><p>Aseguresé de tener activo el GPS</p>");
+        }
+        function tiendasCercanas(){
+            alert('ok');
+        }
 
     /*Login*///////////////////////////////////
    $("#login").click(function(){
