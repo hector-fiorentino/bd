@@ -1105,12 +1105,15 @@ function main(){
     $("#pagegeo").on("pageshow",function(){
             $('.buscando').show();
             $('#dest-geo').hide();
-            navigator.geolocation.getCurrentPosition(onSuccessGeo,onErrorGeo);
+            obtenergeo();
             $('#resgeo').hide();
             //alert("hasta aquí ok");
             //console.log('geolocalización');
             //tiendasCercanas();
     })
+    function obtenergeo(){
+    	navigator.geolocation.getCurrentPosition(onSuccessGeo,onErrorGeo);
+    }
     function onSuccessGeo(position){
             lat = position.coords.latitude;
             lon = position.coords.longitude;
@@ -1131,8 +1134,10 @@ function main(){
                     $("#dest-geo").empty();
                     $('#dest-geo').show();
                     $('#resgeo').show();
+                    exito = exito.descuento;
                     var total = exito.length;
 					var post=""
+
 					for(var p = 0; p<total; p++){
 						post = '<li data-icon="false">';
 						post += '<span class="promocion" style="background-color:'+exito[p].color+';">'+exito[p].tag+'</span>';
