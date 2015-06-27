@@ -1107,16 +1107,19 @@ function main(){
             $('#dest-geo').hide();
             navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
             $('#resgeo').hide();
-            console.log('geolocalización');
+            alert("hasta aquí ok");
+            //console.log('geolocalización');
             //tiendasCercanas();
     })
     function onSuccessGeo(position){
             lat = position.coords.latitude;
             lon = position.coords.longitude;
-            tiendasCercanas();
+            alert("ok"+lat);
+            //tiendasCercanas();
     }
         function onErrorGeo(error){
-        	console.log('error en geolocalización');
+        	alert("error");
+        	//console.log('error en geolocalización');
             alert("<strong>No hemos podido encontrar su ubicación</strong><br><p>Aseguresé de tener activo el GPS</p>");
         }
         function tiendasCercanas(){
