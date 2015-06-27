@@ -1107,7 +1107,7 @@ function main(){
             $('#dest-geo').hide();
             navigator.geolocation.getCurrentPosition(onSuccessGeo,onErrorGeo);
             $('#resgeo').hide();
-            alert("hasta aquí ok");
+            //alert("hasta aquí ok");
             //console.log('geolocalización');
             //tiendasCercanas();
     })
@@ -1122,11 +1122,11 @@ function main(){
             alert("<strong>No hemos podido encontrar su ubicación</strong><br><p>Aseguresé de tener activo el GPS</p>");
         }
         function tiendasCercanas(){
-        	console.log('ok en geolocalización');
             var distancia = 15;
-            console.log(lat+" & "+lon);
+            alert(RUTA + 'cercanos.php?lat='+lat+'&lon='+lon+'&k='+distancia+'&user='+userID);
             $.getJSON(RUTA + 'cercanos.php?lat='+lat+'&lon='+lon+'&k='+distancia+'&user='+userID,function(exito){
                if(exito){
+               	alert(JSON.stringify(exito));
                     $('.buscando').hide();
                     $("#dest-geo").empty();
                     $('#dest-geo').show();
@@ -1171,6 +1171,7 @@ function main(){
 					$("#dest-geo").listview( "refresh" );
 				}
             }).fail(function(error){
+            	alert(JSON.stringify(error));
                 alert("Vuelva a intentarlo más tarde.");
             })
         }
