@@ -1123,7 +1123,6 @@ function main(){
         }
         function tiendasCercanas(){
         	console.log('ok en geolocalización');
-            
             var distancia = 15;
             console.log(lat+" & "+lon);
             $.getJSON(RUTA + 'cercanos.php?lat='+lat+'&lon='+lon+'&k='+distancia+'&user='+userID,function(exito){
@@ -1170,6 +1169,7 @@ function main(){
 						$("#dest-geo").append(post);
 					}
 					$("#dest-geo").listview( "refresh" );
+				}
             }).fail(function(error){
                 alert("Vuelva a intentarlo más tarde.");
             })
