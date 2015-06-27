@@ -61,6 +61,7 @@
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.inappbrowser" />
     <gap:plugin name="org.apache.cordova.geolocation" />
+    <gap:plugin name="com.onesignal.plugins.onesignal" />
 	
     <!-- Define app icon for each platform. -->
     <icon src="res/icon/android/icon-96-xhdpi.png" />

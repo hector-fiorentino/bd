@@ -1104,20 +1104,23 @@ function main(){
 
     $("#pagegeo").on("pageshow",function(){
             $('.buscando').show();
-            $('#stores').hide();
-            navigator.geolocation.getCurrentPosition(onSuccess, onError);
+            $('#dest-geo').hide();
+            navigator.geolocation.getCurrentPosition(onSuccessGeo, onErrorGeo);
             $('#resgeo').hide();
+            console.log('geolocalización');
             //tiendasCercanas();
     })
-    function onSuccess(position){
+    function onSuccessGeo(position){
             lat = position.coords.latitude;
             lon = position.coords.longitude;
             tiendasCercanas();
     }
-        function onError(error){
+        function onErrorGeo(error){
+        	console.log('error en geolocalización');
             alert("<strong>No hemos podido encontrar su ubicación</strong><br><p>Aseguresé de tener activo el GPS</p>");
         }
         function tiendasCercanas(){
+        	console.log('ok en geolocalización');
             alert('ok');
         }
 
