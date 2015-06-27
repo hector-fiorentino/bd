@@ -424,7 +424,7 @@ La DIRECCION NACIONAL DE PROTECCION DE DATOS PERSONALES, Órgano de Control de l
             var channelUri;
             
             function onDeviceReady() {
-                $.mobile.loading( 'show', {
+                /*$.mobile.loading( 'show', {
                   text: 'Iniciando App',
                   textVisible: true,
                   theme: 'a',
@@ -436,9 +436,9 @@ La DIRECCION NACIONAL DE PROTECCION DE DATOS PERSONALES, Órgano de Control de l
                   if(networkState=="none"){
                     alert("La aplicación requiere de conexión a internet. Conéctese y vuelva a ingresar. \n Muchas Gracias.");
                     navigator.app.exitApp();
-                  }else{
+                  }else{*/
                     main();
-                  }
+                  /*}
                 }else{
                   try
                   { 
@@ -455,7 +455,7 @@ La DIRECCION NACIONAL DE PROTECCION DE DATOS PERSONALES, Órgano de Control de l
                     alert(txt);
                     //main(); 
                   } 
-                }
+                }*/
             }
             
             // handle APNS notifications for iOS
