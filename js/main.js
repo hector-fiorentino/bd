@@ -1110,13 +1110,12 @@ function main(){
             alert("hasta aquí ok");
             //console.log('geolocalización');
             //tiendasCercanas();
-    })
-    function onSuccessGeo(position){
+            function onSuccessGeo(position){
             lat = position.coords.latitude;
             lon = position.coords.longitude;
             alert("ok"+lat);
             //tiendasCercanas();
-    }
+    		}
         function onErrorGeo(error){
         	alert("error");
         	//console.log('error en geolocalización');
@@ -1126,6 +1125,8 @@ function main(){
         	console.log('ok en geolocalización');
             alert('ok');
         }
+    })
+    
 
     /*Login*///////////////////////////////////
    $("#login").click(function(){
