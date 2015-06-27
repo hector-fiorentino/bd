@@ -1105,12 +1105,7 @@ function main(){
     $("#pagegeo").on("pageshow",function(){
             $('.buscando').show();
             $('#dest-geo').hide();
-            console.log(navigator.geolocation+" works well");
-            navigator.geolocation.getCurrentPosition(function(position){
-            	alert("P:"+position.coords.latitude);
-            }, function(error){
-            	alert("E:"+error);
-            });
+            navigator.geolocation.getCurrentPosition(onSuccessGeo,onErrorGeo);
             $('#resgeo').hide();
             alert("hasta aquí ok");
             //console.log('geolocalización');
