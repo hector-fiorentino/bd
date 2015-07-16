@@ -1,5 +1,5 @@
 function main(){
-	 if ((typeof cordova == 'undefined') && (typeof Cordova == 'undefined')) alert('Error. Vuelva a intentarlo1');
+/*	 if ((typeof cordova == 'undefined') && (typeof Cordova == 'undefined')) alert('Error. Vuelva a intentarlo1');
             if (typeof CDV == 'undefined') alert('Error. Vuelva a intentarlo2');
             if (typeof FB == 'undefined') alert('Error. Vuelva a intentarlo3');
             
@@ -21,13 +21,13 @@ function main(){
                                //alert('auth.statusChange event');
                                });
     FB.init({ appId: "853919827954063", nativeInterface: CDV.FB, useCachedDialogs: false });
-	
+*/	
 	/*PRIMERAS CONFIGURACIONES DE HTML */
 	$( "body>[data-role='panel']" ).panel();
 
 	/*////////////////*/
 	var RUTA = "http://backend.bigdescuento.com/";//"http://192.168.1.112/bigdesc/backend/"; //192.168.0.109
-	
+	var swiper
 	/*Datos de usuario///////////////////////////////////*/
 	var userID = window.localStorage.getItem('userID');
 	var userName = window.localStorage.getItem('userName');
@@ -104,6 +104,10 @@ function main(){
 		$.mobile.loading('hide');
 		if(vuelvoDeDetalle==false){
 			traerHome();
+			//Enable to debug issues.
+			window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+			window.plugins.OneSignal.registerForPushNotifications();
+			window.plugins.OneSignal.sendTag("Plataforma", "Android");
 		}
 	})
 
@@ -185,6 +189,9 @@ function main(){
 				var post=""
 				for(var p = 0; p<total; p++){
 					post = '<li data-icon="false">';
+					if(exito[p].entidadId != 8){
+						post += '<span class="premium"></span>';
+					}
 					post += '<span class="promocion" style="background-color:'+exito[p].color+';">'+exito[p].tag+'</span>';
 					post += '<a href="#" class="preview" rel="'+exito[p].id+'">';
 					post += '<img src="'+RUTA+'public/assets/posts/'+folder+'/'+exito[p].imagen+'">';
@@ -232,13 +239,22 @@ function main(){
 	}
 
 	function traerBanner(){
-		var banner = $.post(RUTA + 'destacados/service',{},function(exito){
+		$(".swiper-wrapper").empty();
+		var banner = $.post(RUTA + 'destacados/serviceAdvance',{},function(exito){
 			if(exito){
-				$("#destacado").html("<img src='"+RUTA+"public/assets/banners/"+folder+"/"+exito+"'/>");
+				var total = exito.length;
+				for(var t=0;t<total;t++){
+					$(".swiper-wrapper").append("<div class='swiper-slide'><img src='"+RUTA+"public/assets/banners/"+folder+"/"+exito[t]+"'/><div>");	
+				}
+				/*$("#destacado").html("<img src='"+RUTA+"public/assets/banners/"+folder+"/"+exito+"'/>");*/
 			}else{
 				alert('error');
 			}
-		});
+			swiper = new Swiper('.swiper-container', {
+	                pagination: '.swiper-pagination',
+	                paginationClickable: true
+        	});
+		},"json");
 		banner.fail(function(){
 			alert("sin conexión");
 		})
@@ -302,6 +318,94 @@ function main(){
 				$("#dias").html(dias+ "<br>" +tiempoLimite(exito.fhasta) + "<br>( Vence el " + fechabien + ")");
 				$("#posttitle").html(exito.titulo);
 				$("#postbreve").html(exito.breve);
+				if(exito.entidad != 8 ){
+					$("#postbreve").append("<p>Teléfono: "+exito.telefono+"</p>");
+					$("#postbreve").append("<p>Web: "+exito.web+"</p>");
+				}
+				$("#exppromo").html(urlify(exito.masinfo));
+				$("#detTags").empty();
+				tinc=pasarArreglo(exito.tarjetasId);
+        		for(var mt = 0; mt<tinc.length;mt++){
+        				if(enArray(mistarjetasG,tinc[mt])){
+        					var url = tarjetasURLS[tinc[mt]];
+        					if(url==""){url="#"};
+        					var enlace = '<a href="#" ';
+        						if(url!="#"){
+        							enlace += 'onclick="window.open(';
+        							enlace += "'" + url + "', '_system');";
+									enlace += '" ';
+								}
+								enlace += '>';
+        					$("#detTags").append('<span class="tag">'+enlace+todastarjetas[tinc[mt]]+'</a></span>');
+        				}else{
+        					$("#detTags").append('<span class="tag nohay">'+todastarjetas[tinc[mt]]+'</span>');
+        				}
+
+        		}
+        		$(".masinfo").html("<br>"+exito.descripcion);
+        		shareinfo = exito.promo + " en " + exito.titulo + " "+ infod + ". Encontrá más promos en Big Descuentos.";
+        		$.mobile.loading('hide');
+			}
+		},"json");
+		jqhrx.fail(function(){
+			alert("error");
+		})		
+	})
+
+$("#dest-geo").on("click",".preview", function(){
+		detalleID = $(this).attr('rel');
+		$(".addfav").html("+ favoritos");
+		$.mobile.loading( 'show', {
+                text: 'Cargando',
+                textVisible: true,
+                theme: 'a',
+                html: ""
+        });
+		var chfav=$.post(RUTA + 'favoritos/existe',{id:detalleID,user:userID},function(exito){
+			if(exito=="si"){
+				$(".addfav").html("- favoritos");
+			}else{
+				$(".addfav").html("+ favoritos");
+			}
+		});
+		chfav.fail(function(){
+			$("a.addfav").html("+ favoritos");
+		})
+		var jqhrx = $.post(RUTA + 'descuentos/detalle',{id:detalleID},function(exito){
+			if(!exito.error){
+				$.mobile.changePage('#pagedetalle');
+				vuelvoDeDetalle=true;
+				$("#postpromo").html("<strong style='color:"+exito.color+"'>Beneficio:</strong> "+exito.promo);
+				$("#img-detalle").html('<img src="'+RUTA+'public/assets/posts/'+folder+'/'+exito.imagen+'" width="100%"/>');
+				if(exito.imagen!="sin-imagen.jpg"){
+					$("#img-detalle").show();
+				}else{
+					$("#img-detalle").hide();
+				}
+				if(exito.dias=="Todos"){
+					dias = "Todos los Días";
+				}else{
+					dias = "Los "+exito.dias;
+						dias = dias.replace("lunes", "Lunes");
+						dias = dias.replace("martes", "Martes");
+						dias = dias.replace("miercoles", "Miércoles");
+						dias = dias.replace("jueves", "Jueves");
+						dias = dias.replace("viernes", "Viernes");
+						dias = dias.replace("sabado", "Sábados");
+						dias = dias.replace("domingo", "Domingos");
+				}
+				var fechabien = exito.fhasta;
+				fechabien = fechabien.split("-");
+				fechabien = fechabien[2] + "/" + fechabien[1] + "/" + fechabien[0];
+				var infod = dias;
+				$("#dias").html(dias+ "<br>" +tiempoLimite(exito.fhasta) + "<br>( Vence el " + fechabien + ")");
+				$("#posttitle").html(exito.titulo);
+				$("#postbreve").html(exito.breve);
+				if(exito.entidad != 8 ){
+					$("#postbreve").append("<p><strong>Marca:</strong> "+exito.marca+"</p>");
+					$("#postbreve").append("<p>Teléfono: "+exito.telefono+"</p>");
+					$("#postbreve").append("<p>Web: "+exito.web+"</p>");
+				}
 				$("#exppromo").html(urlify(exito.masinfo));
 				$("#detTags").empty();
 				tinc=pasarArreglo(exito.tarjetasId);
@@ -420,11 +524,11 @@ function main(){
 
   	$(document).on('click','#appshare',function(){
   		//SHARE
-        window.plugins.socialsharing.share('Bajate BigDescuento y encontrá todas las promos de tus tarjetas de crédito y débito en un solo lugar.', null, null, 'http://bit.ly/1vHbUgh');
+        window.plugins.socialsharing.share('Bajate BigDescuento y encontrá todas las promos de tus tarjetas de crédito y débito en un solo lugar.', null, null, 'http://bit.ly/1TBHSqU');
   	})
   	$(document).on('click','.share',function(){
   		//SHARE
-        window.plugins.socialsharing.share(shareinfo, null, null, 'http://bit.ly/1vHbUgh');
+        window.plugins.socialsharing.share(shareinfo, null, null, 'http://bit.ly/1TBHSqU');
   	})
 	
 	//$('#searchinput').click(function(){})
@@ -465,9 +569,21 @@ function main(){
 			var jqhrx = $.post(RUTA+"tarjetas/relaciones",{id:ID,n:Nombre,userid:userID},function(exito){
 			if(exito){
 				var tottar=exito.length
-				if(tottar<1){
-					$("#tarjetas").append('No hay tarjetas asociadas');
-				}
+				if(tottar==1){
+				 	var opciones='<fieldset data-role="controlgroup" class="fieldsettar">';
+					for(var a=0;a<tottar;a++){
+						checked="";
+						if(exito[a].activo==1){
+							checked='';
+						}else{
+							checked='checked=""';
+						}
+	    				opciones+='<input type="checkbox" name="emitidas" id="checkbox-'+a+'a" value="'+exito[a].id+'" '+checked+' >';
+					}
+					opciones+='</fieldset>';
+					$("#tarjetas").html(opciones);
+					$('.guardar').click();
+				}else{
 				var opciones='<fieldset data-role="controlgroup" class="fieldsettar">';
 				for(var a=0;a<tottar;a++){
 					checked="";
@@ -482,14 +598,16 @@ function main(){
 				$("#tarjetas").html(opciones);
 				$("#tarjetas").trigger('create');
 				$.mobile.loading( 'hide');
+				$("#popupTarj").popup('open');
 				}
+			}
 			$.mobile.loading('hide');
 		},"json");
 		jqhrx.fail(function(){
 			alert("error tar");
 			$.mobile.loading('hide');
 		})
-			$("#popupTarj").popup('open');
+			
 			// if($(this).hasClass('seleccionado')){
 			// 	$(this).removeClass('seleccionado');
 			// 	$(this).find("span").remove();
@@ -759,7 +877,12 @@ function main(){
 		e.preventDefault();
 		vuelvoDeDetalle=false;
 		$("#searchinput").val("");
-		traerHome();
+		if($.mobile.activePage[0].id == 'pageHome'){
+			traerHome();
+		}else{
+			CAT = 0;
+			obtenergeo();
+		}
 	})
 //test
 	//Busqueda por categoria
@@ -853,15 +976,29 @@ function main(){
 		CAT=$(this).attr('rel');
 		CATNAME =$(this).attr('title');
 		var activePage = $.mobile.activePage[0].id;
+		//alert(activePage);
+		//console.log('PAGINA: '+activePage);
 		vuelvoDeDetalle=true;
 		//if(activePage == "pagehome" && $("#searchinput").val()!=""){
 			//FILTRO LA BÚSQUEDA.
 		//}else{
 			$("#catespanel").panel("close");
-			$("#destacado").hide();
-  			$("#dest-home").empty();
-
-  			busquedaCAT(0);
+			if(activePage == 'pageHome'){
+				$("#destacado").hide();
+  				$("#dest-home").empty();
+  				busquedaCAT(0);
+  			}else if(activePage == 'pagegeo'){
+  				//$("#resgeo").html('Descuentos por proximidad en ' + CATNAME);
+  				$("#dest-geo").empty();
+  				$.mobile.changePage('#pagegeo');
+  				obtenergeo();
+  				//busquedaCAT(0);
+  			}else{
+  				$("#destacado").hide();
+  				$("#dest-home").empty();
+  				$.mobile.changePage('#pagehome');
+  				busquedaCAT(0);
+  			}
 		//}
 	})
 
@@ -1105,6 +1242,7 @@ function main(){
     $("#pagegeo").on("pageshow",function(){
             $('.buscando').show();
             $('#dest-geo').hide();
+            $("#regeo").hide();
             obtenergeo();
             $('#resgeo').hide();
             //alert("hasta aquí ok");
@@ -1112,27 +1250,37 @@ function main(){
             //tiendasCercanas();
     })
     function obtenergeo(){
+    	$("#regeo").hide();
     	navigator.geolocation.getCurrentPosition(onSuccessGeo,onErrorGeo);
     }
     function onSuccessGeo(position){
             lat = position.coords.latitude;
             lon = position.coords.longitude;
+            console.log(lat+':'+lon);
             tiendasCercanas();
     }
         function onErrorGeo(error){
-        	alert("error");
-        	//console.log('error en geolocalización');
-            alert("<strong>No hemos podido encontrar su ubicación</strong><br><p>Aseguresé de tener activo el GPS</p>");
+            $("#ergeo").html("<strong>No hemos podido encontrar su ubicación</strong><br><p>Aseguresé de tener activo el GPS</p>");
+            $("#resgeo").show();
         }
         function tiendasCercanas(){
             var distancia = 15;
-            alert(RUTA + 'cercanos.php?lat='+lat+'&lon='+lon+'&k='+distancia+'&user='+userID);
-            $.getJSON(RUTA + 'cercanos.php?lat='+lat+'&lon='+lon+'&k='+distancia+'&user='+userID,function(exito){
+            $.mobile.loading( 'show', {
+                            text: 'Buscando',
+                            textVisible: true,
+                            theme: 'a',
+                            html: ""
+        	});
+            $.getJSON(RUTA + 'cercanos.php?lat='+lat+'&lon='+lon+'&k='+distancia+'&user='+userID+'&cat='+CAT,function(exito){
                if(exito){
-               	alert(JSON.stringify(exito));
                     $('.buscando').hide();
                     $("#dest-geo").empty();
                     $('#dest-geo').show();
+                    if(CAT!=0){
+                    	$('#resgeo').html(exito.descuento.length + ' descuentos por proximidad en<br><strong>"' + CATNAME + '"</strong> <a href="#" class="ui-input-clear ui-btn ui-icon-delete ui-btn-icon-notext ui-corner-all reiniciar" title="Reiniciar">Reiniciar</a>');
+                    }else{
+                    	$('#resgeo').html(exito.descuento.length + ' descuentos por proximidad');
+                	}
                     $('#resgeo').show();
                     exito = exito.descuento;
                     var total = exito.length;
@@ -1143,8 +1291,10 @@ function main(){
 						post += '<span class="promocion" style="background-color:'+exito[p].color+';">'+exito[p].tag+'</span>';
 						post += '<a href="#" class="preview" rel="'+exito[p].id+'">';
 						post += '<img src="'+RUTA+'public/assets/posts/'+folder+'/'+exito[p].imagen+'">';
-						post += '<h2 class="titular">'+exito[p].titulo+'</h2>';
-						post += '<p class="breve">'+exito[p].breve+'</p>';
+						post += '<h2 class="titular">'+exito[p].titulo+'<br><span style="color:#569092">'+exito[p].km+' km</span></h2>';
+						if(exito[p].breve != null){
+							post += '<p class="breve">'+exito[p].breve+'</p>';
+						}
 						post += '<p class="tiempo"><i class="icon-time"> '+tiempoLimite(exito[p].fhasta)+'</i> </p>';
 						if(exito[p].dias=="Todos"){
 							dias = "Todos los Días";
@@ -1174,10 +1324,12 @@ function main(){
 						$("#dest-geo").append(post);
 					}
 					$("#dest-geo").listview( "refresh" );
+					$.mobile.loading( 'hide');
 				}
             }).fail(function(error){
-            	alert(JSON.stringify(error));
-                alert("Vuelva a intentarlo más tarde.");
+            	$("#ergeo").html('Problemas con el GPS. Vuelva a intentar');
+            	$("#regeo").show();
+            	$.mobile.loading( 'hide');
             })
         }
 

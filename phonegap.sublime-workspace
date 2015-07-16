@@ -283,7 +283,7 @@
 			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 44742,
+				"buffer_size": 48084,
 				"line_ending": "Unix"
 			}
 		},
@@ -291,7 +291,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 39690,
+				"buffer_size": 42423,
 				"line_ending": "Unix"
 			}
 		},
@@ -316,7 +316,7 @@
 			"file": "config.xml",
 			"settings":
 			{
-				"buffer_size": 8264,
+				"buffer_size": 8379,
 				"line_ending": "Unix"
 			}
 		},
@@ -353,6 +353,9 @@
 	},
 	"file_history":
 	[
+		"/Library/WebServer/Documents/bersa-app/config.xml",
+		"/Library/WebServer/Documents/bersa-app/www/js/index.js",
+		"/Library/WebServer/Documents/bersa-app/www/main.html",
 		"/Library/WebServer/Documents/bigdesc/www/index.html",
 		"/Library/WebServer/Documents/bigdesc/bd/js/login.js",
 		"/Users/hefiorentino/Documents/HF/TRABAJOS/CICSP/incre.php",
@@ -477,10 +480,7 @@
 		"/Users/hefiorentino/Documents/ifdevelopers/Tito/encuentros/admin/upload.php",
 		"/Users/hefiorentino/Documents/ifdevelopers/Tito/Chistv/backend/updatebanner.php",
 		"/Library/WebServer/Documents/bigdesc/backend/views/promociones/index.phtml",
-		"/Library/WebServer/Documents/bigdesc/backend/models/promocionesModel.php",
-		"/Library/WebServer/Documents/bigdesc/backend/controllers/categoriasController.php",
-		"/Library/WebServer/Documents/bigdesc/backend/models/categoriasModel.php",
-		"/Library/WebServer/Documents/bigdesc/backend/public/assets/bootstrap-colorpicker/css/colorpicker.css"
+		"/Library/WebServer/Documents/bigdesc/backend/models/promocionesModel.php"
 	],
 	"find":
 	{
@@ -518,6 +518,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Vuelva a intentarlo",
+			"geo",
+			"exito",
+			"geo",
+			"traerHome",
+			"home",
+			"icon",
+			"pe-",
+			"geo",
 			"#pagehome",
 			"home",
 			"categoria",
@@ -636,16 +645,7 @@
 			"detalle",
 			"pagehome",
 			"home",
-			"favoritos",
-			"catfil",
-			"searchinput",
-			"categorias",
-			"catespanel",
-			"categorias",
-			"busqueda",
-			"buscar",
-			"clear",
-			"q"
+			"favoritos"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -688,7 +688,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -696,15 +696,15 @@
 					"file": "js/main.js",
 					"settings":
 					{
-						"buffer_size": 44742,
+						"buffer_size": 48084,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3585,
-								3585
+								18,
+								18
 							]
 						],
 						"settings":
@@ -713,7 +713,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1248.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -723,15 +723,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 39690,
+						"buffer_size": 42423,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								25482,
-								25482
+								35207,
+								35207
 							]
 						],
 						"settings":
@@ -741,7 +741,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4619.0,
+						"translation.y": 7694.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -806,15 +806,15 @@
 					"file": "config.xml",
 					"settings":
 					{
-						"buffer_size": 8264,
+						"buffer_size": 8379,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								293,
-								293
+								4494,
+								4494
 							]
 						],
 						"settings":
@@ -824,7 +824,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1632.0,
+						"translation.y": 938.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
