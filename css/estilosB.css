@@ -70,6 +70,24 @@ a.addfav{
     margin:0.25em;
     padding:0px;
 }
+.premium {
+  background-image: url(../images/gold.png);
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  display: block;
+  top: -15px;
+  right: -13px;
+  z-index: 40000;
+}
+.swiper-container{
+    background-color:#fff;
+    border-radius:8px;
+    text-align:center;
+    position:relative;overflow:hidden;
+}
+/*.swiper-container i{font-size:3em;color:#000;opacity:.4;display:inline-block;margin-top:2em;}*/
+.swiper-container img{height:200px;}  
 .favrem{
     display:block;
     position:absolute;
