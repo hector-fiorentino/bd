@@ -1256,6 +1256,7 @@ $("#dest-geo").on("click",".preview", function(){
     function onSuccessGeo(position){
             lat = position.coords.latitude;
             lon = position.coords.longitude;
+            alert("LAT="+lat);
             console.log(lat+':'+lon);
             tiendasCercanas();
     }
