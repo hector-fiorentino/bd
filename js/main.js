@@ -1328,6 +1328,7 @@ $("#dest-geo").on("click",".preview", function(){
 					$.mobile.loading( 'hide');
 				}
             }).fail(function(error){
+            	alert("exito:"+JSON.stringify(error));
             	$("#ergeo").html('Problemas con el GPS. Vuelva a intentar');
             	$("#regeo").show();
             	$.mobile.loading( 'hide');
