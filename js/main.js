@@ -1256,7 +1256,6 @@ $("#dest-geo").on("click",".preview", function(){
     function onSuccessGeo(position){
             lat = position.coords.latitude;
             lon = position.coords.longitude;
-            alert("LAT="+lat);
             console.log(lat+':'+lon);
             tiendasCercanas();
     }
@@ -1274,6 +1273,7 @@ $("#dest-geo").on("click",".preview", function(){
         	});
             $.getJSON(RUTA + 'cercanos.php?lat='+lat+'&lon='+lon+'&k='+distancia+'&user='+userID+'&cat='+CAT,function(exito){
                if(exito){
+               	alert("exito:"+exito);
                     $('.buscando').hide();
                     $("#dest-geo").empty();
                     $('#dest-geo').show();
