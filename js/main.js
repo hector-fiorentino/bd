@@ -105,7 +105,7 @@ function main(){
 		if(vuelvoDeDetalle==false){
 			traerHome();
 			//Enable to debug issues.
-			window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+			//window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
 			window.plugins.OneSignal.registerForPushNotifications();
 			window.plugins.OneSignal.sendTag("Plataforma", "Android");
 		}
@@ -1273,7 +1273,7 @@ $("#dest-geo").on("click",".preview", function(){
         	});
             $.getJSON(RUTA + 'cercanos.php?lat='+lat+'&lon='+lon+'&k='+distancia+'&user='+userID+'&cat='+CAT,function(exito){
                if(exito){
-               	alert("exito:"+exito);
+               	//alert("exito:"+exito);
                     $('.buscando').hide();
                     $("#dest-geo").empty();
                     $('#dest-geo').show();
@@ -1328,7 +1328,7 @@ $("#dest-geo").on("click",".preview", function(){
 					$.mobile.loading( 'hide');
 				}
             }).fail(function(error){
-            	alert("exito:"+JSON.stringify(error));
+            	//alert("exito:"+JSON.stringify(error));
             	$("#ergeo").html('Problemas con el GPS. Vuelva a intentar');
             	$("#regeo").show();
             	$.mobile.loading( 'hide');
