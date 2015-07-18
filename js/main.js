@@ -569,7 +569,7 @@ $("#dest-geo").on("click",".preview", function(){
 			var jqhrx = $.post(RUTA+"tarjetas/relaciones",{id:ID,n:Nombre,userid:userID},function(exito){
 			if(exito){
 				var tottar=exito.length
-				if(tottar==1){
+				/*if(tottar==1){
 				 	var opciones='<fieldset data-role="controlgroup" class="fieldsettar">';
 					for(var a=0;a<tottar;a++){
 						checked="";
@@ -583,7 +583,7 @@ $("#dest-geo").on("click",".preview", function(){
 					opciones+='</fieldset>';
 					$("#tarjetas").html(opciones);
 					$('.guardar').click();
-				}else{
+				}else{*/
 				var opciones='<fieldset data-role="controlgroup" class="fieldsettar">';
 				for(var a=0;a<tottar;a++){
 					checked="";
@@ -600,7 +600,7 @@ $("#dest-geo").on("click",".preview", function(){
 				$.mobile.loading( 'hide');
 				$("#popupTarj").popup('open');
 				}
-			}
+			//}
 			$.mobile.loading('hide');
 		},"json");
 		jqhrx.fail(function(){

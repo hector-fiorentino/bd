@@ -283,7 +283,7 @@
 			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 48084,
+				"buffer_size": 53955,
 				"line_ending": "Unix"
 			}
 		},
@@ -291,7 +291,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 42423,
+				"buffer_size": 43702,
 				"line_ending": "Unix"
 			}
 		},
@@ -299,7 +299,7 @@
 			"file": "css/estilosB.css",
 			"settings":
 			{
-				"buffer_size": 8694,
+				"buffer_size": 9141,
 				"line_ending": "Unix"
 			}
 		},
@@ -316,7 +316,7 @@
 			"file": "config.xml",
 			"settings":
 			{
-				"buffer_size": 8379,
+				"buffer_size": 8305,
 				"line_ending": "Unix"
 			}
 		},
@@ -518,6 +518,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"one",
+			"alert",
+			"geo",
 			"Vuelva a intentarlo",
 			"geo",
 			"exito",
@@ -642,10 +645,7 @@
 			"dest-home",
 			"favorito",
 			"favoritos",
-			"detalle",
-			"pagehome",
-			"home",
-			"favoritos"
+			"detalle"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -696,15 +696,15 @@
 					"file": "js/main.js",
 					"settings":
 					{
-						"buffer_size": 48084,
+						"buffer_size": 53955,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								18,
-								18
+								3470,
+								3470
 							]
 						],
 						"settings":
@@ -713,7 +713,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1647.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -723,15 +723,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 42423,
+						"buffer_size": 43702,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								35207,
-								35207
+								0,
+								0
 							]
 						],
 						"settings":
@@ -751,15 +751,15 @@
 					"file": "css/estilosB.css",
 					"settings":
 					{
-						"buffer_size": 8694,
+						"buffer_size": 9141,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1474,
-								1474
+								0,
+								0
 							]
 						],
 						"settings":
@@ -806,15 +806,15 @@
 					"file": "config.xml",
 					"settings":
 					{
-						"buffer_size": 8379,
+						"buffer_size": 8305,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4494,
-								4494
+								0,
+								0
 							]
 						],
 						"settings":
